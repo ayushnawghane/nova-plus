@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaPlus | Practical ESG & Regulatory Confidence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nova: {
+                            base: '#F2F0E9', // Warm paper white
+                            dark: '#14281D', // Deep Moss
+                            green: '#2A5C44', // Primary Green
+                            light: '#E6E4DD', // Card BG
+                            gold: '#C5A65E', // Accent
+                            accent: '#D8EED4' // Light sage
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Fraunces', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    animation: {
+                        'reveal': 'reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Grainy Texture Overlay */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2F0E9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #14281D;
+            border-radius: 4px;
+        }
+
+        .stagger-1 { animation-delay: 100ms; }
+        .stagger-2 { animation-delay: 200ms; }
+        .stagger-3 { animation-delay: 300ms; }
+        .stagger-4 { animation-delay: 400ms; }
+    </style>
+</head>
+<body class="bg-nova-base text-nova-dark font-sans antialiased overflow-x-hidden selection:bg-nova-green selection:text-white">
+
+    <div class="noise-overlay"></div>
+
+    <nav class="fixed top-0 w-full z-40 px-6 py-4 transition-all duration-300 bg-nova-base/90 backdrop-blur-md border-b border-nova-dark/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-nova-dark rounded-full flex items-center justify-center text-white">
+                    <i class="fa-solid fa-leaf text-xs"></i>
+                </div>
+                <span class="font-serif font-semibold text-xl tracking-tight">NovaPlus</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium opacity-80">
+                <a href="#" class="hover:text-nova-green transition-colors">Platform</a>
+                <a href="#" class="hover:text-nova-green transition-colors">Solutions</a>
+                <a href="#" class="hover:text-nova-green transition-colors">Resources</a>
+                <a href="#" class="hover:text-nova-green transition-colors">Company</a>
+            </div>
+
+            <button class="bg-nova-dark text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-nova-green transition-all duration-300 shadow-lg shadow-nova-green/20">
+                Get Started
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-nova-accent rounded-full blur-[100px] opacity-50 -translate-y-1/2 translate-x-1/4 animate-float"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-yellow-100 rounded-full blur-[80px] opacity-40 translate-y-1/4 -translate-x-1/4"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-nova-dark/10 bg-white/50 mb-6 animate-reveal stagger-1 opacity-0">
+                <span class="w-2 h-2 rounded-full bg-nova-green animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wide uppercase text-nova-dark/70">ESG Compliance 2.0</span>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl font-light leading-[1.1] mb-6 animate-reveal stagger-2 opacity-0">
+                Practical ESG. <br>
+                <span class="italic text-nova-green">Regulatory Confidence.</span> <br>
+                Long-Term Value.
+            </h1>
+            
+            <p class="text-lg md:text-xl text-nova-dark/60 max-w-2xl mx-auto mb-10 animate-reveal stagger-3 opacity-0">
+                The comprehensive platform for companies to manage sustainability data, ensuring compliance and driving actionable insights.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center animate-reveal stagger-4 opacity-0">
+                <button class="bg-nova-dark text-white px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition-transform duration-300 shadow-xl shadow-nova-dark/20 flex items-center gap-3">
+                    Let's Talk ESG <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                </button>
+                <button class="px-8 py-4 rounded-full text-lg font-medium border border-nova-dark/20 hover:bg-white hover:border-transparent transition-all duration-300">
+                    View Demo
+                </button>
+            </div>
+
+            <div class="mt-16 border-t border-nova-dark/5 pt-8 animate-reveal stagger-4 opacity-0">
+                <p class="text-xs uppercase tracking-widest text-nova-dark/40 mb-6">Trusted by sustainable leaders</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                    <span class="font-serif font-bold text-xl">Acme Corp</span>
+                    <span class="font-sans font-bold text-xl">GlobalGreen</span>
+                    <span class="font-mono font-bold text-xl">EcoSystems</span>
+                    <span class="font-serif italic text-xl">FutureFirst</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<section class="px-6 py-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="bg-white p-10 rounded-3xl border border-nova-dark/5 hover:shadow-2xl hover:shadow-nova-dark/5 transition-all duration-500 group relative">
+                <div class="absolute top-8 right-8 text-nova-dark/20 group-hover:text-nova-green transition-colors duration-300">
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                </div>
+
+                <div class="w-14 h-14 bg-nova-green rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-nova-green/20 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-bullseye text-white text-2xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-3xl mb-6">Our Mission</h3>
+                
+                <p class="text-nova-dark/70 leading-relaxed mb-10 h-auto md:h-24">
+                    To provide rigorous, implementation-focused ESG advisory that enables organizations to manage sustainability risks, meet regulatory obligations, and integrate ESG considerations into core business decision-making.
+                </p>
+                
+                <div class="pt-6 border-t border-nova-dark/5 flex items-center gap-3 text-sm font-medium text-nova-dark/50 group-hover:text-nova-green transition-colors">
+                    <i class="fa-solid fa-arrow-right"></i> Clarity in complexity
+                </div>
+            </div>
+
+            <div class="bg-nova-dark text-white p-10 rounded-3xl relative overflow-hidden group border border-white/5">
+                <div class="absolute top-8 right-8 text-white/20 group-hover:text-nova-gold transition-colors duration-300 z-20">
+                    <i class="fa-solid fa-arrow-up-right"></i>
+                </div>
+
+                <div class="absolute top-0 right-0 w-64 h-64 bg-nova-gold/10 rounded-full blur-[60px] translate-x-1/2 -translate-y-1/2 group-hover:bg-nova-gold/20 transition-colors"></div>
+                
+                <div class="w-14 h-14 bg-nova-gold/20 border border-nova-gold/30 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm relative z-10 group-hover:bg-nova-gold/30 transition-colors duration-300">
+                    <i class="fa-solid fa-eye text-nova-gold text-2xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-3xl mb-6 relative z-10">Our Vision</h3>
+                
+                <p class="text-white/70 leading-relaxed mb-10 relative z-10 h-auto md:h-24">
+                    To support the development of responsible, resilient organizations by advancing transparent, high-quality ESG practices aligned with evolving global standards.
+                </p>
+                
+                 <div class="pt-6 border-t border-white/10 flex items-center gap-3 text-sm font-medium text-white/50 group-hover:text-nova-gold transition-colors relative z-10">
+                    <i class="fa-solid fa-arrow-right"></i> Leadership through responsibility
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 py-24 bg-nova-base relative z-10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <span class="text-nova-gold text-sm font-bold uppercase tracking-widest mb-3 block">Our Services</span>
+                <h2 class="font-serif text-4xl md:text-6xl text-nova-dark mb-6">ESG Consultancy</h2>
+                <p class="text-nova-dark/70 text-lg leading-relaxed">
+                    Comprehensive strategy, reporting & implementation services tailored to your ESG maturity level.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="switchTier(1)" id="tab-1" class="tier-tab group relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-nova-dark text-white shadow-lg shadow-nova-green/20 hover:-translate-y-0.5">
+                    <span class="opacity-50 mr-1 font-serif italic">Tier 1</span> Foundational & Strategy
+                </button>
+                <button onclick="switchTier(2)" id="tab-2" class="tier-tab group relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-nova-dark/10 text-nova-dark/60 hover:border-nova-dark hover:text-nova-dark hover:-translate-y-0.5">
+                    <span class="opacity-50 mr-1 font-serif italic">Tier 2</span> Operational & Technical
+                </button>
+                <button onclick="switchTier(3)" id="tab-3" class="tier-tab group relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-nova-dark/10 text-nova-dark/60 hover:border-nova-dark hover:text-nova-dark hover:-translate-y-0.5">
+                    <span class="opacity-50 mr-1 font-serif italic">Tier 3</span> Advanced & Value-Driven
+                </button>
+            </div>
+
+            <div id="tier-content" class="min-h-[400px] transition-opacity duration-300 ease-in-out">
+                
+                <div id="content-1" class="tier-pane block animate-reveal">
+                    <p class="text-center text-nova-dark/50 italic font-serif mb-10">For organizations starting their sustainability journey</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl hover:shadow-nova-green/5 hover:-translate-y-1 transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-xl bg-nova-accent/30 flex items-center justify-center mb-6 text-nova-green group-hover:bg-nova-green group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-leaf text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6 text-nova-dark">Sustainability Strategy & Vision</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>Materiality assessments</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>ESG vision, targets & net-zero roadmaps</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>ESG integration into governance & risk</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>ESG benchmarking against peers</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl hover:shadow-nova-green/5 hover:-translate-y-1 transition-all duration-300 group delay-75">
+                            <div class="w-12 h-12 rounded-xl bg-nova-accent/30 flex items-center justify-center mb-6 text-nova-green group-hover:bg-nova-green group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-file-contract text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6 text-nova-dark">ESG Reporting & Disclosure</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>ISSB / IFRS S1 & S2 readiness</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>GRI, SASB, TCFD & SGX-aligned reporting</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>Sustainability report drafting</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>Assurance and verification preparation</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl hover:shadow-nova-green/5 hover:-translate-y-1 transition-all duration-300 group delay-150">
+                            <div class="w-12 h-12 rounded-xl bg-nova-accent/30 flex items-center justify-center mb-6 text-nova-green group-hover:bg-nova-green group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6 text-nova-dark">Policy & Governance</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>ESG & sustainability policies</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>Supplier codes & human rights policies</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-sm text-nova-dark/70">
+                                    <i class="fa-solid fa-check text-nova-green mt-1"></i>
+                                    <span>Board and management ESG training</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-2" class="tier-pane hidden animate-reveal">
+                    <p class="text-center text-nova-dark/50 italic font-serif mb-10">For organizations scaling their operational impact</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                             <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-chart-pie text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6">Carbon Accounting</h3>
+                            <ul class="space-y-4 text-sm text-nova-dark/70">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Scope 1, 2 & 3 calculation</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Science-Based Targets (SBTi)</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Decarbonization modeling</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-droplet text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6">Resource Efficiency</h3>
+                            <ul class="space-y-4 text-sm text-nova-dark/70">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Water risk analysis</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Waste audits & circularity</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Energy management systems</li>
+                            </ul>
+                        </div>
+                         <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-code-branch text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6">Supply Chain</h3>
+                            <ul class="space-y-4 text-sm text-nova-dark/70">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Vendor ESG scoring</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Scope 3 data collection</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Sustainable procurement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content-3" class="tier-pane hidden animate-reveal">
+                    <p class="text-center text-nova-dark/50 italic font-serif mb-10">For organizations leading with purpose and innovation</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6">Green Finance</h3>
+                            <ul class="space-y-4 text-sm text-nova-dark/70">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Green bond frameworks</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Impact investing strategy</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> EU Taxonomy alignment</li>
+                            </ul>
+                        </div>
+                         <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-globe text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6">Climate Resilience</h3>
+                            <ul class="space-y-4 text-sm text-nova-dark/70">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Climate scenario analysis</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> TCFD quantitative modeling</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Physical risk assessment</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-nova-dark/5 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                            <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-recycle text-xl"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold mb-6">Circular Economy</h3>
+                            <ul class="space-y-4 text-sm text-nova-dark/70">
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Lifecycle Assessment (LCA)</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Product design advisory</li>
+                                <li class="flex gap-3"><i class="fa-solid fa-check text-nova-green"></i> Zero-waste certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#F2F0E9] relative overflow-hidden text-[#14281D] font-sans">
+    
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#D8EED4] rounded-full blur-[120px] opacity-40 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-3 block">Climate Action</span>
+            <h2 class="font-serif text-4xl md:text-5xl mb-6 text-[#14281D]">Carbon Accounting & Net Zero</h2>
+            <p class="text-[#14281D]/70 text-lg leading-relaxed">
+                Measure, manage, and reduce your carbon footprint with our comprehensive carbon accounting services and net zero strategy development.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            
+            <div class="bg-white p-8 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-xl hover:shadow-[#2A5C44]/10 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-12 h-12 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#2A5C44] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-chart-simple text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-4">Carbon Accounting</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Scope 1, 2 & 3 emissions</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>GHG Protocol aligned</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Carbon footprint reporting</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-xl hover:shadow-[#2A5C44]/10 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-12 h-12 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#2A5C44] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-bullseye text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-4">Net Zero Strategy</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Science-Based Targets (SBTi)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Decarbonization roadmaps</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Emissions reduction planning</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-xl hover:shadow-[#2A5C44]/10 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-12 h-12 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#2A5C44] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-tree text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-4">Credit Consultancy</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Carbon offset strategies</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Credit sourcing & verification</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-sm text-[#14281D]/70">
+                        <i class="fa-solid fa-check text-[#2A5C44] mt-1 text-xs"></i>
+                        <span>Portfolio optimization</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-[#E6E4DD] rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start relative z-10">
+                <div class="flex-shrink-0">
+                    <div class="w-20 h-20 bg-[#2A5C44] rounded-2xl flex items-center justify-center shadow-lg shadow-[#2A5C44]/20 group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid fa-leaf text-white text-3xl"></i>
+                    </div>
+                </div>
+                
+                <div class="flex-grow">
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold mb-4 text-[#14281D]">Carbon Credit Consultancy</h3>
+                    <p class="text-[#14281D]/70 leading-relaxed mb-8 max-w-3xl">
+                        Nova Plus provides comprehensive Carbon Credit consultancy services to help organizations navigate the voluntary and compliance carbon markets. We assist in identifying high-quality carbon credits, developing offset strategies aligned with your sustainability goals, and ensuring credible claims for your stakeholders.
+                    </p>
+                    
+                    <a href="#" class="inline-flex items-center gap-2 px-8 py-3 bg-[#14281D] text-white rounded-full font-medium text-sm hover:bg-[#2A5C44] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-white relative overflow-hidden font-sans">
+    
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#F2F0E9] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none opacity-80"></div>
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#D8EED4] rounded-full blur-[80px] translate-x-1/3 -translate-y-1/3 pointer-events-none opacity-40"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        <div>
+            <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-3 block animate-reveal">Training & Capability Building</span>
+            <h2 class="font-serif text-4xl md:text-5xl mb-6 text-[#14281D] animate-reveal stagger-1">ESG & Sustainability Training</h2>
+            <p class="text-[#14281D]/70 text-lg leading-relaxed mb-10 max-w-xl animate-reveal stagger-2">
+                Designed for leadership teams, sustainability managers, finance, procurement, and operations. Includes real-world case studies, regulatory insights, and practical tools.
+            </p>
+
+            <div class="space-y-4 animate-reveal stagger-3">
+                
+                <div class="flex items-center gap-6 p-5 rounded-3xl transition-all duration-300 hover:bg-[#F2F0E9] group cursor-default border border-transparent hover:border-[#14281D]/5">
+                    <div class="w-14 h-14 rounded-2xl border border-[#14281D]/10 flex items-center justify-center bg-white shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <i class="fa-solid fa-location-dot text-[#2A5C44] text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-[#14281D] text-xl mb-1 group-hover:text-[#2A5C44] transition-colors">On-site training</h4>
+                        <p class="text-sm text-[#14281D]/60 font-medium">Singapore & regionally</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6 p-5 rounded-3xl transition-all duration-300 hover:bg-[#F2F0E9] group cursor-default border border-transparent hover:border-[#14281D]/5">
+                    <div class="w-14 h-14 rounded-2xl border border-[#14281D]/10 flex items-center justify-center bg-white shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <i class="fa-regular fa-calendar-check text-[#2A5C44] text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-[#14281D] text-xl mb-1 group-hover:text-[#2A5C44] transition-colors">3-day intensive programs</h4>
+                        <p class="text-sm text-[#14281D]/60 font-medium">Comprehensive coverage</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6 p-5 rounded-3xl transition-all duration-300 hover:bg-[#F2F0E9] group cursor-default border border-transparent hover:border-[#14281D]/5">
+                    <div class="w-14 h-14 rounded-2xl border border-[#14281D]/10 flex items-center justify-center bg-white shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                        <i class="fa-solid fa-briefcase text-[#2A5C44] text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-[#14281D] text-xl mb-1 group-hover:text-[#2A5C44] transition-colors">Customized workshops</h4>
+                        <p class="text-sm text-[#14281D]/60 font-medium">By role or function</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative animate-reveal stagger-4">
+             <div class="absolute inset-0 bg-[#2A5C44] rounded-[2.5rem] rotate-2 opacity-5 scale-[0.98] translate-y-3 z-0"></div>
+
+             <div class="bg-[#F2F0E9] p-8 md:p-12 rounded-[2.5rem] relative shadow-2xl shadow-[#14281D]/5 border border-[#14281D]/5 z-10 hover:-translate-y-1 transition-transform duration-500">
+                
+                <div class="flex justify-between items-start mb-8">
+                    <div class="w-16 h-16 bg-[#2A5C44] rounded-2xl flex items-center justify-center shadow-lg shadow-[#2A5C44]/20 text-white">
+                        <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <div class="px-3 py-1 bg-white border border-[#14281D]/10 rounded-full text-xs font-bold uppercase tracking-wide text-[#14281D]/50">
+                        Syllabus 2025
+                    </div>
+                </div>
+
+                <h3 class="font-serif text-3xl font-bold text-[#14281D] mb-8">Training Topics</h3>
+
+                <ul class="space-y-5">
+                    <li class="flex items-start gap-4 group cursor-pointer">
+                        <div class="mt-1 w-5 h-5 rounded-md border-2 border-[#14281D]/20 flex items-center justify-center flex-shrink-0 bg-white group-hover:border-[#2A5C44] group-hover:bg-[#2A5C44] transition-all duration-300">
+                            <i class="fa-solid fa-check text-[10px] text-transparent group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-[#14281D]/70 font-medium text-lg group-hover:text-[#14281D] transition-colors select-none">ISSB & SGX sustainability reporting</span>
+                    </li>
+                     <li class="flex items-start gap-4 group cursor-pointer">
+                        <div class="mt-1 w-5 h-5 rounded-md border-2 border-[#14281D]/20 flex items-center justify-center flex-shrink-0 bg-white group-hover:border-[#2A5C44] group-hover:bg-[#2A5C44] transition-all duration-300">
+                            <i class="fa-solid fa-check text-[10px] text-transparent group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-[#14281D]/70 font-medium text-lg group-hover:text-[#14281D] transition-colors select-none">Climate risk & carbon accounting</span>
+                    </li>
+                     <li class="flex items-start gap-4 group cursor-pointer">
+                        <div class="mt-1 w-5 h-5 rounded-md border-2 border-[#14281D]/20 flex items-center justify-center flex-shrink-0 bg-white group-hover:border-[#2A5C44] group-hover:bg-[#2A5C44] transition-all duration-300">
+                            <i class="fa-solid fa-check text-[10px] text-transparent group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-[#14281D]/70 font-medium text-lg group-hover:text-[#14281D] transition-colors select-none">ESG governance & board responsibilities</span>
+                    </li>
+                     <li class="flex items-start gap-4 group cursor-pointer">
+                        <div class="mt-1 w-5 h-5 rounded-md border-2 border-[#14281D]/20 flex items-center justify-center flex-shrink-0 bg-white group-hover:border-[#2A5C44] group-hover:bg-[#2A5C44] transition-all duration-300">
+                            <i class="fa-solid fa-check text-[10px] text-transparent group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-[#14281D]/70 font-medium text-lg group-hover:text-[#14281D] transition-colors select-none">Avoiding greenwashing</span>
+                    </li>
+                     <li class="flex items-start gap-4 group cursor-pointer">
+                        <div class="mt-1 w-5 h-5 rounded-md border-2 border-[#14281D]/20 flex items-center justify-center flex-shrink-0 bg-white group-hover:border-[#2A5C44] group-hover:bg-[#2A5C44] transition-all duration-300">
+                            <i class="fa-solid fa-check text-[10px] text-transparent group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <span class="text-[#14281D]/70 font-medium text-lg group-hover:text-[#14281D] transition-colors select-none">Supply chain ESG risk</span>
+                    </li>
+                </ul>
+
+             </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- <section class="px-6 py-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-4xl md:text-5xl mb-12">Carbon Accounting & Net Zero</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-white to-nova-base border border-nova-dark/5">
+                    <i class="fa-solid fa-cloud text-3xl text-nova-green mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Scope 1, 2 & 3</h3>
+                    <p class="text-sm text-nova-dark/60">Full coverage calculation engine compliant with GHG Protocol.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-white to-nova-base border border-nova-dark/5">
+                    <i class="fa-solid fa-chart-line text-3xl text-nova-green mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Net Zero Pathways</h3>
+                    <p class="text-sm text-nova-dark/60">Simulate reduction strategies and set science-based targets (SBTi).</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-white to-nova-base border border-nova-dark/5">
+                    <i class="fa-solid fa-file-contract text-3xl text-nova-green mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Supply Chain</h3>
+                    <p class="text-sm text-nova-dark/60">Engage suppliers and gather primary data to refine scope 3 estimates.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-nova-green/10 rounded-2xl p-6 flex items-start gap-4 border border-nova-green/20">
+                <div class="bg-nova-green text-white w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-serif italic">i</div>
+                <div>
+                    <h4 class="font-bold text-nova-green mb-1">Did you know?</h4>
+                    <p class="text-sm text-nova-dark/70">Companies with validated science-based targets have reduced emissions by 25% on average compared to peers.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section class="px-6 py-20 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-orange-400 text-sm font-bold uppercase tracking-widest">Social Governance</span>
+                <h2 class="font-serif text-4xl md:text-5xl mt-3 mb-6">Workforce, Human Rights & Training</h2>
+                <p class="text-nova-dark/70 mb-8 text-lg">
+                    ESG is more than just carbon. Track diversity metrics, health & safety incidents, and human rights due diligence across your entire value chain.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-green-500"></i>
+                        <span>Gender Pay Gap Analysis</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-green-500"></i>
+                        <span>Supplier Code of Conduct Tracking</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-green-500"></i>
+                        <span>Employee Wellbeing Surveys</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-nova-accent to-yellow-50 rounded-3xl transform rotate-3"></div>
+                <div class="relative bg-white border border-nova-dark/10 rounded-2xl shadow-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="text-xs font-mono text-gray-400">Diversity_Report_2025.pdf</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="h-24 bg-nova-base rounded-lg w-full flex items-end p-2 gap-2">
+                            <div class="w-1/4 bg-nova-dark h-[40%] rounded-sm"></div>
+                            <div class="w-1/4 bg-nova-dark h-[60%] rounded-sm"></div>
+                            <div class="w-1/4 bg-nova-dark h-[50%] rounded-sm"></div>
+                            <div class="w-1/4 bg-nova-green h-[85%] rounded-sm relative">
+                                <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-nova-green">+12%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold">Female Leadership</span>
+                            <span class="text-nova-green font-bold">42%</span>
+                        </div>
+                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full w-[42%] bg-nova-green"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<section class="py-24 px-6 bg-[#F2F0E9] relative overflow-hidden font-sans">
+    
+    <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#D8EED4] rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#E6E4DD] rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+            <div class="max-w-2xl">
+                <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-3 block animate-reveal">Learning Management System</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-[#14281D] mb-6 leading-tight animate-reveal stagger-1">
+                    ESG Learning Platform
+                </h2>
+                <p class="text-[#14281D]/70 text-lg leading-relaxed animate-reveal stagger-2">
+                    Deliver scalable ESG education for your entire organization. From board members to front-line staff, ensure everyone understands their role in your sustainability journey.
+                </p>
+            </div>
+            
+            <div class="animate-reveal stagger-3">
+                <button class="group relative px-8 py-4 bg-[#14281D] text-white rounded-full font-bold overflow-hidden shadow-xl shadow-[#2A5C44]/20 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <span class="relative z-10 flex items-center gap-2">
+                        Request a Demo 
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-[#2A5C44] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <div class="md:col-span-7 bg-white rounded-[2.5rem] p-8 md:p-12 border border-[#14281D]/5 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden animate-reveal stagger-1">
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-desktop text-[#2A5C44] text-2xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-[#14281D] mb-4">Online Courses</h3>
+                    <p class="text-[#14281D]/60 mb-8 max-w-sm">Accessible anytime, anywhere. Self-paced modules designed for modern professionals.</p>
+                    
+                    <div class="mt-auto bg-[#14281D] rounded-2xl p-4 md:p-6 transform group-hover:translate-y-2 transition-transform duration-500">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center cursor-pointer hover:bg-[#2A5C44] transition-colors">
+                                <i class="fa-solid fa-play text-white text-xs ml-0.5"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="h-full w-2/3 bg-[#C5A65E] rounded-full"></div>
+                                </div>
+                            </div>
+                            <span class="text-xs text-white/50 font-mono">04:20</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-white/60 text-xs border border-white/10">Module 1</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-white/60 text-xs border border-white/10">Introduction to Scope 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 bg-[#14281D] rounded-[2.5rem] p-8 md:p-10 text-white border border-white/5 shadow-xl hover:shadow-2xl transition-all duration-500 group relative overflow-hidden animate-reveal stagger-2">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#2A5C44] rounded-full blur-[80px] opacity-40 translate-x-1/3 -translate-y-1/3"></div>
+
+                <div class="relative z-10 h-full flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                            <i class="fa-solid fa-chart-pie text-[#C5A65E] text-xl"></i>
+                        </div>
+                        <span class="bg-[#2A5C44] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-md">Admin View</span>
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl font-bold mb-2">Analytics Dashboard</h3>
+                    <p class="text-white/60 text-sm mb-8">Track organization-wide progress and completion rates.</p>
+
+                    <div class="mt-auto flex items-end gap-3 h-24 pb-2 border-b border-white/10">
+                        <div class="w-full bg-white/5 rounded-t-lg h-[40%] relative group-hover:h-[50%] transition-all duration-500 delay-75"></div>
+                        <div class="w-full bg-white/5 rounded-t-lg h-[60%] relative group-hover:h-[75%] transition-all duration-500 delay-100"></div>
+                        <div class="w-full bg-[#2A5C44] rounded-t-lg h-[35%] relative group-hover:h-[85%] transition-all duration-500 delay-150 shadow-[0_0_15px_rgba(42,92,68,0.5)]">
+                             <div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-[#C5A65E] opacity-0 group-hover:opacity-100 transition-opacity duration-300">+24%</div>
+                        </div>
+                        <div class="w-full bg-white/5 rounded-t-lg h-[50%] relative group-hover:h-[60%] transition-all duration-500 delay-200"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 bg-white rounded-[2.5rem] p-8 border border-[#14281D]/5 hover:border-[#C5A65E]/30 shadow-sm hover:shadow-lg transition-all duration-300 group animate-reveal stagger-3">
+                <div class="w-12 h-12 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-certificate text-[#C5A65E] text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-[#14281D] mb-3">Certifications</h3>
+                <p class="text-[#14281D]/60 text-sm mb-6">Recognized credentials for career advancement.</p>
+                <div class="flex items-center gap-3">
+                    <div class="h-8 w-8 rounded-full bg-[#C5A65E]/10 border border-[#C5A65E] flex items-center justify-center text-[#C5A65E]">
+                        <i class="fa-solid fa-ribbon text-xs"></i>
+                    </div>
+                    <span class="text-xs font-bold text-[#14281D]/80 uppercase tracking-wide">Verified Badge</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 bg-[#FFFBF0] rounded-[2.5rem] p-8 border border-[#C5A65E]/10 shadow-sm hover:shadow-lg transition-all duration-300 group animate-reveal stagger-4">
+                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                    <i class="fa-solid fa-book-open text-[#C5A65E] text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-[#14281D] mb-3">Rich Content</h3>
+                <p class="text-[#14281D]/60 text-sm mb-6">Videos, quizzes, and interactive resources.</p>
+                
+                <div class="relative h-8 w-full mx-auto">
+                    <div class="absolute top-0 left-0 w-full h-full bg-white rounded-lg border border-[#14281D]/5 shadow-sm transform group-hover:-rotate-2 transition-transform"></div>
+                    <div class="absolute top-0 left-0 w-full h-full bg-white rounded-lg border border-[#14281D]/5 shadow-sm transform rotate-3 group-hover:rotate-6 transition-transform opacity-80"></div>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 bg-white rounded-[2.5rem] p-8 border border-[#14281D]/5 shadow-sm hover:shadow-lg transition-all duration-300 group animate-reveal stagger-5">
+                <div class="w-12 h-12 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-users text-[#2A5C44] text-xl"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-[#14281D] mb-3">Team Learning</h3>
+                <p class="text-[#14281D]/60 text-sm mb-6">Collaborative features and leaderboards.</p>
+                <div class="flex -space-x-2 overflow-hidden">
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white grayscale group-hover:grayscale-0 transition-all" src="https://i.pravatar.cc/100?img=1" alt=""/>
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white grayscale group-hover:grayscale-0 transition-all" src="https://i.pravatar.cc/100?img=2" alt=""/>
+                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white grayscale group-hover:grayscale-0 transition-all" src="https://i.pravatar.cc/100?img=3" alt=""/>
+                    <div class="h-8 w-8 rounded-full bg-[#14281D] text-white flex items-center justify-center text-xs ring-2 ring-white font-medium">+5</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-32 px-6 bg-[#14281D] relative overflow-hidden font-sans text-[#F2F0E9]">
+    
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#2A5C44] rounded-full blur-[150px] opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+        
+        <div class="mb-20 flex flex-col items-center">
+            <div class="relative inline-flex items-center justify-center px-6 py-2 mb-8 border border-[#C5A65E]/50 rounded-full bg-[#C5A65E]/10 backdrop-blur-sm animate-reveal">
+                <span class="w-2 h-2 bg-[#C5A65E] rounded-full mr-3 animate-pulse"></span>
+                <span class="text-[#C5A65E] font-bold tracking-[0.2em] text-xs uppercase">Coming Soon</span>
+                <span class="ml-3 text-[#F2F0E9]/40 text-xs tracking-wider border-l border-[#F2F0E9]/20 pl-3">Sustainable Solutions</span>
+            </div>
+
+            <h2 class="font-serif text-5xl md:text-7xl mb-8 animate-reveal stagger-1 text-transparent bg-clip-text bg-gradient-to-b from-[#F2F0E9] to-[#F2F0E9]/70">
+                Eco-Friendly Products
+            </h2>
+            
+            <p class="text-[#F2F0E9]/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed animate-reveal stagger-2">
+                We supply energy-efficient & environmentally friendly products to help organizations reduce their footprint while maintaining operational excellence.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            
+            <div class="group relative aspect-square animate-reveal stagger-3">
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl transform transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl opacity-50 blur-lg transition-opacity duration-500 group-hover:opacity-80"></div>
+                
+                <div class="relative h-full bg-[#F2F0E9] rounded-3xl p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:-translate-y-2 border border-white/50 shadow-xl overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%221.5%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+                    
+                    <div class="w-16 h-16 rounded-full bg-[#14281D]/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#C5A65E] group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-bolt text-[#14281D] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-[#14281D] mb-2">Energy Efficient</h3>
+                    <div class="w-8 h-1 bg-[#C5A65E] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </div>
+            </div>
+
+            <div class="group relative aspect-square animate-reveal stagger-4">
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl transform transition-transform duration-500 group-hover:-rotate-2 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl opacity-50 blur-lg transition-opacity duration-500 group-hover:opacity-80"></div>
+                
+                <div class="relative h-full bg-[#F2F0E9] rounded-3xl p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:-translate-y-2 border border-white/50 shadow-xl overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%221.5%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+                    <div class="w-16 h-16 rounded-full bg-[#14281D]/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#2A5C44] group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-leaf text-[#14281D] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-[#14281D] mb-2">Eco-Friendly</h3>
+                     <div class="w-8 h-1 bg-[#2A5C44] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </div>
+            </div>
+
+            <div class="group relative aspect-square animate-reveal stagger-5">
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl transform transition-transform duration-500 group-hover:rotate-2 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl opacity-50 blur-lg transition-opacity duration-500 group-hover:opacity-80"></div>
+                
+                <div class="relative h-full bg-[#F2F0E9] rounded-3xl p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:-translate-y-2 border border-white/50 shadow-xl overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%221.5%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+                    <div class="w-16 h-16 rounded-full bg-[#14281D]/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#14281D] group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-recycle text-[#14281D] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-[#14281D] mb-2">Sustainable</h3>
+                     <div class="w-8 h-1 bg-[#14281D] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </div>
+            </div>
+
+            <div class="group relative aspect-square animate-reveal stagger-5">
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl transform transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105"></div>
+                <div class="absolute inset-0 bg-[#F2F0E9] rounded-3xl opacity-50 blur-lg transition-opacity duration-500 group-hover:opacity-80"></div>
+                
+                <div class="relative h-full bg-[#F2F0E9] rounded-3xl p-8 flex flex-col items-center justify-center text-center transition-transform duration-500 group-hover:-translate-y-2 border border-white/50 shadow-xl overflow-hidden">
+                     <div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%221.5%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
+
+                    <div class="w-16 h-16 rounded-full bg-[#14281D]/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#C5A65E] group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-cube text-[#14281D] text-2xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-[#14281D] mb-2">Quality Assured</h3>
+                     <div class="w-8 h-1 bg-[#C5A65E] rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="inline-block relative group animate-reveal stagger-5">
+             <div class="absolute inset-0 bg-[#2A5C44] blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+             <p class="relative z-10 text-[#F2F0E9]/80 text-sm font-medium border border-[#F2F0E9]/20 rounded-full px-8 py-4 bg-[#14281D]/50 backdrop-blur-md">
+                Stay tuned for our product catalog. 
+                <a href="#" class="text-[#C5A65E] hover:text-white transition-colors ml-2 font-bold underline decoration-1 underline-offset-4">
+                    Get Early Access <i class="fa-solid fa-arrow-right -rotate-45 inline-block ml-1 group-hover:rotate-0 transition-transform"></i>
+                </a>
+             </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="py-24 px-6 bg-[#F2F0E9] relative overflow-hidden font-sans">
+    
+    <div class="absolute inset-0 z-0 opacity-[0.03]" 
+         style="background-image: linear-gradient(#14281D 1px, transparent 1px), linear-gradient(90deg, #14281D 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="max-w-3xl mb-20 animate-reveal">
+            <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-3 block">Why Choose Us</span>
+            <h2 class="font-serif text-5xl md:text-6xl text-[#14281D] mb-8">Why Nova Plus</h2>
+            <p class="text-[#14281D]/70 text-xl leading-relaxed font-light">
+                Singapore’s sustainability landscape is shifting rapidly. With mandatory disclosures from FY2025, companies need <span class="text-[#14281D] font-medium border-b border-[#C5A65E]">structured guidance</span>, <span class="text-[#14281D] font-medium border-b border-[#C5A65E]">reliable data</span>, and <span class="text-[#14281D] font-medium border-b border-[#C5A65E]">defensible decisions</span>.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+            
+            <div class="bg-white p-10 rounded-tr-[3rem] rounded-bl-[3rem] border border-[#14281D]/5 hover:border-[#C5A65E]/50 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-1">
+                <span class="absolute top-8 right-8 font-serif text-6xl text-[#F2F0E9] font-bold group-hover:text-[#C5A65E]/10 transition-colors">01</span>
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-xl flex items-center justify-center mb-8 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300 relative z-10">
+                    <i class="fa-solid fa-file-contract text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4 relative z-10">Singapore Aligned</h3>
+                <p class="text-[#14281D]/60 relative z-10">Built specifically for Singapore's regulatory landscape, SGX requirements, and ISSB standards.</p>
+            </div>
+
+            <div class="bg-white p-10 rounded-tl-[3rem] rounded-br-[3rem] border border-[#14281D]/5 hover:border-[#C5A65E]/50 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-2">
+                <span class="absolute top-8 right-8 font-serif text-6xl text-[#F2F0E9] font-bold group-hover:text-[#C5A65E]/10 transition-colors">02</span>
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-xl flex items-center justify-center mb-8 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300 relative z-10">
+                    <i class="fa-solid fa-earth-asia text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4 relative z-10">Global Experience</h3>
+                <p class="text-[#14281D]/60 relative z-10">Our consultants bring extensive experience delivering ESG consultancy, reports, and training to clients across industries globally.</p>
+            </div>
+
+            <div class="bg-white p-10 rounded-tl-[3rem] rounded-br-[3rem] border border-[#14281D]/5 hover:border-[#C5A65E]/50 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-3">
+                <span class="absolute top-8 right-8 font-serif text-6xl text-[#F2F0E9] font-bold group-hover:text-[#C5A65E]/10 transition-colors">03</span>
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-xl flex items-center justify-center mb-8 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300 relative z-10">
+                    <i class="fa-solid fa-wrench text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4 relative z-10">Practical Implementation</h3>
+                <p class="text-[#14281D]/60 relative z-10">We focus on execution and real outcomes—helping clients achieve tangible sustainability improvements.</p>
+            </div>
+
+            <div class="bg-white p-10 rounded-tr-[3rem] rounded-bl-[3rem] border border-[#14281D]/5 hover:border-[#C5A65E]/50 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-4">
+                <span class="absolute top-8 right-8 font-serif text-6xl text-[#F2F0E9] font-bold group-hover:text-[#C5A65E]/10 transition-colors">04</span>
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-xl flex items-center justify-center mb-8 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300 relative z-10">
+                    <i class="fa-solid fa-handshake-simple text-xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4 relative z-10">End-to-End Support</h3>
+                <p class="text-[#14281D]/60 relative z-10">From strategy development to reporting and training, we guide clients through every stage of their ESG journey.</p>
+            </div>
+        </div>
+
+        <div class="bg-[#14281D] rounded-[3rem] p-8 md:p-16 relative overflow-hidden text-[#F2F0E9] shadow-2xl animate-reveal stagger-5">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#2A5C44] rounded-full blur-[120px] opacity-30 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+                
+                <div class="flex flex-col justify-center">
+                    <h3 class="font-serif text-4xl md:text-5xl mb-8">Proven Track Record</h3>
+                    <p class="text-white/60 mb-8 leading-relaxed">
+                        Nova Plus consultants are experienced in providing ESG consultancy, sustainability reports, and training globally to clients across diverse industries.
+                    </p>
+                    <p class="text-white/80 font-medium text-lg border-l-2 border-[#C5A65E] pl-6 py-2">
+                        Our team combines deep regulatory knowledge with practical implementation experience to deliver results that matter.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 bg-white/5 p-6 rounded-2xl border border-white/5 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-300 group">
+                        <div class="mt-1 w-6 h-6 rounded-full border border-[#C5A65E] flex items-center justify-center flex-shrink-0 text-[#C5A65E] group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all">
+                            <i class="fa-solid fa-arrow-right text-xs -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                        <span class="text-white/80 group-hover:text-white transition-colors">Delivered <strong class="text-[#C5A65E]">50+ sustainability reports</strong> across sectors including manufacturing, logistics, and financial services.</span>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white/5 p-6 rounded-2xl border border-white/5 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-300 group">
+                         <div class="mt-1 w-6 h-6 rounded-full border border-[#C5A65E] flex items-center justify-center flex-shrink-0 text-[#C5A65E] group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all">
+                            <i class="fa-solid fa-arrow-right text-xs -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                        <span class="text-white/80 group-hover:text-white transition-colors">Trained <strong class="text-[#C5A65E]">500+ professionals</strong> in ESG governance, climate risk, and sustainability reporting.</span>
+                    </div>
+
+                    <div class="flex items-start gap-4 bg-white/5 p-6 rounded-2xl border border-white/5 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-300 group">
+                         <div class="mt-1 w-6 h-6 rounded-full border border-[#C5A65E] flex items-center justify-center flex-shrink-0 text-[#C5A65E] group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all">
+                            <i class="fa-solid fa-arrow-right text-xs -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                        <span class="text-white/80 group-hover:text-white transition-colors">Supported organizations in achieving compliance with <strong class="text-[#C5A65E]">SGX, GRI, and TCFD</strong> frameworks.</span>
+                    </div>
+
+                     <div class="flex items-start gap-4 bg-white/5 p-6 rounded-2xl border border-white/5 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-300 group">
+                         <div class="mt-1 w-6 h-6 rounded-full border border-[#C5A65E] flex items-center justify-center flex-shrink-0 text-[#C5A65E] group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all">
+                            <i class="fa-solid fa-arrow-right text-xs -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                        <span class="text-white/80 group-hover:text-white transition-colors">Guided clients through successful <strong class="text-[#C5A65E]">SBTi target setting</strong> and validation processes.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-white relative overflow-hidden font-sans">
+    
+    <div class="absolute inset-0 opacity-40 pointer-events-none" 
+         style="background-image: radial-gradient(#14281D 0.5px, transparent 0.5px); background-size: 24px 24px;">
+    </div>
+
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-[#F2F0E9] rounded-full blur-[120px] opacity-80 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="text-center mb-20 animate-reveal">
+            <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-3 block">Our Methodology</span>
+            <h2 class="font-serif text-5xl md:text-6xl text-[#14281D] mb-6">How We Work</h2>
+            <p class="text-[#14281D]/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                A structured, proven methodology that guides you from assessment to continuous improvement.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+            
+            <div class="bg-white p-10 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-2xl hover:shadow-[#2A5C44]/10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-1">
+                <div class="absolute top-0 right-0 p-8 opacity-10 font-serif text-8xl font-bold text-[#14281D] group-hover:opacity-20 transition-opacity select-none">01</div>
+                
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-8 border border-[#14281D]/5 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4">Assess</h3>
+                <p class="text-[#14281D]/60 leading-relaxed text-sm">
+                    Comprehensive evaluation of your current ESG position and material risks.
+                </p>
+                
+                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#2A5C44] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-2xl hover:shadow-[#2A5C44]/10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-2">
+                <div class="absolute top-0 right-0 p-8 opacity-10 font-serif text-8xl font-bold text-[#14281D] group-hover:opacity-20 transition-opacity select-none">02</div>
+                
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-8 border border-[#14281D]/5 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-bullseye text-xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4">Strategise</h3>
+                <p class="text-[#14281D]/60 leading-relaxed text-sm">
+                    Develop tailored roadmaps aligned with your business objectives.
+                </p>
+                 <div class="absolute bottom-0 left-0 w-full h-1 bg-[#2A5C44] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-2xl hover:shadow-[#2A5C44]/10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-3">
+                <div class="absolute top-0 right-0 p-8 opacity-10 font-serif text-8xl font-bold text-[#14281D] group-hover:opacity-20 transition-opacity select-none">03</div>
+                
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-8 border border-[#14281D]/5 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-gears text-xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4">Implement</h3>
+                <p class="text-[#14281D]/60 leading-relaxed text-sm">
+                    Execute initiatives with practical, measurable approaches.
+                </p>
+                 <div class="absolute bottom-0 left-0 w-full h-1 bg-[#2A5C44] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-2xl hover:shadow-[#2A5C44]/10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-4">
+                <div class="absolute top-0 right-0 p-8 opacity-10 font-serif text-8xl font-bold text-[#14281D] group-hover:opacity-20 transition-opacity select-none">04</div>
+                
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-8 border border-[#14281D]/5 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4">Train</h3>
+                <p class="text-[#14281D]/60 leading-relaxed text-sm">
+                    Build internal capacity and embed sustainability expertise.
+                </p>
+                 <div class="absolute bottom-0 left-0 w-full h-1 bg-[#2A5C44] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-[#14281D]/5 shadow-sm hover:shadow-2xl hover:shadow-[#2A5C44]/10 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-5">
+                <div class="absolute top-0 right-0 p-8 opacity-10 font-serif text-8xl font-bold text-[#14281D] group-hover:opacity-20 transition-opacity select-none">05</div>
+                
+                <div class="w-14 h-14 bg-[#F2F0E9] rounded-2xl flex items-center justify-center mb-8 border border-[#14281D]/5 group-hover:bg-[#14281D] group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-file-signature text-xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold text-[#14281D] mb-4">Report</h3>
+                <p class="text-[#14281D]/60 leading-relaxed text-sm">
+                    Ensure transparent, compliant disclosure to stakeholders.
+                </p>
+                 <div class="absolute bottom-0 left-0 w-full h-1 bg-[#2A5C44] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </div>
+
+            <div class="bg-[#14281D] p-10 rounded-[2rem] border border-[#14281D]/5 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden text-[#F2F0E9] animate-reveal stagger-6">
+                 <div class="absolute top-0 right-0 w-40 h-40 bg-[#2A5C44] rounded-full blur-[50px] opacity-40 translate-x-1/3 -translate-y-1/3"></div>
+
+                <div class="absolute top-0 right-0 p-8 opacity-20 font-serif text-8xl font-bold text-white group-hover:opacity-30 transition-opacity select-none">06</div>
+                
+                <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/10 group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-colors duration-300">
+                    <i class="fa-solid fa-arrow-trend-up text-xl"></i>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold text-white mb-4">Improve</h3>
+                <p class="text-white/60 leading-relaxed text-sm">
+                    Continuous refinement based on performance and evolving standards.
+                </p>
+                <div class="absolute bottom-0 left-0 w-full h-1 bg-[#C5A65E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-[#14281D] relative overflow-hidden font-sans text-[#F2F0E9]">
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-5xl bg-[#2A5C44] opacity-20 blur-[150px] rounded-full pointer-events-none"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23F2F0E9\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+        
+        <div class="text-center mb-20 animate-reveal">
+            <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-4 inline-block px-3 py-1 border border-[#C5A65E]/30 rounded-full bg-[#C5A65E]/10">About Us</span>
+            
+            <h2 class="font-serif text-5xl md:text-6xl mb-8 leading-tight">
+                Bridging Standards <br>
+                <span class="italic text-[#2A5C44] bg-[#F2F0E9] px-2 mr-2 transform -skew-x-6 inline-block"> & Reality</span>
+            </h2>
+            
+            <p class="text-[#F2F0E9]/70 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light">
+                Nova Plus was founded to bridge the gap between global ESG standards and real-world business realities. We combine <span class="text-[#F2F0E9] font-medium border-b border-[#C5A65E]/50">technical rigor</span>, <span class="text-[#F2F0E9] font-medium border-b border-[#C5A65E]/50">regulatory insight</span>, and <span class="text-[#F2F0E9] font-medium border-b border-[#C5A65E]/50">commercial understanding</span> to help organizations create lasting value.
+            </p>
+        </div>
+
+        <div class="mb-24">
+            <h3 class="font-serif text-3xl text-center mb-12 text-[#F2F0E9]">Our Leadership</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 border border-white/10 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-1 text-center">
+                    <div class="w-24 h-24 mx-auto bg-[#F2F0E9] rounded-full flex items-center justify-center mb-6 border-4 border-[#14281D] group-hover:scale-110 transition-transform duration-300">
+                        <span class="font-serif text-3xl text-[#14281D]">P</span>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-1 group-hover:text-[#C5A65E] transition-colors">Pratap</h4>
+                    <p class="text-[#F2F0E9]/50 text-sm uppercase tracking-wider mb-6">Director</p>
+                    
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-[#C5A65E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 border border-white/10 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-2 text-center transform md:-translate-y-4">
+                    <div class="absolute top-4 right-4 text-[#C5A65E] opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-star text-xs"></i>
+                    </div>
+                    
+                    <div class="w-24 h-24 mx-auto bg-[#F2F0E9] rounded-full flex items-center justify-center mb-6 border-4 border-[#14281D] group-hover:scale-110 transition-transform duration-300">
+                        <span class="font-serif text-3xl text-[#14281D]">N</span>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-1 group-hover:text-[#C5A65E] transition-colors">Nivethana</h4>
+                    <p class="text-[#F2F0E9]/50 text-sm uppercase tracking-wider mb-6">Head of Operations</p>
+                    
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-[#C5A65E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 border border-white/10 hover:bg-white/10 hover:border-[#C5A65E]/50 transition-all duration-500 group relative overflow-hidden animate-reveal stagger-3 text-center">
+                    <div class="w-24 h-24 mx-auto bg-[#F2F0E9] rounded-full flex items-center justify-center mb-6 border-4 border-[#14281D] group-hover:scale-110 transition-transform duration-300">
+                        <span class="font-serif text-3xl text-[#14281D]">Pr</span>
+                    </div>
+                    <h4 class="font-serif text-2xl font-bold mb-1 group-hover:text-[#C5A65E] transition-colors">Pratiksha</h4>
+                    <p class="text-[#F2F0E9]/50 text-sm uppercase tracking-wider mb-6">Chief ESG Consultant</p>
+                    
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-[#C5A65E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-16 animate-reveal stagger-4">
+            <div class="flex flex-wrap justify-center gap-12 md:gap-24 text-center">
+                
+                <div class="group cursor-default">
+                    <h5 class="text-[#C5A65E] font-bold text-4xl mb-2 font-serif group-hover:scale-110 transition-transform duration-300">SGX</h5>
+                    <span class="text-[#F2F0E9]/60 text-sm uppercase tracking-widest group-hover:text-white transition-colors">Aligned</span>
+                </div>
+
+                <div class="w-px h-16 bg-white/10 hidden md:block"></div>
+
+                <div class="group cursor-default">
+                    <h5 class="text-[#C5A65E] font-bold text-4xl mb-2 font-serif group-hover:scale-110 transition-transform duration-300">ISSB</h5>
+                    <span class="text-[#F2F0E9]/60 text-sm uppercase tracking-widest group-hover:text-white transition-colors">Ready</span>
+                </div>
+
+                <div class="w-px h-16 bg-white/10 hidden md:block"></div>
+
+                <div class="group cursor-default">
+                    <h5 class="text-[#C5A65E] font-bold text-4xl mb-2 font-serif group-hover:scale-110 transition-transform duration-300">SBTi</h5>
+                    <span class="text-[#F2F0E9]/60 text-sm uppercase tracking-widest group-hover:text-white transition-colors">Certified</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-[#F2F0E9] relative overflow-hidden font-sans text-[#14281D]">
+    
+    <div class="absolute inset-0 opacity-40 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+        
+        <div class="flex flex-col justify-center animate-reveal stagger-1">
+            <span class="text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-4 flex items-center gap-2">
+                <span class="w-8 h-px bg-[#C5A65E]"></span> Get In Touch
+            </span>
+            
+            <h2 class="font-serif text-5xl md:text-6xl mb-8 leading-[1.1]">
+                Start Your <br>
+                <span class="italic text-[#2A5C44]">ESG Journey</span>
+            </h2>
+            
+            <p class="text-[#14281D]/70 text-lg leading-relaxed mb-12 max-w-md">
+                Whether you're preparing for ISSB-aligned reporting, building your net-zero roadmap, or strengthening ESG governance—Nova Plus is ready to support you.
+            </p>
+
+            <div class="relative group">
+                <div class="absolute inset-0 bg-[#14281D] rounded-xl transform rotate-3 opacity-10 group-hover:rotate-6 transition-transform duration-500"></div>
+                
+                <div class="relative bg-white p-8 rounded-xl border border-[#14281D]/5 shadow-lg transition-transform duration-500 hover:-translate-y-1">
+                    <div class="grid gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#F2F0E9] flex items-center justify-center text-[#2A5C44]">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold uppercase tracking-wider text-[#14281D]/40 mb-1">Email Us</span>
+                                <a href="mailto:sales@novaplus.sg" class="font-serif text-lg font-bold border-b border-[#C5A65E]/30 hover:border-[#C5A65E] transition-all">sales@novaplus.sg</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#F2F0E9] flex items-center justify-center text-[#2A5C44]">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold uppercase tracking-wider text-[#14281D]/40 mb-1">Call Us</span>
+                                <a href="tel:+6590882853" class="font-serif text-lg font-bold border-b border-[#C5A65E]/30 hover:border-[#C5A65E] transition-all">+65 9088 2853</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#F2F0E9] flex items-center justify-center text-[#2A5C44]">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold uppercase tracking-wider text-[#14281D]/40 mb-1">Singapore Office</span>
+                                <address class="not-italic text-sm text-[#14281D]/70 leading-relaxed">
+                                    Nova Plus Pte Ltd<br>
+                                    25 International Business Park<br>
+                                    #04-103B German Centre<br>
+                                    Singapore 609916
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex items-center gap-3 text-xs text-[#14281D]/50 bg-white/50 px-4 py-3 rounded-lg border border-[#14281D]/5 w-fit">
+                <i class="fa-regular fa-clock"></i>
+                <span>We typically respond to all inquiries within 24 business hours.</span>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-[#14281D]/5 border border-[#14281D]/5 relative overflow-hidden animate-reveal stagger-2">
+            
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A65E]/10 rounded-bl-[100px] pointer-events-none"></div>
+
+            <form class="space-y-6 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2 group">
+                        <label class="text-xs font-bold uppercase tracking-widest text-[#14281D]/60 ml-1 group-focus-within:text-[#2A5C44] transition-colors">Full Name</label>
+                        <input type="text" placeholder="e.g. Jane Doe" class="w-full bg-[#F2F0E9]/50 border-b-2 border-[#14281D]/10 px-4 py-4 rounded-t-lg focus:outline-none focus:border-[#2A5C44] focus:bg-[#F2F0E9] transition-all placeholder:text-[#14281D]/30">
+                    </div>
+
+                    <div class="space-y-2 group">
+                        <label class="text-xs font-bold uppercase tracking-widest text-[#14281D]/60 ml-1 group-focus-within:text-[#2A5C44] transition-colors">Email Address</label>
+                        <input type="email" placeholder="you@company.com" class="w-full bg-[#F2F0E9]/50 border-b-2 border-[#14281D]/10 px-4 py-4 rounded-t-lg focus:outline-none focus:border-[#2A5C44] focus:bg-[#F2F0E9] transition-all placeholder:text-[#14281D]/30">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2 group">
+                        <label class="text-xs font-bold uppercase tracking-widest text-[#14281D]/60 ml-1 group-focus-within:text-[#2A5C44] transition-colors">Company</label>
+                        <input type="text" placeholder="Company Name" class="w-full bg-[#F2F0E9]/50 border-b-2 border-[#14281D]/10 px-4 py-4 rounded-t-lg focus:outline-none focus:border-[#2A5C44] focus:bg-[#F2F0E9] transition-all placeholder:text-[#14281D]/30">
+                    </div>
+
+                    <div class="space-y-2 group">
+                        <label class="text-xs font-bold uppercase tracking-widest text-[#14281D]/60 ml-1 group-focus-within:text-[#2A5C44] transition-colors">Inquiry Type</label>
+                        <div class="relative">
+                            <select class="w-full bg-[#F2F0E9]/50 border-b-2 border-[#14281D]/10 px-4 py-4 rounded-t-lg focus:outline-none focus:border-[#2A5C44] focus:bg-[#F2F0E9] transition-all appearance-none cursor-pointer text-[#14281D]">
+                                <option>Select a service</option>
+                                <option>ESG Reporting</option>
+                                <option>Carbon Accounting</option>
+                                <option>Training & Workshops</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-[#14281D]/30 text-xs pointer-events-none"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 group">
+                    <label class="text-xs font-bold uppercase tracking-widest text-[#14281D]/60 ml-1 group-focus-within:text-[#2A5C44] transition-colors">Message</label>
+                    <textarea rows="4" placeholder="Tell us about your ESG needs and how we can help..." class="w-full bg-[#F2F0E9]/50 border-b-2 border-[#14281D]/10 px-4 py-4 rounded-t-lg focus:outline-none focus:border-[#2A5C44] focus:bg-[#F2F0E9] transition-all placeholder:text-[#14281D]/30 resize-none"></textarea>
+                </div>
+
+                <button class="w-full bg-[#14281D] text-white font-serif font-medium text-lg py-5 rounded-xl hover:bg-[#2A5C44] transition-all duration-300 shadow-xl shadow-[#14281D]/20 hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3 group">
+                    Send Message
+                    <i class="fa-regular fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-32 px-6 bg-[#F2F0E9] relative overflow-hidden font-sans flex items-center justify-center">
+    
+    <div class="absolute inset-0 opacity-40 pointer-events-none" 
+         style="background-image: radial-gradient(#14281D 0.5px, transparent 0.5px); background-size: 24px 24px;">
+    </div>
+    
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-white rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
+
+    <div class="max-w-5xl w-full relative z-10">
+        <div class="bg-white rounded-[3rem] p-12 md:p-24 text-center shadow-2xl shadow-[#14281D]/5 border border-[#14281D]/5 relative overflow-hidden group animate-reveal">
+            
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#F2F0E9] rounded-full flex items-center justify-center border border-[#C5A65E]/10 z-0 pointer-events-none">
+                <div class="w-48 h-48 rounded-full border border-[#C5A65E]/20 border-dashed animate-[spin_20s_linear_infinite]"></div>
+                <div class="absolute w-32 h-32 rounded-full border border-[#14281D]/5"></div>
+            </div>
+
+            <div class="relative z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-[#C5A65E]/10 text-[#C5A65E] font-bold tracking-widest uppercase text-xs mb-8 border border-[#C5A65E]/20">
+                    Next Steps
+                </span>
+                
+                <h2 class="font-serif text-5xl md:text-7xl text-[#14281D] mb-8 tracking-tight leading-[1.1]">
+                    Ready to <span class="italic text-[#2A5C44]">Start?</span>
+                </h2>
+                
+                <p class="text-[#14281D]/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12 font-light">
+                    Whether you're preparing for ISSB-aligned reporting, building your net-zero roadmap, or strengthening ESG governance—Nova Plus is ready to support you.
+                </p>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-16">
+                    <button class="w-full md:w-auto px-10 py-5 bg-[#14281D] text-white rounded-full font-bold text-lg hover:bg-[#2A5C44] transition-all duration-300 shadow-xl shadow-[#14281D]/20 hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
+                        <i class="fa-regular fa-envelope"></i>
+                        Get in Touch
+                        <i class="fa-solid fa-arrow-right opacity-0 -ml-2 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all duration-300"></i>
+                    </button>
+                    
+                    <button class="w-full md:w-auto px-10 py-5 bg-transparent border-2 border-[#14281D]/10 text-[#14281D] rounded-full font-bold text-lg hover:border-[#14281D] hover:bg-[#F2F0E9] transition-all duration-300 flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        Schedule a Call
+                    </button>
+                </div>
+
+                <div class="inline-flex items-center gap-3 px-6 py-3 bg-[#F2F0E9] rounded-full border border-[#14281D]/5">
+                    <div class="flex -space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-[#2A5C44] border-2 border-white"></div>
+                        <div class="w-6 h-6 rounded-full bg-[#C5A65E] border-2 border-white"></div>
+                    </div>
+                    <span class="text-[#14281D]/60 text-sm font-medium">
+                        Based in Singapore, serving clients across Asia and the Middle East.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-[#14281D] text-[#F2F0E9] pt-24 pb-12 px-6 relative overflow-hidden font-sans border-t border-white/5">
+
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-[0.03]">
+        <h1 class="text-[20vw] font-serif font-bold text-[#F2F0E9] leading-none tracking-tighter -mb-10 select-none">
+            NOVA
+        </h1>
+    </div>
+
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C5A65E]/50 to-transparent opacity-50"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+            
+            <div class="lg:col-span-5 space-y-8 animate-reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-[#2A5C44] rounded-xl flex items-center justify-center text-white shadow-lg shadow-[#2A5C44]/20">
+                        <span class="font-serif font-bold text-xl">N</span>
+                    </div>
+                    <span class="font-serif font-bold text-2xl tracking-tight text-white">Nova<span class="text-[#C5A65E]">Plus</span></span>
+                </div>
+
+                <p class="text-[#F2F0E9]/60 leading-relaxed max-w-md">
+                    Singapore's trusted ESG consultancy helping organizations navigate sustainability with clarity, credibility, and execution focus.
+                </p>
+
+                <div class="space-y-4 pt-4">
+                    <a href="mailto:sales@novaplus.sg" class="flex items-center gap-4 group w-fit">
+                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#C5A65E] group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all duration-300">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <span class="text-[#F2F0E9]/80 group-hover:text-white transition-colors">sales@novaplus.sg</span>
+                    </a>
+
+                    <a href="tel:+6590882853" class="flex items-center gap-4 group w-fit">
+                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#C5A65E] group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all duration-300">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span class="text-[#F2F0E9]/80 group-hover:text-white transition-colors">+65 9088 2853</span>
+                    </a>
+
+                    <div class="flex items-start gap-4 group w-fit">
+                         <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#C5A65E] mt-1 group-hover:bg-[#C5A65E] group-hover:text-[#14281D] transition-all duration-300 shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <span class="text-[#F2F0E9]/80 leading-relaxed">
+                            25 International Business Park<br>
+                            #04-103B German Centre<br>
+                            Singapore 609916
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <a href="#" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white hover:bg-[#C5A65E] hover:text-[#14281D] transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white hover:bg-[#C5A65E] hover:text-[#14281D] transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-regular fa-envelope text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 lg:col-start-7 pt-2 animate-reveal stagger-1">
+                <h4 class="font-serif text-xl font-bold mb-8 text-white">Services</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">ESG Consultancy</a></li>
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">Carbon Accounting & Net Zero</a></li>
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">Training</a></li>
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">LMS</a></li>
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">Products</a></li>
+                    </ul>
+            </div>
+
+            <div class="lg:col-span-3 pt-2 animate-reveal stagger-2">
+                <h4 class="font-serif text-xl font-bold mb-8 text-white">Company</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">Why Nova Plus</a></li>
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">About Us</a></li>
+                    <li><a href="#" class="text-[#F2F0E9]/60 hover:text-[#C5A65E] transition-colors hover:pl-2 duration-300 block">Contact Us</a></li>
+                    </ul>
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-[#F2F0E9]/30 animate-reveal stagger-3">
+            <p>&copy; 2026 Nova Plus. All rights reserved.</p>
+            <div class="flex items-center gap-2 mt-4 md:mt-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#C5A65E] animate-pulse"></span>
+                <span class="uppercase tracking-widest font-bold text-[#F2F0E9]/50">Singapore</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+    <script>
+        function switchTier(tierId) {
+            // Update Buttons
+            document.querySelectorAll('.tier-tab').forEach(btn => {
+                // Reset to inactive state
+                btn.className = "tier-tab group relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-nova-dark/10 text-nova-dark/60 hover:border-nova-dark hover:text-nova-dark hover:-translate-y-0.5 cursor-pointer";
+            });
+            
+            // Set active state
+            const activeBtn = document.getElementById(`tab-${tierId}`);
+            activeBtn.className = "tier-tab group relative px-8 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-nova-dark text-white shadow-lg shadow-nova-green/20 hover:-translate-y-0.5 cursor-default";
+
+            // Update Content
+            document.querySelectorAll('.tier-pane').forEach(pane => {
+                pane.classList.add('hidden');
+                pane.classList.remove('block');
+            });
+            
+            const activePane = document.getElementById(`content-${tierId}`);
+            activePane.classList.remove('hidden');
+            activePane.classList.add('block');
+            
+            // Re-trigger animation
+            activePane.style.animation = 'none';
+            activePane.offsetHeight; /* trigger reflow */
+            activePane.style.animation = null; 
+        }
+    </script>
+</html>
