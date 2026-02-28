@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -143,10 +143,10 @@
         class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 py-4 px-6 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo -->
-            <div class="flex items-center gap-2">
-                <span class="font-serif font-bold text-3xl tracking-wide text-nova-deep-blue">NOV<span
-                        class="text-nova-lime-green"><i
-                            class="fa-solid fa-leaf text-xl -translate-y-1"></i></span>A</span>
+            <div class="flex items-center">
+                <a href="#">
+                    <img src="Nova PLus Logo.png" alt="Nova Plus" class="h-10 w-auto object-contain">
+                </a>
             </div>
 
             <!-- Desktop Menu -->
@@ -200,7 +200,8 @@
                     Regulatory<br>
                     <span class="text-gradient italic relative inline-block">Confidence.
                         <!-- Decorative spark -->
-                        <div class="absolute -right-8 -top-4 text-nova-lime-green opacity-40 text-4xl rotate-12">✦</div>
+                        <div class="absolute -right-8 -top-4 text-nova-lime-green opacity-40 text-4xl rotate-12">âœ¦
+                        </div>
                     </span>
                 </h1>
 
@@ -230,32 +231,32 @@
 
             <!-- Right: Image Composition -->
             <div class="relative hidden lg:block animate-reveal delay-300">
-                <!-- Image 1: Wind Turbines -->
+                <!-- Image 1: Solar Farm (Renewable Energy / ESG) -->
                 <div
                     class="relative z-20 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white w-4/5 ml-auto animate-float">
                     <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=800&auto=format&fit=crop"
                         alt="Wind Turbines"
                         class="w-full h-auto object-cover aspect-[4/3] transform hover:scale-105 transition-transform duration-700">
                 </div>
-                <!-- Image 2: Renewable Energy / Corporate -->
-                <div class="absolute -bottom-16 -left-8 z-30 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white w-2/3"
+                <!-- Image 2: Green Finance / ESG Reporting -->
+                <div class="absolute -bottom-24 -left-8 z-30 rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white w-2/3"
                     style="animation: float 7s ease-in-out infinite reverse;">
-                    <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b0?q=80&w=600&auto=format&fit=crop"
-                        alt="Sustainable Business"
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop"
+                        alt="ESG Investing & Green Finance"
                         class="w-full h-auto object-cover aspect-square transform hover:scale-105 transition-transform duration-700">
                 </div>
                 <!-- Floating Badge -->
-                <div class="absolute top-1/2 -left-12 z-40 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100 animate-bounce"
-                    style="animation-duration: 4s;">
+                <!-- <div class="absolute top-1/2 -left-12 z-40 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100"
+                    style="animation: float 4s ease-in-out infinite;">
                     <div
                         class="w-12 h-12 bg-nova-lime-green/20 text-nova-lime-green rounded-full flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-leaf"></i>
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <div>
-                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Impact</p>
-                        <p class="text-sm font-bold text-nova-deep-blue">Measurable</p>
+                        <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">ESG Score</p>
+                        <p class="text-sm font-bold text-nova-deep-blue">A+ Rated</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -276,237 +277,745 @@
     </header>
 
     <!-- ESG Consultancy Section -->
-    <section class="py-24 bg-nova-light-grey relative overflow-hidden">
-        <!-- Abstract Decoration -->
-        <div
-            class="absolute top-20 left-0 w-64 h-64 bg-nova-light-blue rounded-full blur-[80px] opacity-20 -translate-x-1/2">
-        </div>
-        <div
-            class="absolute bottom-20 right-0 w-64 h-64 bg-nova-lime-green rounded-full blur-[80px] opacity-10 translate-x-1/2">
-        </div>
+    <style>
+        /* ---- ESG Consultancy Section Styles ---- */
+        .esg-section {
+            background-color: #f7f9f8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .esg-section-inner-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse 60% 50% at 100% 0%, rgba(115, 170, 60, 0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 60% at 0% 100%, rgba(0, 53, 103, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .esg-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #73aa3c;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .esg-main-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #003567;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .esg-sub-desc {
+            font-size: 1.05rem;
+            color: #5a6b7a;
+            line-height: 1.65;
+            max-width: 52ch;
+        }
+
+        /* Tier Nav */
+        .tier-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            background: #fff;
+            border: 1.5px solid #e4ebe7;
+            border-radius: 14px;
+            padding: 5px;
+            gap: 4px;
+            box-shadow: 0 2px 16px rgba(0, 53, 103, 0.07);
+            width: 100%;
+        }
+
+        .tier-btn {
+            flex: 1;
+            padding: 10px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #6b7c8d;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            white-space: normal;
+            word-break: break-word;
+            text-align: center;
+            line-height: 1.35;
+        }
+
+        .tier-btn.active {
+            background: #003567;
+            color: #fff;
+            box-shadow: 0 3px 12px rgba(0, 53, 103, 0.22);
+        }
+
+        .tier-btn:not(.active):hover {
+            background: #f0f5f2;
+            color: #003567;
+        }
+
+        .tier-context-label {
+            font-size: 0.8rem;
+            color: #73aa3c;
+            font-weight: 600;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tier-context-label::before {
+            content: '';
+            width: 18px;
+            height: 2px;
+            background: #73aa3c;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        /* Service Cards */
+        .svc-card {
+            background: #fff;
+            border: 1.5px solid #e8eeeb;
+            border-radius: 22px;
+            padding: 36px 32px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.28s cubic-bezier(.2, .8, .2, 1), box-shadow 0.28s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #003567, #73aa3c);
+            opacity: 0;
+            transition: opacity 0.28s;
+        }
+
+        .svc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 53, 103, 0.1);
+        }
+
+        .svc-card:hover::before {
+            opacity: 1;
+        }
+
+        .svc-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 22px;
+            transition: transform 0.25s;
+            flex-shrink: 0;
+        }
+
+        .svc-card:hover .svc-icon-wrap {
+            transform: scale(1.1) rotate(-4deg);
+        }
+
+        .svc-card-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #003567;
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        .svc-divider {
+            width: 32px;
+            height: 2.5px;
+            border-radius: 2px;
+            background: #73aa3c;
+            margin-bottom: 20px;
+        }
+
+        .svc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .svc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.875rem;
+            color: #4a5f6e;
+            line-height: 1.45;
+        }
+
+        .svc-list-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #73aa3c;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .svc-card-num {
+            position: absolute;
+            bottom: 22px;
+            right: 26px;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #003567;
+            opacity: 0.04;
+            line-height: 1;
+            font-family: 'Raleway', sans-serif;
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+    <section class="esg-section py-24">
+        <div class="esg-section-inner-bg"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16 animate-reveal">
-                <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-3 block">Strategy &
-                    Compliance</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-6">ESG Consultancy</h2>
-                <p class="text-gray-600 text-lg">
-                    Navigate the complex landscape of ESG regulations with our expert-led consultancy, bridging the gap
-                    between strategy and execution.
-                </p>
+
+            <!-- Section Header â€” split layout -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-14 animate-reveal">
+                <!-- Left: Title block -->
+                <div>
+                    <span class="esg-eyebrow">Our Services</span>
+                    <h2 class="esg-main-title">ESG Consultancy</h2>
+                    <p class="esg-sub-desc">
+                        Comprehensive strategy, reporting &amp; implementation services<br class="hidden md:block">
+                        tailored to your ESG maturity level.
+                    </p>
+                </div>
+
+                <!-- Right: Tier Navigation -->
+                <div class="shrink-0 w-full lg:w-auto lg:max-w-md">
+                    <div class="tier-nav">
+                        <button class="tier-btn active" onclick="selectTier(this, 'tier1')">
+                            <span class="block text-[0.68rem] opacity-60 font-semibold mb-0.5">Tier 1</span>
+                            Foundational &amp; Strategy
+                        </button>
+                        <button class="tier-btn" onclick="selectTier(this, 'tier2')">
+                            <span class="block text-[0.68rem] opacity-60 font-semibold mb-0.5">Tier 2</span>
+                            Operational &amp; Technical
+                        </button>
+                        <button class="tier-btn" onclick="selectTier(this, 'tier3')">
+                            <span class="block text-[0.68rem] opacity-60 font-semibold mb-0.5">Tier 3</span>
+                            Advanced &amp; Value-Driven
+                        </button>
+                    </div>
+                    <p class="tier-context-label" id="tier-context-text">
+                        For organizations starting their sustainability journey
+                    </p>
+                </div>
             </div>
 
-            <!-- Service Tabs/Pills -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16 animate-reveal delay-100">
-                <button
-                    class="bg-nova-deep-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md hover:-translate-y-1 transition-transform">Advisory</button>
-                <button
-                    class="bg-white text-gray-600 px-6 py-2.5 rounded-full text-sm font-bold hover:bg-nova-light-blue hover:text-nova-deep-blue transition-colors">Implementation</button>
-                <button
-                    class="bg-white text-gray-600 px-6 py-2.5 rounded-full text-sm font-bold hover:bg-nova-light-blue hover:text-nova-deep-blue transition-colors">Assurance
-                    Support</button>
-            </div>
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="services-grid">
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-hover hover:-translate-y-2 transition-all duration-300 border border-gray-100 group animate-reveal delay-200">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-beige text-nova-deep-blue flex items-center justify-center mb-6 group-hover:bg-nova-lime-green group-hover:text-white transition-colors duration-300">
-                        <i class="fa-solid fa-compass text-2xl"></i>
+                <!-- Card 1: Sustainability Strategy & Vision -->
+                <div class="svc-card animate-reveal delay-100">
+                    <span class="svc-card-num">01</span>
+                    <div class="svc-icon-wrap" style="background: #e8f3dc; color: #3a7a1a;">
+                        <i class="fa-solid fa-compass"></i>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-nova-deep-blue mb-4">Sustainability Strategy & Vision
-                    </h3>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-1 text-sm"></i>
-                            <span class="text-gray-600 text-sm">Materiality Assessments</span>
+                    <h3 class="svc-card-title">Sustainability Strategy &amp; Vision</h3>
+                    <div class="svc-divider"></div>
+                    <ul class="svc-list">
+                        <li><span class="svc-list-dot"></span>Materiality assessments</li>
+                        <li><span class="svc-list-dot"></span>ESG vision, targets &amp; net-zero roadmaps</li>
+                        <li><span class="svc-list-dot"></span>ESG integration into governance &amp; risk</li>
+                        <li><span class="svc-list-dot"></span>ESG benchmarking against peers</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: ESG Reporting & Disclosure -->
+                <div class="svc-card animate-reveal delay-200">
+                    <span class="svc-card-num">02</span>
+                    <div class="svc-icon-wrap" style="background: #dce8f3; color: #003567;">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="svc-card-title">ESG Reporting &amp; Disclosure</h3>
+                    <div class="svc-divider"></div>
+                    <ul class="svc-list">
+                        <li><span class="svc-list-dot"></span>ISSB / IFRS S1 &amp; S2 readiness (SGX, ADX, DFM)</li>
+                        <li><span class="svc-list-dot"></span>GRI, SASB, TCFD, BRSR &amp; CSRD/ESRS-aligned reporting
                         </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-1 text-sm"></i>
-                            <span class="text-gray-600 text-sm">Peer Benchmarking</span>
+                        <li><span class="svc-list-dot"></span>Sustainability report drafting for multi-jurisdiction
+                            compliance</li>
+                        <li><span class="svc-list-dot"></span>Assurance preparation (BRSR Core, CSRD limited assurance)
                         </li>
                     </ul>
                 </div>
 
-                <!-- Card 2 -->
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-hover hover:-translate-y-2 transition-all duration-300 border border-gray-100 group animate-reveal delay-300">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-light-blue/20 text-nova-deep-blue flex items-center justify-center mb-6 group-hover:bg-nova-deep-blue group-hover:text-white transition-colors duration-300">
-                        <i class="fa-solid fa-file-contract text-2xl"></i>
+                <!-- Card 3: Policy & Governance -->
+                <div class="svc-card animate-reveal delay-300">
+                    <span class="svc-card-num">03</span>
+                    <div class="svc-icon-wrap" style="background: #f0e8f5; color: #5a3580;">
+                        <i class="fa-solid fa-scale-balanced"></i>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-nova-deep-blue mb-4">ESG Reporting & Disclosure</h3>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-1 text-sm"></i>
-                            <span class="text-gray-600 text-sm">Framework Alignment (GRI, SASB)</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-1 text-sm"></i>
-                            <span class="text-gray-600 text-sm">Data Gap Analysis</span>
-                        </li>
+                    <h3 class="svc-card-title">Policy &amp; Governance</h3>
+                    <div class="svc-divider"></div>
+                    <ul class="svc-list">
+                        <li><span class="svc-list-dot"></span>ESG &amp; sustainability policies</li>
+                        <li><span class="svc-list-dot"></span>Supplier codes &amp; human rights policies</li>
+                        <li><span class="svc-list-dot"></span>Board and management ESG training</li>
                     </ul>
                 </div>
 
-                <!-- Card 3 -->
-                <div
-                    class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-hover hover:-translate-y-2 transition-all duration-300 border border-gray-100 group animate-reveal delay-400">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-lime-green/20 text-nova-lime-green flex items-center justify-center mb-6 group-hover:bg-nova-lime-green group-hover:text-white transition-colors duration-300">
-                        <i class="fa-solid fa-scale-balanced text-2xl"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold text-nova-deep-blue mb-4">Policy & Governance</h3>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-1 text-sm"></i>
-                            <span class="text-gray-600 text-sm">Board ESG Training</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-1 text-sm"></i>
-                            <span class="text-gray-600 text-sm">Policy Development</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
+
+        <script>
+            const tierContexts = {
+                tier1: 'For organizations starting their sustainability journey',
+                tier2: 'For companies building operational ESG maturity',
+                tier3: 'For leaders driving value through ESG differentiation',
+            };
+            function selectTier(btn, tier) {
+                document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const ctx = document.getElementById('tier-context-text');
+                ctx.style.opacity = '0';
+                ctx.style.transform = 'translateY(4px)';
+                setTimeout(() => {
+                    ctx.textContent = tierContexts[tier];
+                    ctx.style.transition = 'opacity 0.25s, transform 0.25s';
+                    ctx.style.opacity = '1';
+                    ctx.style.transform = 'translateY(0)';
+                }, 180);
+            }
+        </script>
     </section>
 
     <!-- Carbon Accounting Section -->
-    <section class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 animate-reveal">
+    <style>
+        .carbon-svc-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 7px 14px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            transition: background 0.2s;
+        }
+
+        .carbon-svc-pill:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .carbon-svc-pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #73aa3c;
+            flex-shrink: 0;
+        }
+
+        .carbon-mini-card {
+            background: #fff;
+            border: 1.5px solid #e8eeeb;
+            border-radius: 20px;
+            padding: 28px 26px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.26s cubic-bezier(.2, .8, .2, 1), box-shadow 0.26s;
+        }
+
+        .carbon-mini-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #73aa3c, #003567);
+            opacity: 0;
+            transition: opacity 0.26s;
+        }
+
+        .carbon-mini-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 40px rgba(0, 53, 103, 0.1);
+        }
+
+        .carbon-mini-card:hover::after {
+            opacity: 1;
+        }
+
+        .carbon-mini-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            transition: transform 0.22s;
+        }
+
+        .carbon-mini-card:hover .carbon-mini-icon {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .carbon-mini-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #003567;
+            margin-bottom: 14px;
+        }
+
+        .carbon-mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .carbon-mini-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.83rem;
+            color: #4a5f6e;
+            line-height: 1.4;
+        }
+
+        .carbon-mini-list-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #73aa3c;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+    </style>
+    <section class="py-24 bg-white relative overflow-hidden">
+        <!-- Subtle radial tint -->
+        <div class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(115,170,60,0.04) 0%, transparent 70%);">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-14 gap-8 animate-reveal">
                 <div class="max-w-2xl">
                     <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-3 block">Climate
                         Action</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-6">Carbon Accounting &
-                        Net Zero</h2>
-                    <p class="text-gray-600 text-lg">
-                        Accurately measure, manage, and reduce your greenhouse gas emissions across all three scopes
-                        with our precise calculation engine.
+                    <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-5 leading-tight">Carbon
+                        Accounting &amp; Net Zero</h2>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        Measure, manage, and reduce your carbon footprint with our comprehensive carbon accounting
+                        services and net zero strategy development.
                     </p>
                 </div>
-                <button
-                    class="shrink-0 bg-white border-2 border-nova-deep-blue text-nova-deep-blue px-6 py-2.5 rounded-full font-bold hover:bg-nova-deep-blue hover:text-white transition-colors duration-300">
-                    View Methodology
-                </button>
             </div>
 
-            <!-- Dashboard/Features Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                <!-- Highlight Feature -->
+            <!-- Feature Grid: 1 large dark card + 2 mini cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 animate-reveal delay-100">
+
+                <!-- Featured Card: Carbon Accounting (spans 2 cols) -->
                 <div
-                    class="lg:col-span-2 bg-nova-deep-blue rounded-[2.5rem] p-10 text-white relative overflow-hidden group hover:shadow-2xl transition-all duration-500 animate-reveal delay-100">
-                    <!-- Decor -->
+                    class="lg:col-span-2 bg-nova-deep-blue rounded-[2rem] p-10 text-white relative overflow-hidden group hover:shadow-2xl transition-all duration-500">
+                    <!-- Glow blob -->
                     <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-nova-lime-green rounded-full blur-[80px] opacity-20 translate-x-1/2 -translate-y-1/2 group-hover:opacity-40 transition-opacity duration-500">
+                        class="absolute top-0 right-0 w-72 h-72 bg-nova-lime-green rounded-full blur-[90px] opacity-15 translate-x-1/3 -translate-y-1/3 group-hover:opacity-30 transition-opacity duration-600 pointer-events-none">
+                    </div>
+                    <!-- Faint grid overlay -->
+                    <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+                        style="background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px); background-size: 32px 32px;">
                     </div>
 
-                    <div class="relative z-10 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                                <i class="fa-solid fa-cloud text-nova-lime-green text-xl"></i>
-                            </div>
-                            <h3 class="font-serif text-3xl font-bold mb-4">Scope 1, 2 & 3 Accounting</h3>
-                            <p class="text-blue-100 max-w-md">Automated data ingestion mapping directly to the GHG
-                                Protocol. Simplify complex supply chain emission tracking uniquely tailored to your
-                                sector.</p>
-                        </div>
-                        <div class="mt-8">
-                            <a href="#" class="text-nova-lime-green font-bold hover:text-white transition-colors">Start
-                                tracking <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Secondary Feature -->
-                <div
-                    class="bg-nova-beige rounded-[2.5rem] p-10 relative overflow-hidden group hover:shadow-lg transition-all duration-500 animate-reveal delay-200">
-                    <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 text-nova-deep-blue shadow-sm">
-                                <i class="fa-solid fa-bullseye text-xl"></i>
+                                class="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-7">
+                                <i class="fa-solid fa-cloud text-nova-lime-green text-xl"></i>
                             </div>
-                            <h3 class="font-serif text-2xl font-bold text-nova-deep-blue mb-4">Net Zero Strategy</h3>
-                            <p class="text-gray-600">Set science-based targets and model decarbonization pathways.</p>
+                            <h3 class="font-serif text-2xl md:text-3xl font-bold mb-3">Carbon Accounting</h3>
+                            <p class="text-blue-100/80 text-sm mb-8 max-w-md leading-relaxed">GHG Protocol-aligned
+                                methodology for full emission transparency across all scopes.</p>
+                            <!-- Service pills -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="carbon-svc-pill"><span class="carbon-svc-pill-dot"></span>Scope 1, 2 &amp;
+                                    3 emissions measurement</span>
+                                <span class="carbon-svc-pill"><span class="carbon-svc-pill-dot"></span>GHG Protocol
+                                    aligned methodology</span>
+                                <span class="carbon-svc-pill"><span class="carbon-svc-pill-dot"></span>Carbon footprint
+                                    reporting</span>
+                            </div>
+                        </div>
+                        <div class="mt-10 pt-8 border-t border-white/10">
+                            <a href="#"
+                                class="inline-flex items-center gap-2 text-nova-lime-green font-bold text-sm hover:text-white transition-colors group/link">
+                                Start tracking
+                                <span
+                                    class="w-7 h-7 rounded-full bg-nova-lime-green/20 flex items-center justify-center group-hover/link:bg-nova-lime-green group-hover/link:text-nova-deep-blue transition-all">
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Banner CTA -->
-            <div class="bg-nova-deep-blue rounded-[2rem] p-12 relative overflow-hidden animate-reveal delay-300 group">
-                <!-- Background Image -->
-                <div
-                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-40 group-hover:opacity-50 transition-opacity duration-700 mix-blend-overlay">
-                </div>
-                <div class="absolute inset-0 bg-gradient-to-r from-nova-deep-blue via-nova-deep-blue/80 to-transparent">
-                </div>
-
-                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div class="max-w-2xl">
-                        <h3 class="font-serif text-3xl font-bold text-white mb-4">Carbon Credit Consultancy</h3>
-                        <p class="text-blue-100 font-medium text-lg">NovaPlus provides comprehensive Carbon Credit
-                            consultancy services to help organizations navigate the voluntary and compliance carbon
-                            markets. We assist in identifying high-quality carbon credits.</p>
+                <!-- Mini cards column -->
+                <div class="flex flex-col gap-6">
+                    <!-- Net Zero Strategy -->
+                    <div class="carbon-mini-card flex-1">
+                        <div class="carbon-mini-icon" style="background:#e8f3dc; color:#3a7a1a;">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <p class="carbon-mini-title">Net Zero Strategy</p>
+                        <ul class="carbon-mini-list">
+                            <li><span class="carbon-mini-list-dot"></span>Science-Based Targets (SBTi)</li>
+                            <li><span class="carbon-mini-list-dot"></span>Decarbonization roadmaps</li>
+                            <li><span class="carbon-mini-list-dot"></span>Emissions reduction planning</li>
+                        </ul>
                     </div>
-                    <button
-                        class="shrink-0 bg-nova-lime-green text-nova-deep-blue px-8 py-4 rounded-full font-bold hover:bg-white transition-colors duration-300 shadow-xl">
-                        Discover Credits
-                    </button>
+
+                    <!-- Carbon Credit Consultancy mini -->
+                    <div class="carbon-mini-card flex-1">
+                        <div class="carbon-mini-icon" style="background:#dce8f3; color:#003567;">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <p class="carbon-mini-title">Carbon Credit Consultancy</p>
+                        <ul class="carbon-mini-list">
+                            <li><span class="carbon-mini-list-dot"></span>Carbon offset strategies</li>
+                            <li><span class="carbon-mini-list-dot"></span>Credit sourcing &amp; verification</li>
+                            <li><span class="carbon-mini-list-dot"></span>Portfolio optimization</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <!-- Banner: Carbon Credit Consultancy -->
+            <div
+                class="bg-nova-deep-blue rounded-[2rem] p-10 md:p-12 relative overflow-hidden animate-reveal delay-300 group">
+                <!-- Forest photo overlay -->
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-35 group-hover:opacity-45 transition-opacity duration-700 mix-blend-overlay">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-nova-deep-blue via-nova-deep-blue/85 to-nova-deep-blue/30">
+                </div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+                    <div class="max-w-2xl">
+                        <span
+                            class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Featured
+                            Service</span>
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">Carbon Credit
+                            Consultancy</h3>
+                        <p class="text-blue-100/85 leading-relaxed text-base">
+                            Nova Plus provides comprehensive Carbon Credit consultancy services to help organizations
+                            navigate the voluntary and compliance carbon markets. We assist in identifying high-quality
+                            carbon credits, developing offset strategies aligned with your sustainability goals, and
+                            ensuring credible claims for your stakeholders.
+                        </p>
+                    </div>
+                    <div class="shrink-0">
+                        <button
+                            class="inline-flex items-center gap-2 bg-nova-lime-green text-nova-deep-blue px-7 py-3.5 rounded-xl font-bold hover:bg-white transition-colors duration-300 shadow-xl text-sm">
+                            Learn More <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Learning Platform Section -->
+    <style>
+        .lms-check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lms-check-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.925rem;
+            font-weight: 600;
+            color: #003567;
+        }
+
+        .lms-check-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #003567;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .lms-feat-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: background 0.22s, box-shadow 0.22s, transform 0.22s;
+        }
+
+        .lms-feat-card:hover {
+            background: #fff;
+            box-shadow: 0 8px 28px rgba(0, 53, 103, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .lms-feat-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #003567;
+            color: #73aa3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .lms-feat-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #003567;
+            margin-bottom: 2px;
+        }
+
+        .lms-feat-desc {
+            font-size: 0.78rem;
+            color: #5a6b7a;
+            line-height: 1.4;
+        }
+    </style>
     <section class="py-24 bg-nova-beige relative overflow-hidden">
-        <!-- Abstract Decoration -->
+        <!-- Background texture -->
         <div class="absolute inset-0 bg-white opacity-40 gradient-mesh z-0"></div>
 
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+
             <!-- Left: Text content -->
             <div class="animate-reveal">
-                <span class="text-nova-deep-blue font-bold text-xs uppercase tracking-widest mb-3 block">Learning
+                <span
+                    class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-3 block letter-widest">Learning
                     Management System</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-6">ESG Learning Platform
-                </h2>
-                <p class="text-gray-600 text-lg mb-8">
-                    Deliver scalable ESG education for your entire organization. From board members to front-line staff,
-                    ensure everyone understands their role in your sustainability journey.
+                <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-5 leading-tight">ESG
+                    Learning Platform</h2>
+                <p class="text-gray-600 text-base md:text-lg mb-8 leading-relaxed">
+                    Our Learning Management System delivers scalable ESG education for your entire organization. From
+                    board members to front-line staff, ensure everyone understands their role in your sustainability
+                    journey.
                 </p>
 
-                <div class="grid grid-cols-2 gap-6 mb-10">
-                    <div
-                        class="flex items-center gap-3 bg-white/50 p-3 rounded-xl backdrop-blur-sm border border-white">
-                        <i class="fa-solid fa-check text-nova-lime-green"></i>
-                        <span class="text-sm font-bold text-nova-deep-blue">Interactive Modules</span>
+                <!-- 6-item Checklist -->
+                <ul class="lms-check-list mb-10">
+                    <li>
+                        <span class="lms-check-icon"><i class="fa-solid fa-check"></i></span>
+                        Self-paced ESG &amp; sustainability modules
+                    </li>
+                    <li>
+                        <span class="lms-check-icon"><i class="fa-solid fa-check"></i></span>
+                        Interactive learning experiences
+                    </li>
+                    <li>
+                        <span class="lms-check-icon"><i class="fa-solid fa-check"></i></span>
+                        Progress tracking &amp; certifications
+                    </li>
+                    <li>
+                        <span class="lms-check-icon"><i class="fa-solid fa-check"></i></span>
+                        Multi-language support
+                    </li>
+                    <li>
+                        <span class="lms-check-icon"><i class="fa-solid fa-check"></i></span>
+                        Custom content for your organization
+                    </li>
+                    <li>
+                        <span class="lms-check-icon"><i class="fa-solid fa-check"></i></span>
+                        Analytics &amp; reporting dashboard
+                    </li>
+                </ul>
+
+                <!-- 2x2 Feature Cards Grid -->
+                <div class="grid grid-cols-2 gap-3 my-10">
+                    <div class="lms-feat-card">
+                        <div class="lms-feat-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div>
+                            <p class="lms-feat-title">Online Courses</p>
+                            <p class="lms-feat-desc">Accessible anytime, anywhere</p>
+                        </div>
                     </div>
-                    <div
-                        class="flex items-center gap-3 bg-white/50 p-3 rounded-xl backdrop-blur-sm border border-white">
-                        <i class="fa-solid fa-check text-nova-lime-green"></i>
-                        <span class="text-sm font-bold text-nova-deep-blue">Certification Paths</span>
+                    <div class="lms-feat-card">
+                        <div class="lms-feat-icon"><i class="fa-solid fa-film"></i></div>
+                        <div>
+                            <p class="lms-feat-title">Rich Content</p>
+                            <p class="lms-feat-desc">Videos, quizzes &amp; resources</p>
+                        </div>
                     </div>
-                    <div
-                        class="flex items-center gap-3 bg-white/50 p-3 rounded-xl backdrop-blur-sm border border-white">
-                        <i class="fa-solid fa-check text-nova-lime-green"></i>
-                        <span class="text-sm font-bold text-nova-deep-blue">Progress Tracking</span>
+                    <div class="lms-feat-card">
+                        <div class="lms-feat-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div>
+                            <p class="lms-feat-title">Certifications</p>
+                            <p class="lms-feat-desc">Recognized credentials</p>
+                        </div>
                     </div>
-                    <div
-                        class="flex items-center gap-3 bg-white/50 p-3 rounded-xl backdrop-blur-sm border border-white">
-                        <i class="fa-solid fa-check text-nova-lime-green"></i>
-                        <span class="text-sm font-bold text-nova-deep-blue">Custom Branding</span>
+                    <div class="lms-feat-card">
+                        <div class="lms-feat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <p class="lms-feat-title">Team Learning</p>
+                            <p class="lms-feat-desc">Collaborative features</p>
+                        </div>
                     </div>
                 </div>
 
                 <button
-                    class="bg-nova-deep-blue text-white px-8 py-3.5 rounded-full text-base font-bold shadow-xl shadow-nova-deep-blue/20 hover:bg-nova-lime-green hover:-translate-y-1 transition-all duration-300">
-                    Request a Demo
+                    class="bg-nova-deep-blue text-white px-8 py-3.5 rounded-xl text-base font-bold shadow-xl shadow-nova-deep-blue/20 hover:bg-nova-lime-green hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2">
+                    Request a Demo <i class="fa-solid fa-arrow-right text-sm"></i>
                 </button>
             </div>
 
-            <!-- Right: UI Mockup / Visual -->
+            <!-- Right: UI Mockup / Visual (unchanged) -->
             <div class="relative animate-reveal delay-200 pl-8 pt-8 md:pl-12 md:pt-12">
                 <!-- Main Background Image -->
                 <div class="absolute inset-0 right-8 bottom-8 rounded-3xl overflow-hidden shadow-2xl">
@@ -518,7 +1027,7 @@
 
                 <!-- Main App Window (Overlay) -->
                 <div
-                    class="relative bg-nova-deep-blue/95 backdrop-blur-md rounded-3xl p-8 shadow-2xl overflow-hidden border border-white/10 group hover:-translate-y-2 transition-transform duration-500 mt-16 -ml-8 mb-[-2rem] z-10">
+                    class="relative bg-nova-deep-blue/95 backdrop-blur-md opacity-90 rounded-3xl p-8 shadow-2xl overflow-hidden border border-white/10 group hover:-translate-y-2 transition-transform duration-500 mt-16 -ml-8 mb-[-2rem] z-10">
                     <div class="flex items-center justify-between mb-8">
                         <div class="flex gap-2">
                             <div class="w-3 h-3 rounded-full bg-red-400"></div>
@@ -532,7 +1041,6 @@
                     <div class="space-y-4">
                         <div
                             class="bg-white/5 p-4 rounded-xl flex items-center gap-4 hover:bg-white/10 transition-colors cursor-pointer border border-white/5 relative overflow-hidden group/item">
-                            <!-- Progress highlight -->
                             <div class="absolute left-0 top-0 bottom-0 w-1 bg-nova-lime-green"></div>
                             <div
                                 class="w-10 h-10 rounded-lg bg-nova-lime-green flex text-white items-center justify-center shadow-lg shadow-nova-lime-green/20 group-hover/item:scale-110 transition-transform">
@@ -595,279 +1103,1660 @@
         </div>
     </section>
 
-    <!-- Value Proposition / Why Choose Us -->
-    <section class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
+    <!-- Why Nova Plus Section -->
+    <style>
+        .wnp-pillar-card {
+            background: #003567;
+            border-radius: 22px;
+            padding: 32px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.28s cubic-bezier(.2, .8, .2, 1), box-shadow 0.28s;
+        }
 
-            <div class="text-center max-w-3xl mx-auto mb-16 animate-reveal">
-                <span
-                    class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-3 block">Benefits</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-6">Why Choose Nova</h2>
-                <p class="text-gray-600 text-lg">
-                    We turn complex regulatory requirements into streamlined operational advantages for your business.
-                </p>
-            </div>
+        .wnp-pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 100% 0%, rgba(115, 170, 60, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Benefit 1 -->
-                <div
-                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group animate-reveal delay-100">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-light-blue/20 flex items-center justify-center text-nova-deep-blue mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-bolt text-2xl"></i>
-                    </div>
-                    <h4 class="font-serif font-bold text-nova-deep-blue mb-3 text-xl">Audit-ready Data</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Ensure data integrity with automated collection,
-                        validation and clear audit trails.</p>
-                </div>
+        .wnp-pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 60px rgba(0, 53, 103, 0.22);
+        }
 
-                <!-- Benefit 2 -->
-                <div
-                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group animate-reveal delay-200">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-lime-green/20 flex items-center justify-center text-nova-lime-green mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-clock text-2xl"></i>
-                    </div>
-                    <h4 class="font-serif font-bold text-nova-deep-blue mb-3 text-xl">Time Savings</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Reduce manual reporting time by up to 80% through
-                        automated frameworks.</p>
-                </div>
+        .wnp-pillar-num {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #73aa3c;
+            display: block;
+            margin-bottom: 12px;
+        }
 
-                <!-- Benefit 3 -->
-                <div
-                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group animate-reveal delay-300">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-beige flex items-center justify-center text-nova-deep-blue mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-shield text-2xl"></i>
-                    </div>
-                    <h4 class="font-serif font-bold text-nova-deep-blue mb-3 text-xl">Risk Mitigation</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Stay ahead of changing regulations and flag supply
-                        chain vulnerabilities.</p>
-                </div>
+        .wnp-pillar-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
 
-                <!-- Benefit 4 -->
-                <div
-                    class="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group animate-reveal delay-400">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-nova-light-yellow flex items-center justify-center text-nova-deep-blue mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-chart-line text-2xl"></i>
-                    </div>
-                    <h4 class="font-serif font-bold text-nova-deep-blue mb-3 text-xl">Value Creation</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">Identify operational efficiencies and drive
-                        long-term sustainable growth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        .wnp-pillar-desc {
+            font-size: 0.855rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.6;
+        }
 
-    <!-- Corporate ESG Regulations Section -->
-    <section class="py-24 bg-nova-light-grey relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16 animate-reveal">
-                <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-3 block">Compliance
-                    Ready</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-6">Global ESG Regulations
-                </h2>
-                <p class="text-gray-600 text-lg">
-                    Stay compliant with major global frameworks effortlessly using our built-in mapping engine and
-                    automated data alignment.
-                </p>
-            </div>
+        .wnp-benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            background: #f7f9f8;
+            border: 1.5px solid #e5eee9;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #003567;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
 
-            <div class="flex flex-wrap justify-center gap-3 mb-10 animate-reveal delay-100">
-                <button
-                    class="bg-nova-deep-blue text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-nova-deep-blue/20 hover:-translate-y-1 transition-transform">SGX
-                    Core</button>
-                <button
-                    class="bg-white border-2 border-transparent text-gray-600 px-6 py-2 rounded-full text-sm font-bold hover:border-nova-light-blue transition-colors shadow-sm">CSRD
-                    / ESRS</button>
-                <button
-                    class="bg-white border-2 border-transparent text-gray-600 px-6 py-2 rounded-full text-sm font-bold hover:border-nova-light-blue transition-colors shadow-sm">GRI
-                    Standards</button>
-                <button
-                    class="bg-white border-2 border-transparent text-gray-600 px-6 py-2 rounded-full text-sm font-bold hover:border-nova-light-blue transition-colors shadow-sm">TCFD</button>
-                <button
-                    class="bg-white border-2 border-transparent text-gray-600 px-6 py-2 rounded-full text-sm font-bold hover:border-nova-light-blue transition-colors shadow-sm">ISSB
-                    (S1 & S2)</button>
-            </div>
+        .wnp-benefit-item:hover {
+            background: #fff;
+            box-shadow: 0 6px 20px rgba(0, 53, 103, 0.08);
+            transform: translateX(4px);
+        }
 
-            <!-- Regulation Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div
-                    class="bg-white rounded-3xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 animate-reveal delay-200">
-                    <div class="flex items-center gap-6 mb-6">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-nova-lime-green/10 text-nova-lime-green flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-file-invoice text-2xl"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-nova-deep-blue">SGX Excellence</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6 leading-relaxed">Complete your Singapore Exchange mandatory climate
-                        reporting with our pre-configured data collection modules designed to capture the 27 Core ESG
-                        Metrics perfectly.</p>
-                    <a href="#"
-                        class="inline-flex items-center gap-2 text-nova-lime-green font-bold hover:text-nova-deep-blue transition-colors group">
-                        Read SGX guide <span
-                            class="bg-nova-lime-green/10 p-2 rounded-full group-hover:bg-nova-deep-blue group-hover:text-white transition-colors"><i
-                                class="fa-solid fa-arrow-right text-sm"></i></span>
-                    </a>
-                </div>
+        .wnp-benefit-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #73aa3c;
+            flex-shrink: 0;
+        }
 
-                <div
-                    class="bg-white rounded-3xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 animate-reveal delay-300">
-                    <div class="flex items-center gap-6 mb-6">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-nova-light-blue/20 text-nova-deep-blue flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-earth-americas text-2xl"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-nova-deep-blue">ISSB & TCFD</h3>
-                    </div>
-                    <p class="text-gray-600 mb-6 leading-relaxed">Our platform strictly aligns with TCFD recommendations
-                        and the IFRS S1 and S2 standards, guaranteeing that your disclosures meet rigorous investor
-                        expectations globally.</p>
-                    <a href="#"
-                        class="inline-flex items-center gap-2 text-nova-lime-green font-bold hover:text-nova-deep-blue transition-colors group">
-                        Explore Climate Reporting <span
-                            class="bg-nova-lime-green/10 p-2 rounded-full group-hover:bg-nova-deep-blue group-hover:text-white transition-colors"><i
-                                class="fa-solid fa-arrow-right text-sm"></i></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+        .wnp-stat-block {
+            text-align: center;
+            padding: 20px 24px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            flex: 1;
+        }
 
-    <!-- Pricing / Plans Section -->
+        .wnp-stat-block:last-child {
+            border-right: none;
+        }
+
+        .wnp-stat-num {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #73aa3c;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .wnp-stat-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+    </style>
     <section class="py-24 bg-white relative overflow-hidden">
-        <!-- Abstract gradient background -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-nova-light-yellow/50 z-0"></div>
+        <!-- Subtle background texture -->
+        <div class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,53,103,0.03) 0%, transparent 70%);">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20 animate-reveal">
-                <span class="text-nova-deep-blue font-bold text-xs uppercase tracking-widest mb-3 block">Transparent
-                    Pricing</span>
-                <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold mb-6">Choose Your Plan</h2>
-                <p class="text-gray-600 text-lg">
-                    Scale your ESG strategy with flexible plans designed for every stage of your organization's
-                    sustainability journey.
-                </p>
 
-                <!-- Annual / Monthly Toggle -->
-                <div class="inline-flex items-center gap-3 mt-8 bg-gray-100 p-1.5 rounded-full">
-                    <button
-                        class="bg-white text-nova-deep-blue font-bold px-6 py-2 rounded-full shadow-sm text-sm">Annually
-                        <span class="text-nova-lime-green ml-1">-20%</span></button>
-                    <button
-                        class="text-gray-500 font-bold px-6 py-2 rounded-full text-sm hover:text-nova-deep-blue transition-colors">Monthly</button>
+            <!-- â‘  Intro: split heading + description -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20 animate-reveal">
+                <div>
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Why Nova
+                        Plus</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold leading-tight">Why Nova
+                        Plus</h2>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        Climate-related risks, resource constraints, evolving regulations, and rising stakeholder
+                        expectations are fundamentally reshaping how businesses operate, manage risk, and report their
+                        impact.
+                    </p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <!-- Basic Plan -->
-                <div
-                    class="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 animate-reveal delay-100">
-                    <div
-                        class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-500 mb-6 text-xl">
-                        <i class="fa-solid fa-seedling"></i>
+            <!-- â‘¡ Key Pillars: 4 dark navy cards in 2Ã—2 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-20 animate-reveal delay-100">
+                <!-- Pillar 01 -->
+                <div class="wnp-pillar-card">
+                    <span class="wnp-pillar-num">01</span>
+                    <p class="wnp-pillar-title">Regulatory Expertise</p>
+                    <p class="wnp-pillar-desc">Understand current and upcoming ESG regulations. Prepare CSRD /
+                        ESRS-ready disclosures aligned with GRI, ISSB, TCFD, BRSR.</p>
+                </div>
+                <!-- Pillar 02 -->
+                <div class="wnp-pillar-card">
+                    <span class="wnp-pillar-num">02</span>
+                    <p class="wnp-pillar-title">Double Materiality</p>
+                    <p class="wnp-pillar-desc">Conduct Double Materiality Assessments to identify your most significant
+                        sustainability impacts, risks, and opportunities.</p>
+                </div>
+                <!-- Pillar 03 -->
+                <div class="wnp-pillar-card">
+                    <span class="wnp-pillar-num">03</span>
+                    <p class="wnp-pillar-title">Governance &amp; Controls</p>
+                    <p class="wnp-pillar-desc">Strengthen internal ESG governance and controls. Ensure audit-ready ESG
+                        data and documentation.</p>
+                </div>
+                <!-- Pillar 04 -->
+                <div class="wnp-pillar-card">
+                    <span class="wnp-pillar-num">04</span>
+                    <p class="wnp-pillar-title">Global Experience</p>
+                    <p class="wnp-pillar-desc">Our consultants bring extensive experience delivering ESG consultancy,
+                        reports, and training to clients across industries globally.</p>
+                </div>
+            </div>
+
+            <!-- â‘¢ Business Benefits: heading + 6 pill items + photo -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 animate-reveal delay-200">
+                <!-- Left: Benefits list -->
+                <div>
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Business
+                        Benefits</span>
+                    <h3 class="font-serif text-3xl text-nova-deep-blue font-bold mb-8 leading-snug">What you gain with
+                        Nova Plus</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="wnp-benefit-item"><span class="wnp-benefit-dot"></span>Reduced regulatory and
+                            compliance risk</div>
+                        <div class="wnp-benefit-item"><span class="wnp-benefit-dot"></span>Better identification of
+                            sustainability risks and opportunities</div>
+                        <div class="wnp-benefit-item"><span class="wnp-benefit-dot"></span>Stronger ESG ratings and
+                            disclosures</div>
+                        <div class="wnp-benefit-item"><span class="wnp-benefit-dot"></span>Practical roadmaps aligned
+                            with business strategy</div>
+                        <div class="wnp-benefit-item"><span class="wnp-benefit-dot"></span>Improved investor and
+                            stakeholder confidence</div>
+                        <div class="wnp-benefit-item"><span class="wnp-benefit-dot"></span>Future-ready ESG systems and
+                            governance</div>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-nova-deep-blue mb-2">Starter</h3>
-                    <p class="text-sm text-gray-500 mb-8 h-10">For small businesses starting their ESG journey.</p>
-                    <div class="mb-8 flex items-end">
-                        <span class="text-5xl font-bold text-nova-deep-blue">Free</span>
-                    </div>
-                    <button
-                        class="w-full bg-white border-2 border-nova-deep-blue text-nova-deep-blue py-3.5 rounded-full font-bold hover:bg-nova-deep-blue hover:text-white transition-colors mb-8">
-                        Begin for Free
-                    </button>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Basic Carbon Calculator</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>1 User Account</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Community Support</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Professional Plan -->
+                <!-- Right: Contextual image -->
                 <div
-                    class="bg-nova-deep-blue text-white rounded-[2rem] p-8 md:p-10 shadow-2xl relative z-10 border border-nova-deep-blue transform md:scale-105 animate-reveal delay-200">
+                    class="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-[420px] group">
+                    <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=900&auto=format&fit=crop"
+                        alt="Global ESG teamwork"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <!-- Gradient overlay -->
                     <div
-                        class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-nova-lime-green to-green-500 text-white text-xs font-bold uppercase tracking-widest py-1.5 px-6 rounded-full shadow-lg">
-                        Most Popular
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/60 via-transparent to-transparent">
                     </div>
+                    <!-- Floating badge -->
                     <div
-                        class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-nova-lime-green mb-6 text-xl">
-                        <i class="fa-solid fa-bolt"></i>
+                        class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-4 flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-nova-lime-green flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-globe text-nova-deep-blue text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-sm">7+ Jurisdictions Covered</p>
+                            <p class="text-white/60 text-xs">Singapore, UAE, Saudi Arabia, Qatar, EU, India &amp; UK</p>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold mb-2">Professional</h3>
-                    <p class="text-sm text-blue-200 mb-8 h-10">Complete reporting capabilities for growing
-                        organizations.</p>
-                    <div class="mb-8 flex items-end">
-                        <span class="text-5xl font-bold">$499</span>
-                        <span class="text-blue-200 ml-2 mb-1">/mo</span>
-                    </div>
-                    <button
-                        class="w-full bg-nova-lime-green text-white py-3.5 rounded-full font-bold hover:bg-green-500 transition-colors shadow-lg shadow-nova-lime-green/30 hover:-translate-y-1 mb-8">
-                        Start Professional
-                    </button>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Full Scope 1, 2, 3 Accounting</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Framework specific reporting (SGX/GRI)</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Up to 10 Users</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Priority Email Support</span>
-                        </li>
-                    </ul>
+                </div>
+            </div>
+
+            <!-- â‘£ ESG Landscape: dark banner with photo + 4 stats -->
+            <div class="bg-nova-deep-blue rounded-[2rem] overflow-hidden relative group animate-reveal delay-300">
+                <!-- Background nature photo -->
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-25 group-hover:opacity-35 transition-opacity duration-700 mix-blend-luminosity">
+                </div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-nova-deep-blue via-nova-deep-blue/95 to-nova-deep-blue/80">
                 </div>
 
-                <!-- Enterprise Plan -->
-                <div
-                    class="bg-white rounded-[2rem] p-8 md:p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 animate-reveal delay-300">
+                <div class="relative z-10 p-10 md:p-14">
+                    <!-- Banner header -->
+                    <div class="max-w-2xl mb-12">
+                        <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">ESG
+                            Landscape â€” Globally</span>
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mb-4 leading-snug">Mandatory
+                            sustainability reporting is expanding rapidly</h3>
+                        <p class="text-blue-100/70 text-base leading-relaxed">Across regions, making ESG reporting a
+                            mainstream business practice rather than a voluntary exercise.</p>
+                    </div>
+
+                    <!-- Stats row -->
                     <div
-                        class="w-12 h-12 bg-nova-light-blue/20 rounded-xl flex items-center justify-center text-nova-deep-blue mb-6 text-xl">
-                        <i class="fa-solid fa-building"></i>
+                        class="flex flex-wrap md:flex-nowrap divide-y md:divide-y-0 divide-white/10 border border-white/10 rounded-2xl overflow-hidden">
+                        <div class="wnp-stat-block">
+                            <p class="wnp-stat-num">7+</p>
+                            <p class="wnp-stat-label">Key jurisdictions covered â€” Singapore, UAE, Saudi Arabia, Qatar,
+                                EU, India &amp; UK</p>
+                        </div>
+                        <div class="wnp-stat-block">
+                            <p class="wnp-stat-num">50K+</p>
+                            <p class="wnp-stat-label">Companies globally impacted by mandatory ESG regulations including
+                                CSRD, BRSR &amp; SGX rules</p>
+                        </div>
+                        <div class="wnp-stat-block">
+                            <p class="wnp-stat-num">2025</p>
+                            <p class="wnp-stat-label">Year ISSB-aligned climate reporting becomes mandatory for SGX
+                                large-cap issuers</p>
+                        </div>
+                        <div class="wnp-stat-block">
+                            <p class="wnp-stat-num">100%</p>
+                            <p class="wnp-stat-label">Of GCC stock exchanges now require or recommend ESG disclosure
+                                from listed companies</p>
+                        </div>
                     </div>
-                    <h3 class="font-serif text-2xl font-bold text-nova-deep-blue mb-2">Enterprise</h3>
-                    <p class="text-sm text-gray-500 mb-8 h-10">Custom solutions for large global enterprises needing
-                        scale.</p>
-                    <div class="mb-8 flex items-end">
-                        <span class="text-5xl font-bold text-nova-deep-blue">Custom</span>
-                    </div>
-                    <button
-                        class="w-full bg-white border-2 border-nova-deep-blue text-nova-deep-blue py-3.5 rounded-full font-bold hover:bg-nova-deep-blue hover:text-white transition-colors mb-8">
-                        Contact Sales
-                    </button>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Dedicated Success Manager</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Custom API Integrations</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-gray-600">
-                            <i class="fa-solid fa-check text-nova-lime-green mt-0.5"></i>
-                            <span>Unlimited Users & Entities</span>
-                        </li>
-                    </ul>
                 </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Global ESG Regulations Section -->
+    <style>
+        .reg-section {
+            background: #f4f7f5;
+        }
+
+        .reg-jurisdiction-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1.5px solid #dde6e2;
+            background: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #6b7c8d;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .reg-jurisdiction-btn.active {
+            background: #003567;
+            border-color: #003567;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(0, 53, 103, 0.2);
+        }
+
+        .reg-jurisdiction-btn:not(.active):hover {
+            border-color: #003567;
+            color: #003567;
+        }
+
+        .reg-flag {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .reg-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(115, 170, 60, 0.12);
+            border: 1.5px solid rgba(115, 170, 60, 0.3);
+            color: #3a7a1a;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 999px;
+        }
+
+        .reg-status-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #73aa3c;
+            animation: pulse 2s infinite;
+        }
+
+        .reg-point {
+            display: flex;
+            gap: 16px;
+            padding: 18px 20px;
+            border-radius: 14px;
+            border: 1.5px solid #e4ede9;
+            background: #fff;
+            transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+        }
+
+        .reg-point:hover {
+            border-color: #003567;
+            box-shadow: 0 8px 24px rgba(0, 53, 103, 0.08);
+            transform: translateX(4px);
+        }
+
+        .reg-point-num {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: #73aa3c;
+            letter-spacing: 0.08em;
+            flex-shrink: 0;
+            padding-top: 3px;
+        }
+
+        .reg-point-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: #003567;
+            margin-bottom: 5px;
+        }
+
+        .reg-point-desc {
+            font-size: 0.82rem;
+            color: #5a6b7a;
+            line-height: 1.55;
+        }
+
+        .reg-panel {
+            display: none;
+        }
+
+        .reg-panel.active {
+            display: grid;
+        }
+
+        @keyframes regFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reg-panel.active {
+            animation: regFadeIn 0.35s ease-out forwards;
+        }
+    </style>
+    <section class="reg-section py-24 relative overflow-hidden">
+        <!-- Faint grid bg -->
+        <div class="absolute inset-0 pointer-events-none opacity-40"
+            style="background-image: linear-gradient(rgba(0,53,103,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,53,103,0.04) 1px, transparent 1px); background-size: 48px 48px;">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Section Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-14 animate-reveal">
+                <div>
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Compliance
+                        Ready</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold leading-tight">Global ESG
+                        Regulations</h2>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        We help organisations navigate the rapidly evolving ESG regulatory landscape across key
+                        jurisdictions â€” from Singapore &amp; GCC to the EU, India, and the UK.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Regional Jurisdiction Selector -->
+            <div class="flex flex-wrap gap-2 mb-10 animate-reveal delay-100" id="reg-selector">
+                <button class="reg-jurisdiction-btn active" onclick="selectRegion(this, 'sg')">
+                    SG Singapore
+                </button>
+                <button class="reg-jurisdiction-btn" onclick="selectRegion(this, 'ae')">
+                    AE UAE
+                </button>
+                <button class="reg-jurisdiction-btn" onclick="selectRegion(this, 'sa')">
+                    SA Saudi Arabia
+                </button>
+                <button class="reg-jurisdiction-btn" onclick="selectRegion(this, 'eu')">
+                    EU European Union
+                </button>
+                <button class="reg-jurisdiction-btn" onclick="selectRegion(this, 'in')">
+                    IN India
+                </button>
+                <button class="reg-jurisdiction-btn" onclick="selectRegion(this, 'gb')">
+                    GB United Kingdom
+                </button>
+                <button class="reg-jurisdiction-btn" onclick="selectRegion(this, 'qa')">
+                    QA Qatar
+                </button>
+            </div>
+
+            <!-- â”€â”€ Singapore Panel â”€â”€ -->
+            <div class="reg-panel active grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-sg">
+                <!-- Left: Regulatory content (3/5) -->
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <!-- Panel header -->
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">SGX &amp; MAS Mandates
+                                </h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">Singapore Regulatory Framework</p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Mandatory from FY2025</span>
+                    </div>
+
+                    <!-- 4 regulatory points -->
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point">
+                            <span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">SGX Sustainability Reporting</p>
+                                <p class="reg-point-desc">All SGX-listed companies must publish sustainability reports
+                                    aligned with TCFD recommendations. Climate-related disclosures on IFRS S2 (ISSB) now
+                                    mandatory for large-cap issuers from FY2025.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point">
+                            <span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">IFRS S1 &amp; S2 Incorporation</p>
+                                <p class="reg-point-desc">SGX RegCo is incorporating IFRS Sustainability Disclosure
+                                    Standards (ISSB) into its listing rules â€” phased approach for large-cap, mid-cap,
+                                    and small-cap issuers through 2027.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point">
+                            <span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">MAS Environmental Risk Guidelines</p>
+                                <p class="reg-point-desc">Financial institutions must implement environmental risk
+                                    management frameworks covering governance, strategy, risk management, and disclosure
+                                    of climate-related risks.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point">
+                            <span class="reg-point-num">04</span>
+                            <div>
+                                <p class="reg-point-title">Singapore Green Plan 2030</p>
+                                <p class="reg-point-desc">National sustainability blueprint targeting net-zero
+                                    emissions, green economy, and circular economy principles across public and private
+                                    sectors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Singapore skyline photo (2/5) -->
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format&fit=crop"
+                        alt="Singapore skyline"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <!-- Dark overlay -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <!-- Bottom label -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">Singapore</p>
+                        <p class="text-white/60 text-xs mt-1">SGX Â· MAS Â· Green Plan 2030</p>
+                    </div>
+                    <!-- Top-right tag -->
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡¸ðŸ‡¬ SG
+                    </div>
+                </div>
+            </div>
+
+            <!-- â”€â”€ Placeholder panels for other jurisdictions â”€â”€ -->
+            <div class="reg-panel grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-ae">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2"><span class="text-2xl">ðŸ‡¦ðŸ‡ª</span>
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">UAE ESG Framework</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">United Arab Emirates Regulatory Framework</p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Evolving Mandates</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point"><span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">ADX &amp; DFM Reporting</p>
+                                <p class="reg-point-desc">Abu Dhabi Securities Exchange (ADX) and Dubai Financial Market
+                                    (DFM) require ESG disclosures from listed companies, aligned with GRI and MSCI
+                                    standards.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">UAE Net Zero 2050</p>
+                                <p class="reg-point-desc">The UAE's Net Zero by 2050 Strategic Initiative drives
+                                    mandatory climate action reporting and clean energy transition requirements across
+                                    industries.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">CBUAE Sustainable Finance</p>
+                                <p class="reg-point-desc">Central Bank of UAE guidelines require financial institutions
+                                    to embed climate risk in credit assessments and disclose environmental exposures.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop"
+                        alt="Dubai skyline"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">United Arab Emirates</p>
+                        <p class="text-white/60 text-xs mt-1">ADX Â· DFM Â· UAE Net Zero 2050</p>
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡¦ðŸ‡ª AE</div>
+                </div>
+            </div>
+
+            <div class="reg-panel grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-sa">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2"><span class="text-2xl">ðŸ‡¸ðŸ‡¦</span>
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">Saudi Arabia ESG &amp;
+                                    Vision 2030</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">Kingdom of Saudi Arabia Regulatory Framework
+                            </p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Mandatory Disclosure</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point"><span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">Tadawul ESG Reporting</p>
+                                <p class="reg-point-desc">Saudi Exchange (Tadawul) requires listed companies to publish
+                                    annual ESG reports. The CMA ESG Disclosure Guidelines set the disclosure framework.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">Saudi Vision 2030 Sustainability</p>
+                                <p class="reg-point-desc">Vision 2030 embeds sustainability across all national pillars.
+                                    Companies operating in KSA must align with national sustainability and economic
+                                    diversification targets.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">Net Zero by 2060</p>
+                                <p class="reg-point-desc">Saudi Arabia's commitment to net zero by 2060 with 50%
+                                    renewable energy by 2030 drives corporate climate accountability and green economy
+                                    transition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=800&auto=format&fit=crop"
+                        alt="Riyadh skyline"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">Saudi Arabia</p>
+                        <p class="text-white/60 text-xs mt-1">Tadawul Â· Vision 2030 Â· Net Zero 2060</p>
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡¸ðŸ‡¦ SA</div>
+                </div>
+            </div>
+
+            <div class="reg-panel grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-eu">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2"><span class="text-2xl">ðŸ‡ªðŸ‡º</span>
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">CSRD &amp; ESRS Framework
+                                </h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">European Union Regulatory Framework</p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Phased from FY2024</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point"><span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">CSRD â€” Corporate Sustainability Reporting Directive</p>
+                                <p class="reg-point-desc">Mandatory for ~50,000 companies including non-EU companies
+                                    with significant EU operations. Requires double materiality assessments and
+                                    ESRS-aligned reporting.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">ESRS â€” European Sustainability Reporting Standards</p>
+                                <p class="reg-point-desc">12 cross-cutting and topic-specific standards covering
+                                    Environment (E), Social (S), and Governance (G) disclosures under the CSRD regime.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">EU Taxonomy Regulation</p>
+                                <p class="reg-point-desc">Requires companies to classify and disclose the proportion of
+                                    their activities that are environmentally sustainable under six EU environmental
+                                    objectives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop"
+                        alt="Brussels EU"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">European Union</p>
+                        <p class="text-white/60 text-xs mt-1">CSRD Â· ESRS Â· EU Taxonomy</p>
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡ªðŸ‡º EU</div>
+                </div>
+            </div>
+
+            <div class="reg-panel grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-in">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2"><span class="text-2xl">ðŸ‡®ðŸ‡³</span>
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">BRSR &amp; SEBI Framework
+                                </h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">India Regulatory Framework</p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Mandatory from FY2023</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point"><span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">BRSR â€” Business Responsibility &amp; Sustainability Report
+                                </p>
+                                <p class="reg-point-desc">SEBI mandates BRSR for top 1,000 listed companies by market
+                                    cap from FY2023. BRSR Core with assurance required for top 150 companies from
+                                    FY2024.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">BRSR Core &amp; Limited Assurance</p>
+                                <p class="reg-point-desc">SEBI introduced BRSR Core comprising 9 key performance
+                                    indicators (KPIs) requiring mandatory third-party limited assurance â€” phased
+                                    across
+                                    top companies.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">India Net Zero 2070</p>
+                                <p class="reg-point-desc">India's net zero target by 2070 and its Panchamrit commitments
+                                    (500 GW renewables, 50% clean energy by 2030) drive sectoral transition
+                                    requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?q=80&w=800&auto=format&fit=crop"
+                        alt="India sustainability"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">India</p>
+                        <p class="text-white/60 text-xs mt-1">BRSR Â· SEBI Â· Net Zero 2070</p>
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡®ðŸ‡³ IN</div>
+                </div>
+            </div>
+
+            <div class="reg-panel grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-gb">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2"><span class="text-2xl">ðŸ‡¬ðŸ‡§</span>
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">UK TCFD &amp; Green
+                                    Finance</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">United Kingdom Regulatory Framework</p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Mandatory since 2022</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point"><span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">Mandatory TCFD Reporting</p>
+                                <p class="reg-point-desc">UK became the first G20 country to mandate TCFD-aligned
+                                    climate disclosures. Applies to listed companies, large private firms, LLPs, and
+                                    pension funds since 2022.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">UK Sustainability Disclosure Standards (UK SDS)</p>
+                                <p class="reg-point-desc">The FCA is developing UK SDS based on IFRS S1 &amp; S2 as the
+                                    primary UK framework, with adoption expected to become mandatory for listed issuers
+                                    from 2025+.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">UK Green Finance Strategy</p>
+                                <p class="reg-point-desc">Comprehensive roadmap to align the UK financial system with
+                                    net zero by 2050, including mandatory nature-related disclosures and the UK
+                                    Transition Plan Taskforce framework.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=800&auto=format&fit=crop"
+                        alt="London UK"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">United Kingdom</p>
+                        <p class="text-white/60 text-xs mt-1">TCFD Â· UK SDS Â· Net Zero 2050</p>
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡¬ðŸ‡§ GB</div>
+                </div>
+            </div>
+
+            <div class="reg-panel grid-cols-1 lg:grid-cols-5 gap-8 mb-10" id="panel-qa">
+                <div class="lg:col-span-3 flex flex-col gap-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2"><span class="text-2xl">ðŸ‡¶ðŸ‡¦</span>
+                                <h3 class="font-serif text-2xl font-bold text-nova-deep-blue">Qatar ESG &amp; QSE
+                                    Framework</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm font-medium">Qatar Regulatory Framework</p>
+                        </div>
+                        <span class="reg-status-badge shrink-0">Recommended Disclosure</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="reg-point"><span class="reg-point-num">01</span>
+                            <div>
+                                <p class="reg-point-title">Qatar Stock Exchange ESG Reporting</p>
+                                <p class="reg-point-desc">QSE-listed companies are encouraged to disclose ESG data
+                                    aligned with GRI Standards. The QSE ESG Reporting Guide sets the voluntary framework
+                                    structure.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">02</span>
+                            <div>
+                                <p class="reg-point-title">Qatar National Vision 2030</p>
+                                <p class="reg-point-desc">QNV 2030 sets the sustainability framework across four pillars
+                                    â€” human, social, economic, and environmental development â€” guiding corporate ESG
+                                    expectations.</p>
+                            </div>
+                        </div>
+                        <div class="reg-point"><span class="reg-point-num">03</span>
+                            <div>
+                                <p class="reg-point-title">GCC ESG Alignment</p>
+                                <p class="reg-point-desc">Qatar aligns with GCC-wide sustainability frameworks and the
+                                    COP28 commitments, increasingly integrating ESG into public procurement and
+                                    investment decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 relative rounded-[1.75rem] overflow-hidden shadow-2xl min-h-[380px] group">
+                    <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=800&auto=format&fit=crop"
+                        alt="Doha Qatar"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 absolute inset-0">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/80 via-nova-deep-blue/20 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6">
+                        <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Jurisdiction</p>
+                        <p class="text-white font-serif text-xl font-bold">Qatar</p>
+                        <p class="text-white/60 text-xs mt-1">QSE Â· QNV 2030 Â· GCC Alignment</p>
+                    </div>
+                    <div
+                        class="absolute top-5 right-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-3 py-2 text-white text-xs font-bold">
+                        ðŸ‡¶ðŸ‡¦</div>
+                </div>
+            </div>
+
+            <!-- Final CTA Banner -->
+            <div
+                class="bg-nova-deep-blue rounded-[1.75rem] px-10 py-10 flex flex-col sm:flex-row items-center justify-between gap-6 animate-reveal delay-400">
+                <div>
+                    <p class="text-white/50 text-xs font-bold uppercase tracking-widest mb-2">Get Expert Guidance</p>
+                    <p class="text-white font-serif text-xl md:text-2xl font-bold">Not sure which regulations apply to
+                        your organisation?</p>
+                </div>
+                <button
+                    class="shrink-0 inline-flex items-center gap-2 bg-nova-lime-green text-nova-deep-blue px-7 py-3.5 rounded-xl font-bold hover:bg-white transition-colors duration-300 shadow-xl text-sm whitespace-nowrap">
+                    Book a Regulatory Assessment <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <script>
+            function selectRegion(btn, region) {
+                // Update buttons
+                document.querySelectorAll('.reg-jurisdiction-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Swap panels
+                document.querySelectorAll('.reg-panel').forEach(p => p.classList.remove('active'));
+                const target = document.getElementById('panel-' + region);
+                if (target) target.classList.add('active');
+            }
+        </script>
+    </section>
+
+    <!-- How We Work Section -->
+    <style>
+        .hww-section {
+            background: #002a50;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hww-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(115, 170, 60, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(115, 170, 60, 0.04) 1px, transparent 1px);
+            background-size: 44px 44px;
+            pointer-events: none;
+        }
+
+        .hww-step {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            flex: 1;
+            min-width: 0;
+            position: relative;
+        }
+
+        /* Connector line between steps */
+
+        .hww-step-num-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            border: 2px solid rgba(115, 170, 60, 0.3);
+            background: rgba(115, 170, 60, 0.08);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            transition: background 0.25s, border-color 0.25s;
+        }
+
+        .hww-step:hover .hww-step-num-wrap {
+            background: rgba(115, 170, 60, 0.18);
+            border-color: rgba(115, 170, 60, 0.7);
+        }
+
+        .hww-step-num {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: #73aa3c;
+            line-height: 1;
+        }
+
+        .hww-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #73aa3c;
+            margin-bottom: 14px;
+            transition: background 0.25s;
+        }
+
+        .hww-step:hover .hww-icon {
+            background: rgba(115, 170, 60, 0.15);
+        }
+
+        .hww-step-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .hww-step-desc {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+        }
+
+        .hww-step-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #73aa3c;
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .hww-step::after {
+                display: none;
+            }
+        }
+    </style>
+    <section class="hww-section py-24">
+        <div class="hww-grid-bg"></div>
+        <!-- Subtle glow accents -->
+        <div
+            class="absolute top-0 left-1/4 w-96 h-96 bg-nova-lime-green rounded-full blur-[160px] opacity-[0.04] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-1/4 w-96 h-96 bg-nova-light-blue rounded-full blur-[160px] opacity-[0.05] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-20 animate-reveal">
+                <div>
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Our
+                        Process</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">How We Work</h2>
+                </div>
+                <div>
+                    <p class="text-white/50 text-lg leading-relaxed">
+                        A structured, proven methodology that guides you from assessment to continuous improvement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Steps: 3-across top row, 3-across bottom row â€” connected by dotted lines -->
+            <!-- Row 1: Steps 01, 02, 03 -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-0 mb-0 animate-reveal delay-100 relative">
+                <!-- Step 01 -->
+                <div class="hww-step px-2 pb-12 sm:pb-16 md:px-4">
+                    <div class="hww-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <p class="hww-step-label">Step 01</p>
+                    <p class="hww-step-title">Assess</p>
+                    <p class="hww-step-desc">Comprehensive evaluation of your current ESG position and material risks.
+                    </p>
+                </div>
+                <!-- Step 02 -->
+                <div class="hww-step px-2 pb-12 sm:pb-16 md:px-4">
+                    <div class="hww-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <p class="hww-step-label">Step 02</p>
+                    <p class="hww-step-title">Strategise</p>
+                    <p class="hww-step-desc">Develop tailored roadmaps aligned with your business objectives.</p>
+                </div>
+                <!-- Step 03 -->
+                <div class="hww-step px-2 pb-12 sm:pb-16 md:px-4" style="--connector: none;">
+                    <div class="hww-icon"><i class="fa-solid fa-gear"></i></div>
+                    <p class="hww-step-label">Step 03</p>
+                    <p class="hww-step-title">Implement</p>
+                    <p class="hww-step-desc">Execute initiatives with practical, measurable approaches.</p>
+                </div>
+            </div>
+
+            <!-- Row 2: Steps 06 â† 05 â† 04 (reversed so flow reads right-to-left) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-0 animate-reveal delay-200 relative"
+                style="direction: rtl;">
+                <!-- Step 06 (rightmost in reverse flow = leftmost visually) -->
+                <div class="hww-step px-2 pt-0 md:px-4" style="direction: ltr;">
+                    <div class="hww-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <p class="hww-step-label">Step 06</p>
+                    <p class="hww-step-title">Improve</p>
+                    <p class="hww-step-desc">Continuous refinement based on performance and evolving standards.</p>
+                </div>
+                <!-- Step 05 -->
+                <div class="hww-step px-2 pt-0 md:px-4" style="direction: ltr;">
+                    <div class="hww-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <p class="hww-step-label">Step 05</p>
+                    <p class="hww-step-title">Report</p>
+                    <p class="hww-step-desc">Ensure transparent, compliant disclosure to stakeholders.</p>
+                </div>
+                <!-- Step 04 -->
+                <div class="hww-step px-2 pt-0 md:px-4" style="direction: ltr;">
+                    <div class="hww-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <p class="hww-step-label">Step 04</p>
+                    <p class="hww-step-title">Train</p>
+                    <p class="hww-step-desc">Build internal capacity and embed sustainability expertise.</p>
+                </div>
+            </div>
+
+            <!-- Bottom CTA strip -->
+            <div
+                class="mt-20 pt-10 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-6 animate-reveal delay-300">
+                <p class="text-white/40 text-sm">Ready to begin your ESG journey with a proven partner?</p>
+                <button
+                    class="inline-flex items-center gap-2 bg-nova-lime-green text-nova-deep-blue px-7 py-3.5 rounded-xl font-bold hover:bg-white transition-colors duration-300 text-sm shadow-xl">
+                    Start with an Assessment <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <style>
+        .about-section {
+            background: #fff;
+        }
+
+        .about-mission-card {
+            background: #003567;
+            border-radius: 24px;
+            padding: 36px 32px;
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .about-mission-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0% 100%, rgba(115, 170, 60, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .about-vision-card {
+            background: #f4f7f5;
+            border-radius: 24px;
+            padding: 36px 32px;
+            border: 1.5px solid #e0ebe5;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .about-tag-arrow {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .about-team-card {
+            background: #fff;
+            border: 1.5px solid #e5ede8;
+            border-radius: 20px;
+            overflow: hidden;
+            flex: 1;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .about-team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 48px rgba(0, 53, 103, 0.12);
+        }
+
+        .about-team-photo {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-team-card:hover .about-team-photo img {
+            transform: scale(1.07);
+        }
+
+        .about-team-info {
+            padding: 20px 22px;
+        }
+
+        .about-team-name {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #003567;
+            margin-bottom: 4px;
+        }
+
+        .about-team-role {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #73aa3c;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .about-std-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 18px 24px;
+            border-radius: 14px;
+            background: #fff;
+            border: 1.5px solid #dde8e2;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .about-std-badge:hover {
+            border-color: #003567;
+            box-shadow: 0 6px 20px rgba(0, 53, 103, 0.08);
+        }
+
+        .about-std-code {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: #003567;
+        }
+
+        .about-std-label {
+            font-size: 0.72rem;
+            color: #6b7c8d;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+    </style>
+    <section class="about-section py-24 overflow-hidden relative">
+        <!-- Faint background tint -->
+        <div class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(ellipse 70% 40% at 100% 0%, rgba(0,53,103,0.03) 0%, transparent 60%);">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- â‘  Split intro header -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20 animate-reveal">
+                <div>
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">About
+                        Us</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold leading-tight">Bridging
+                        Standards<br>&amp; Reality</h2>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        Nova Plus was founded to bridge the gap between global ESG standards and real-world business
+                        realities. We combine technical rigor, regulatory insight, and commercial understanding to help
+                        organizations deliver sustainability outcomes that stand up to scrutiny â€” and create lasting
+                        value.
+                    </p>
+                </div>
+            </div>
+
+            <!-- â‘¡ Mission & Vision cards side by side -->
+            <div class="flex flex-col md:flex-row gap-6 mb-20 animate-reveal delay-100">
+                <!-- Mission: dark card -->
+                <div class="about-mission-card">
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Our
+                        Mission</span>
+                    <p class="text-white/90 text-base leading-relaxed">
+                        As sustainability expectations intensify, organisations face increasing pressure to balance
+                        economic growth with environmental responsibility, social accountability, and robust governance.
+                        Nova Plus enables credible, defensible, and future-ready growth that strengthens resilience and
+                        long-term value.
+                    </p>
+                    <div class="about-tagline text-nova-lime-green">
+                        <span class="about-tag-arrow bg-nova-lime-green text-nova-deep-blue"><i
+                                class="fa-solid fa-arrow-right text-[0.55rem]"></i></span>
+                        Clarity in complexity
+                    </div>
+                </div>
+
+                <!-- Vision: light card -->
+                <div class="about-vision-card">
+                    <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Our
+                        Vision</span>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        By aligning sustainability priorities with globally recognised frameworks and measurable
+                        outcomes, we support the development of responsible, resilient organizations advancing
+                        transparent, high-quality ESG practices.
+                    </p>
+                    <div class="about-tagline text-nova-deep-blue">
+                        <span class="about-tag-arrow bg-nova-deep-blue text-white"><i
+                                class="fa-solid fa-arrow-right text-[0.55rem]"></i></span>
+                        Leadership through responsibility
+                    </div>
+                </div>
+            </div>
+
+            <!-- â‘¢ Team row -->
+            <div class="mb-14 animate-reveal delay-200">
+                <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+                    <div>
+                        <span class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-3 block">Our
+                            Team</span>
+                        <h3 class="font-serif text-3xl text-nova-deep-blue font-bold">The People Behind Nova Plus</h3>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <!-- Pratap -->
+                    <div class="about-team-card">
+                        <!-- <div class="about-team-photo">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop"
+                                alt="Pratap - Director">
+                            <div class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/50 to-transparent"></div>
+                        </div> -->
+                        <div class="about-team-info">
+                            <p class="about-team-name">Pratap</p>
+                            <p class="about-team-role">Director</p>
+                        </div>
+                    </div>
+                    <!-- Nivethana -->
+                    <div class="about-team-card">
+                        <!-- <div class="about-team-photo">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+                                alt="Nivethana - Head of Operations">
+                            <div class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/50 to-transparent"></div>
+                        </div> -->
+                        <div class="about-team-info">
+                            <p class="about-team-name">Nivethana</p>
+                            <p class="about-team-role">Head of Operations</p>
+                        </div>
+                    </div>
+                    <!-- Pratiksha -->
+                    <div class="about-team-card">
+                        <!-- <div class="about-team-photo">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop"
+                                alt="Pratiksha - Chief ESG Consultant">
+                            <div class="absolute inset-0 bg-gradient-to-t from-nova-deep-blue/50 to-transparent"></div>
+                        </div> -->
+                        <div class="about-team-info">
+                            <p class="about-team-name">Pratiksha</p>
+                            <p class="about-team-role">Chief ESG Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- â‘£ Standards & Frameworks strip -->
+            <div class="bg-[#f7f9f7] rounded-[1.5rem] p-8 animate-reveal delay-300">
+                <div class="flex flex-wrap items-center justify-between gap-6">
+                    <div class="shrink-0">
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Standards &amp;
+                            Frameworks</p>
+                        <p class="text-nova-deep-blue font-bold text-sm">Recognised globally</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 flex-1 justify-end">
+                        <div class="about-std-badge">
+                            <span class="about-std-code">SGX</span>
+                            <span class="about-std-label">Singapore Aligned</span>
+                        </div>
+                        <div class="about-std-badge">
+                            <span class="about-std-code">ISSB</span>
+                            <span class="about-std-label">IFRS S1 &amp; S2</span>
+                        </div>
+                        <div class="about-std-badge">
+                            <span class="about-std-code">CSRD</span>
+                            <span class="about-std-label">EU ESRS Ready</span>
+                        </div>
+                        <div class="about-std-badge">
+                            <span class="about-std-code">BRSR</span>
+                            <span class="about-std-label">India SEBI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Get In Touch Section -->
+    <style>
+        .git-section {
+            background: #f4f7f5;
+        }
+
+        .git-info-card {
+            background: #003567;
+            border-radius: 24px;
+            padding: 40px 36px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .git-info-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(115, 170, 60, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .git-contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .git-contact-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .git-contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(115, 170, 60, 0.15);
+            border: 1px solid rgba(115, 170, 60, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #73aa3c;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .git-contact-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 4px;
+        }
+
+        .git-contact-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .git-form-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 36px;
+            border: 1.5px solid #e0ebe5;
+            box-shadow: 0 8px 40px rgba(0, 53, 103, 0.06);
+        }
+
+        .git-field-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #003567;
+            margin-bottom: 8px;
+        }
+
+        .git-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #dde8e2;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            color: #1a2e3a;
+            background: #f9fbfa;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .git-input:focus {
+            border-color: #003567;
+            box-shadow: 0 0 0 3px rgba(0, 53, 103, 0.07);
+            background: #fff;
+        }
+
+        .git-input::placeholder {
+            color: #9aabb4;
+        }
+
+        .git-submit {
+            width: 100%;
+            padding: 14px;
+            background: #003567;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.25s, transform 0.2s;
+        }
+
+        .git-submit:hover {
+            background: #73aa3c;
+            transform: translateY(-2px);
+        }
+    </style>
+    <section class="git-section py-24 relative overflow-hidden">
+        <!-- Subtle grid -->
+        <div class="absolute inset-0 pointer-events-none opacity-30"
+            style="background-image: linear-gradient(rgba(0,53,103,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,53,103,0.04) 1px, transparent 1px); background-size: 48px 48px;">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-14 animate-reveal">
+                <div>
+                    <span
+                        class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-4 block">Contact</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-nova-deep-blue font-bold leading-tight">Get In Touch
+                    </h2>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-lg leading-relaxed">
+                        Nova Plus offers support for ISSB-aligned reporting, building net-zero roadmaps, and
+                        strengthening ESG governance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Two columns: Info card + Form -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 animate-reveal delay-100">
+
+                <!-- Left: Contact info card (2/5) -->
+                <div class="lg:col-span-2">
+                    <div class="git-info-card">
+                        <p class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-6">Contact
+                            Information</p>
+
+                        <div class="git-contact-row">
+                            <div class="git-contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <p class="git-contact-label">Email</p>
+                                <a href="mailto:sales@novaplus.sg"
+                                    class="git-contact-value hover:text-nova-lime-green transition-colors">sales@novaplus.sg</a>
+                            </div>
+                        </div>
+
+                        <div class="git-contact-row">
+                            <div class="git-contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="git-contact-label">Phone</p>
+                                <a href="tel:+6590882853"
+                                    class="git-contact-value hover:text-nova-lime-green transition-colors">+65 9088
+                                    2853</a>
+                            </div>
+                        </div>
+
+                        <div class="git-contact-row">
+                            <div class="git-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <p class="git-contact-label">Singapore Office</p>
+                                <p class="git-contact-value">
+                                    Nova Plus Pte Ltd<br>
+                                    25 International Business Park<br>
+                                    #04-103B German Centre<br>
+                                    Singapore 609916
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="git-contact-row">
+                            <div class="git-contact-icon"><i class="fa-regular fa-clock"></i></div>
+                            <div>
+                                <p class="git-contact-label">Response Time</p>
+                                <p class="git-contact-value">Typically within 24 business hours</p>
+                            </div>
+                        </div>
+
+                        <!-- Decorative map silhouette strip -->
+                        <div class="mt-8 rounded-2xl overflow-hidden h-[110px] relative opacity-80">
+                            <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=800&auto=format&fit=crop"
+                                alt="Singapore" class="w-full h-full object-cover object-center">
+                            <div class="absolute inset-0 bg-nova-deep-blue/60 flex items-end pl-4 pb-3">
+                                <span class="text-white/70 text-xs font-bold uppercase tracking-widest">ðŸ“ Singapore
+                                    Â·
+                                    GCC Â· EU Â· India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Inquiry form (3/5) -->
+                <div class="lg:col-span-3">
+                    <div class="git-form-card">
+                        <p class="text-nova-lime-green font-bold text-xs uppercase tracking-widest mb-6">Inquiry Details
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                            <div>
+                                <label class="git-field-label" for="git-name">Full Name</label>
+                                <input id="git-name" type="text" class="git-input" placeholder="Your full name">
+                            </div>
+                            <div>
+                                <label class="git-field-label" for="git-email">Email Address</label>
+                                <input id="git-email" type="email" class="git-input" placeholder="you@company.com">
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="git-field-label" for="git-company">Company</label>
+                            <input id="git-company" type="text" class="git-input" placeholder="Your organisation name">
+                        </div>
+
+                        <div class="mb-5">
+                            <label class="git-field-label" for="git-inquiry">Inquiry Type</label>
+                            <div class="relative">
+                                <select id="git-inquiry" class="git-input"
+                                    style="appearance: none; -webkit-appearance: none; padding-right: 40px;">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option>ESG Consultancy</option>
+                                    <option>Carbon Accounting &amp; Net Zero</option>
+                                    <option>Carbon Credit Consultancy</option>
+                                    <option>ESG Reporting &amp; Disclosure</option>
+                                    <option>ESG Learning Platform</option>
+                                    <option>Regulatory Assessment</option>
+                                    <option>Other</option>
+                                </select>
+                                <span
+                                    class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-nova-deep-blue text-xs">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mb-7">
+                            <label class="git-field-label" for="git-message">Message</label>
+                            <textarea id="git-message" rows="5" class="git-input" style="resize: vertical;"
+                                placeholder="Tell us about your ESG needs and how we can helpâ€¦"></textarea>
+                        </div>
+
+                        <button class="git-submit" type="submit">
+                            Send Message <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </button>
+
+                        <p class="text-center text-gray-400 text-xs mt-5">
+                            <i class="fa-solid fa-lock text-[0.65rem] mr-1"></i>
+                            Your information is kept strictly confidential and never shared.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -891,8 +2780,8 @@
                     </div>
                     <h2 class="font-serif text-4xl font-bold mb-4">Ready to Start?</h2>
                     <p class="text-blue-100 mb-8 max-w-xl mx-auto">
-                        Join hundreds of forward-thinking companies already using NovaPlus to run their ESG programs
-                        efficiently and effectively.
+                        Whether you're preparing for ISSB-aligned reporting, building your net-zero roadmap, or
+                        strengthening ESG governanceâ€”Nova Plus is ready to support you.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
                         <input type="email" placeholder="Enter your work email"
@@ -908,75 +2797,182 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-nova-deep-blue pt-20 pb-10 px-6 text-white border-t border-white/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+    <footer style="background: #003567; position: relative; overflow: hidden;" class="pt-16 pb-0 text-white">
 
-                <div class="lg:col-span-2">
-                    <span class="font-serif font-bold text-3xl tracking-wide mb-6 block">NOV<span
-                            class="text-nova-lime-green"><i
-                                class="fa-solid fa-leaf text-xl -translate-y-1"></i></span>A</span>
-                    <p class="text-blue-200 text-sm leading-relaxed mb-6 max-w-xs">
-                        The sophisticated choice for modern businesses looking to streamline ESG reporting and build
-                        real operational resilience.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-nova-lime-green transition-colors"><i
-                                class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-nova-lime-green transition-colors"><i
-                                class="fa-brands fa-twitter"></i></a>
+        <!-- Giant watermark "NOVA" text in the background -->
+        <div aria-hidden="true" style="
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(100px, 18vw, 220px);
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.04);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+            z-index: 0;
+        ">NOVA</div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Main grid: Brand block + Nav columns -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 pb-14">
+
+                <!-- Left: Brand + Contact (3/5) -->
+                <div class="lg:col-span-3 flex flex-col gap-8">
+
+                    <!-- Logo -->
+                    <div>
+                        <div class="mb-5">
+                            <a href="#">
+                                <img src="Nova PLus Logo.png" alt="Nova Plus" class="h-9 w-auto object-contain"
+                                    style="filter: brightness(0) invert(1);">
+                            </a>
+                        </div>
+                        <p
+                            style="color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.7; max-width: 340px;">
+                            Singapore's trusted ESG consultancy helping organizations navigate sustainability with
+                            clarity, credibility, and execution focus.
+                        </p>
+                    </div>
+
+                    <!-- Contact details -->
+                    <div class="flex flex-col gap-4">
+                        <a href="mailto:sales@novaplus.sg"
+                            style="display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                            onmouseover="this.style.color='#73aa3c'"
+                            onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+                            <span
+                                style="width: 30px; height: 30px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-regular fa-envelope" style="font-size: 0.75rem;"></i>
+                            </span>
+                            sales@novaplus.sg
+                        </a>
+                        <a href="tel:+6590882853"
+                            style="display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.6); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                            onmouseover="this.style.color='#73aa3c'"
+                            onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+                            <span
+                                style="width: 30px; height: 30px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fa-solid fa-phone" style="font-size: 0.7rem;"></i>
+                            </span>
+                            +65 9088 2853
+                        </a>
+                        <div
+                            style="display: flex; align-items: flex-start; gap: 12px; color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">
+                            <span
+                                style="width: 30px; height: 30px; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                                <i class="fa-solid fa-location-dot" style="font-size: 0.75rem;"></i>
+                            </span>
+                            <span>25 International Business Park<br>#04-103B German Centre<br>Singapore 609916</span>
+                        </div>
+                    </div>
+
+                    <!-- Social icons -->
+                    <div class="flex gap-3">
+                        <a href="#" style="
+                            width: 38px; height: 38px;
+                            border: 1.5px solid rgba(255,255,255,0.15);
+                            border-radius: 8px;
+                            display: flex; align-items: center; justify-content: center;
+                            color: rgba(255,255,255,0.6);
+                            font-size: 0.9rem;
+                            text-decoration: none;
+                            transition: border-color 0.2s, color 0.2s, background 0.2s;
+                        " onmouseover="this.style.borderColor='#73aa3c'; this.style.color='#73aa3c';"
+                            onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.color='rgba(255,255,255,0.6)';"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:sales@novaplus.sg" style="
+                            width: 38px; height: 38px;
+                            border: 1.5px solid rgba(255,255,255,0.15);
+                            border-radius: 8px;
+                            display: flex; align-items: center; justify-content: center;
+                            color: rgba(255,255,255,0.6);
+                            font-size: 0.9rem;
+                            text-decoration: none;
+                            transition: border-color 0.2s, color 0.2s;
+                        " onmouseover="this.style.borderColor='#73aa3c'; this.style.color='#73aa3c';"
+                            onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.color='rgba(255,255,255,0.6)';"
+                            aria-label="Email">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Platform</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Carbon
-                                Accounting</a></li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">ESG
-                                Reporting</a></li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Supply Chain
-                                Risk</a></li>
-                        <li><a href="#"
-                                class="text-blue-200 text-sm hover:text-white transition-colors">Integrations</a></li>
-                    </ul>
-                </div>
+                <!-- Right: Nav columns (2/5) -->
+                <div class="lg:col-span-2 grid grid-cols-2 gap-10 pt-1">
 
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Resources</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Case
-                                Studies</a></li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Webinars</a>
-                        </li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">ESG
-                                Glossary</a></li>
-                    </ul>
-                </div>
+                    <!-- Services column -->
+                    <div>
+                        <h4
+                            style="font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 800; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px;">
+                            Services</h4>
+                        <ul
+                            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">ESG Consultancy</a></li>
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s; line-height: 1.4;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">Carbon Accounting &amp; Net
+                                    Zero</a></li>
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">Training</a></li>
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">LMS</a></li>
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">Products</a></li>
+                        </ul>
+                    </div>
 
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Company</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">About Us</a>
-                        </li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Careers</a>
-                        </li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Contact</a>
-                        </li>
-                        <li><a href="#" class="text-blue-200 text-sm hover:text-white transition-colors">Partners</a>
-                        </li>
-                    </ul>
+                    <!-- Company column -->
+                    <div>
+                        <h4
+                            style="font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 800; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px;">
+                            Company</h4>
+                        <ul
+                            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">Why Nova Plus</a></li>
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">About Us</a></li>
+                            <li><a href="#"
+                                    style="color: rgba(255,255,255,0.5); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;"
+                                    onmouseover="this.style.color='#73aa3c'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.5)'">Contact Us</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-blue-200 text-sm">&copy; 2024 NovaPlus Technologies. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="text-blue-200 text-sm hover:text-white">Privacy Policy</a>
-                    <a href="#" class="text-blue-200 text-sm hover:text-white">Terms of Service</a>
+            <!-- Bottom bar -->
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.07); padding: 18px 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; position: relative; z-index: 1;">
+                <p style="color: rgba(255,255,255,0.35); font-size: 0.78rem; margin: 0;">Â© 2026 Nova Plus. All rights
+                    reserved.</p>
+                <div
+                    style="display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.35); font-size: 0.78rem;">
+                    <span
+                        style="width: 6px; height: 6px; background: #73aa3c; border-radius: 50%; display: inline-block;"></span>
+                    Singapore
                 </div>
             </div>
         </div>
