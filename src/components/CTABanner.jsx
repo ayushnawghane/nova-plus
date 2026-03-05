@@ -16,13 +16,13 @@ export default function CTABanner() {
                             Whether you're preparing for ISSB-aligned reporting, building your net-zero roadmap, or
                             strengthening ESG governance—Nova Plus is ready to support you.
                         </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mx-auto max-w-lg">
                             <input
                                 type="email"
                                 placeholder="Enter your work email"
-                                className="px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#73aa3c] w-full sm:w-auto min-w-[300px]"
+                                className="flex-1 w-full px-6 py-4 rounded-full text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-[#73aa3c] placeholder-gray-400 min-w-0"
                             />
-                            <button className="bg-[#73aa3c] px-8 py-4 rounded-full text-white font-bold hover:bg-green-600 transition-colors whitespace-nowrap shadow-lg">
+                            <button className="bg-[#73aa3c] px-8 py-4 rounded-full text-white font-bold hover:bg-green-600 transition-colors whitespace-nowrap shadow-lg shrink-0">
                                 Get Started
                             </button>
                         </div>
