@@ -1,0 +1,1133 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Tailwind v4 Theme Tokens
+   ============================================================ */
+@theme {
+  --color-nova-deep-blue: #003567;
+  --color-nova-lime-green: #73aa3c;
+  --color-nova-beige: #f5f4dd;
+  --color-nova-light-green: #b6cf7c;
+  --color-nova-light-blue: #89c8e7;
+  --color-nova-light-yellow: #f2f2ec;
+  --color-nova-light-grey: #eeeeee;
+
+  --font-sans: "Open Sans", sans-serif;
+  --font-serif: "Raleway", sans-serif;
+
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 10px 30px rgba(0, 53, 103, 0.1);
+
+  --animate-reveal: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes regFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   Global Reset / Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  color: #1f2937;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #73aa3c;
+  color: #fff;
+}
+
+/* ============================================================
+   Noise / Gradient Background Textures
+   ============================================================ */
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.gradient-mesh {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 80% 0%, hsla(81, 39%, 80%, 0.4) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(201, 63%, 72%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(55, 52%, 91%, 0.4) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(211, 100%, 20%, 0.03) 0px, transparent 50%);
+}
+
+/* ============================================================
+   Animation Delay Utilities
+   ============================================================ */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+/* ============================================================
+   Custom Utilities
+   ============================================================ */
+.text-gradient {
+  background: linear-gradient(135deg, #003567 0%, #73aa3c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #f5f4dd 0%, #f2f2ec 100%);
+}
+
+/* ============================================================
+   Animation Utility
+   ============================================================ */
+.animate-reveal {
+  animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================================
+   ESG Consultancy Section
+   ============================================================ */
+.esg-section {
+  background-color: #f7f9f8;
+  position: relative;
+  overflow: hidden;
+}
+
+.esg-section-inner-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(115, 170, 60, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(0, 53, 103, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.esg-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #73aa3c;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.esg-main-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #003567;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.esg-sub-desc {
+  font-size: 1.05rem;
+  color: #5a6b7a;
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+/* Tier Nav */
+.tier-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border: 1.5px solid #e4ebe7;
+  border-radius: 14px;
+  padding: 5px;
+  gap: 4px;
+  box-shadow: 0 2px 16px rgba(0, 53, 103, 0.07);
+  width: 100%;
+}
+
+.tier-btn {
+  flex: 1;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7c8d;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.tier-btn.active {
+  background: #003567;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(0, 53, 103, 0.22);
+}
+
+.tier-btn:not(.active):hover {
+  background: #f0f5f2;
+  color: #003567;
+}
+
+.tier-context-label {
+  font-size: 0.8rem;
+  color: #73aa3c;
+  font-weight: 600;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.tier-context-label::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: #73aa3c;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Service Cards */
+.svc-card {
+  background: #fff;
+  border: 1.5px solid #e8eeeb;
+  border-radius: 22px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(.2, .8, .2, 1), box-shadow 0.28s;
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #003567, #73aa3c);
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+.svc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 53, 103, 0.1);
+}
+
+.svc-card:hover::before {
+  opacity: 1;
+}
+
+.svc-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 22px;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+
+.svc-card:hover .svc-icon-wrap {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.svc-card-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #003567;
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.svc-divider {
+  width: 32px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: #73aa3c;
+  margin-bottom: 20px;
+}
+
+.svc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.svc-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #4a5f6e;
+  line-height: 1.45;
+}
+
+.svc-list-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #73aa3c;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.svc-card-num {
+  position: absolute;
+  bottom: 22px;
+  right: 26px;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #003567;
+  opacity: 0.04;
+  line-height: 1;
+  font-family: 'Raleway', sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================================
+   Carbon Accounting Section
+   ============================================================ */
+.carbon-svc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  transition: background 0.2s;
+}
+
+.carbon-svc-pill:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.carbon-svc-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #73aa3c;
+  flex-shrink: 0;
+}
+
+.carbon-mini-card {
+  background: #fff;
+  border: 1.5px solid #e8eeeb;
+  border-radius: 20px;
+  padding: 28px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.26s cubic-bezier(.2, .8, .2, 1), box-shadow 0.26s;
+}
+
+.carbon-mini-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #73aa3c, #003567);
+  opacity: 0;
+  transition: opacity 0.26s;
+}
+
+.carbon-mini-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 53, 103, 0.1);
+}
+
+.carbon-mini-card:hover::after {
+  opacity: 1;
+}
+
+.carbon-mini-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  transition: transform 0.22s;
+}
+
+.carbon-mini-card:hover .carbon-mini-icon {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.carbon-mini-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #003567;
+  margin-bottom: 14px;
+}
+
+.carbon-mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.carbon-mini-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.83rem;
+  color: #4a5f6e;
+  line-height: 1.4;
+}
+
+.carbon-mini-list-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #73aa3c;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* ============================================================
+   Learning Platform Section
+   ============================================================ */
+.lms-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lms-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #003567;
+}
+
+.lms-check-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #003567;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  flex-shrink: 0;
+}
+
+.lms-feat-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: background 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+
+.lms-feat-card:hover {
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(0, 53, 103, 0.1);
+  transform: translateY(-3px);
+}
+
+.lms-feat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #003567;
+  color: #73aa3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.lms-feat-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #003567;
+  margin-bottom: 2px;
+}
+
+.lms-feat-desc {
+  font-size: 0.78rem;
+  color: #5a6b7a;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Why Nova Plus Section
+   ============================================================ */
+.wnp-pillar-card {
+  background: #003567;
+  border-radius: 22px;
+  padding: 32px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(.2, .8, .2, 1), box-shadow 0.28s;
+}
+
+.wnp-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 100% 0%, rgba(115, 170, 60, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.wnp-pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 60px rgba(0, 53, 103, 0.22);
+}
+
+.wnp-pillar-num {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #73aa3c;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.wnp-pillar-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.wnp-pillar-desc {
+  font-size: 0.855rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+}
+
+.wnp-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f7f9f8;
+  border: 1.5px solid #e5eee9;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #003567;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.wnp-benefit-item:hover {
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0, 53, 103, 0.08);
+  transform: translateX(4px);
+}
+
+.wnp-benefit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #73aa3c;
+  flex-shrink: 0;
+}
+
+.wnp-stat-block {
+  text-align: center;
+  padding: 20px 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+}
+
+.wnp-stat-block:last-child {
+  border-right: none;
+}
+
+.wnp-stat-num {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #73aa3c;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.wnp-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Global Regulations Section
+   ============================================================ */
+.reg-section {
+  background: #f4f7f5;
+}
+
+.reg-jurisdiction-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1.5px solid #dde6e2;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #6b7c8d;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.reg-jurisdiction-btn.active {
+  background: #003567;
+  border-color: #003567;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 53, 103, 0.2);
+}
+
+.reg-jurisdiction-btn:not(.active):hover {
+  border-color: #003567;
+  color: #003567;
+}
+
+.reg-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(115, 170, 60, 0.12);
+  border: 1.5px solid rgba(115, 170, 60, 0.3);
+  color: #3a7a1a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.reg-status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #73aa3c;
+  animation: pulse 2s infinite;
+}
+
+.reg-point {
+  display: flex;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1.5px solid #e4ede9;
+  background: #fff;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+
+.reg-point:hover {
+  border-color: #003567;
+  box-shadow: 0 8px 24px rgba(0, 53, 103, 0.08);
+  transform: translateX(4px);
+}
+
+.reg-point-num {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: #73aa3c;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  padding-top: 3px;
+}
+
+.reg-point-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #003567;
+  margin-bottom: 5px;
+}
+
+.reg-point-desc {
+  font-size: 0.82rem;
+  color: #5a6b7a;
+  line-height: 1.55;
+}
+
+.reg-panel {
+  display: none;
+}
+
+.reg-panel.active {
+  display: grid;
+  animation: regFadeIn 0.35s ease-out forwards;
+}
+
+/* ============================================================
+   How We Work Section
+   ============================================================ */
+.hww-section {
+  background: #002a50;
+  position: relative;
+  overflow: hidden;
+}
+
+.hww-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(115, 170, 60, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(115, 170, 60, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+}
+
+.hww-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.hww-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #73aa3c;
+  margin-bottom: 14px;
+  transition: background 0.25s;
+}
+
+.hww-step:hover .hww-icon {
+  background: rgba(115, 170, 60, 0.15);
+}
+
+.hww-step-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.hww-step-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+}
+
+.hww-step-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #73aa3c;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .hww-step::after {
+    display: none;
+  }
+}
+
+/* ============================================================
+   About Us Section
+   ============================================================ */
+.about-section {
+  background: #fff;
+}
+
+.about-mission-card {
+  background: #003567;
+  border-radius: 24px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.about-mission-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 100%, rgba(115, 170, 60, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.about-vision-card {
+  background: #f4f7f5;
+  border-radius: 24px;
+  padding: 36px 32px;
+  border: 1.5px solid #e0ebe5;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.about-tag-arrow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  flex-shrink: 0;
+}
+
+.about-team-card {
+  background: #fff;
+  border: 1.5px solid #e5ede8;
+  border-radius: 20px;
+  overflow: hidden;
+  flex: 1;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.about-team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(0, 53, 103, 0.12);
+}
+
+.about-team-info {
+  padding: 20px 22px;
+}
+
+.about-team-name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #003567;
+  margin-bottom: 4px;
+}
+
+.about-team-role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #73aa3c;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-std-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid #dde8e2;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.about-std-badge:hover {
+  border-color: #003567;
+  box-shadow: 0 6px 20px rgba(0, 53, 103, 0.08);
+}
+
+.about-std-code {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #003567;
+}
+
+.about-std-label {
+  font-size: 0.72rem;
+  color: #6b7c8d;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ============================================================
+   Get In Touch Section
+   ============================================================ */
+.git-section {
+  background: #f4f7f5;
+}
+
+.git-info-card {
+  background: #003567;
+  border-radius: 24px;
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.git-info-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(115, 170, 60, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.git-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.git-contact-row:last-of-type {
+  border-bottom: none;
+}
+
+.git-contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(115, 170, 60, 0.15);
+  border: 1px solid rgba(115, 170, 60, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #73aa3c;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.git-contact-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+}
+
+.git-contact-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.5;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
+}
+
+.git-contact-value:hover {
+  color: #73aa3c;
+}
+
+.git-form-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 36px;
+  border: 1.5px solid #e0ebe5;
+  box-shadow: 0 8px 40px rgba(0, 53, 103, 0.06);
+}
+
+.git-field-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #003567;
+  margin-bottom: 8px;
+}
+
+.git-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #dde8e2;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: #1a2e3a;
+  background: #f9fbfa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.git-input:focus {
+  border-color: #003567;
+  box-shadow: 0 0 0 3px rgba(0, 53, 103, 0.07);
+  background: #fff;
+}
+
+.git-input::placeholder {
+  color: #9aabb4;
+}
+
+.git-submit {
+  width: 100%;
+  padding: 14px;
+  background: #003567;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.git-submit:hover {
+  background: #73aa3c;
+  transform: translateY(-2px);
+}
