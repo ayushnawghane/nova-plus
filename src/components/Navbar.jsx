@@ -13,7 +13,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="hidden md:flex items-center gap-8 font-semibold text-sm text-[#003567]">
-                    <a href="#/" className="hover:text-[#73aa3c] transition-colors">Platform</a>
+                    <a href="#/" className="hover:text-[#73aa3c] transition-colors">Home</a>
                     <div
                         className="relative"
                         onMouseEnter={() => setIsServicesOpen(true)}
