@@ -6,8 +6,8 @@ const standards = [
 ];
 
 const team = [
-    { name: 'Pratap', role: 'Director' },
-    { name: 'Nivethana', role: 'Head of Operations' },
+    // { name: 'Pratap', role: 'Director' },
+    // { name: 'Nivethana', role: 'Head of Operations' },
     { name: 'Pratiksha', role: 'Chief ESG Consultant' },
 ];
 
