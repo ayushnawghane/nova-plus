@@ -216,12 +216,13 @@ export default function GlobalRegulations() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-14 animate-reveal">
                     <div>
                         <span className="text-[#73aa3c] font-bold text-xs uppercase tracking-widest mb-4 block">Compliance Ready</span>
-                        <h2 className="font-serif text-4xl md:text-5xl text-[#003567] font-bold leading-tight">Global ESG Regulations</h2>
+                        <h2 className="font-serif text-3xl md:text-5xl text-[#003567] font-bold leading-tight">
+                            Why ESG Matter for Businesses in 2026?
+                        </h2>
                     </div>
                     <div>
-                        <p className="text-gray-500 text-lg leading-relaxed">
-                            We help organisations navigate the rapidly evolving ESG regulatory landscape across key
-                            jurisdictions – from Singapore & GCC to the EU, India, and the UK.
+                        <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+                            ESG is no longer just a reporting requirement. Across Singapore, the UAE, and Southeast Asia, businesses are facing growing expectations from customers, procurement teams, investors, regulators, and supply chain partners. Organizations that take a proactive approach to ESG are better positioned to manage risks, strengthen stakeholder trust, win new opportunities, and build long-term resilience.
                         </p>
                     </div>
                 </div>

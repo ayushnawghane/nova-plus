@@ -106,7 +106,7 @@ export default function Footer() {
                                 <span style={{ ...iconBoxStyle, marginTop: '2px' }}>
                                     <i className="fa-solid fa-location-dot" style={{ fontSize: '0.75rem' }}></i>
                                 </span>
-                                <span>25 International Business Park<br />#04-103B German Centre<br />Singapore 609916</span>
+                                <span>25 International Business Park, German Centre,<br />Singapore 609916</span>
                             </div>
                         </div>
 

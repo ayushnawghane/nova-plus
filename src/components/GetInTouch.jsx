@@ -19,7 +19,7 @@ export default function GetInTouch() {
                     </div>
                     <div>
                         <p className="text-gray-500 text-lg leading-relaxed">
-                            Nova Plus offers support for ISSB-aligned reporting, building net-zero roadmaps, and strengthening ESG governance.
+                            Partner with Nova Plus to strengthen ESG performance through sustainability reporting, carbon accounting, supplier sustainability, and governance solutions tailored to your business needs.
                         </p>
                     </div>
                 </div>
@@ -53,8 +53,7 @@ export default function GetInTouch() {
                                     <p className="git-contact-label">Singapore Office</p>
                                     <p className="git-contact-value">
                                         Nova Plus Pte Ltd<br />
-                                        25 International Business Park<br />
-                                        #04-103B German Centre<br />
+                                        25 International Business Park, German Centre,<br />
                                         Singapore 609916
                                     </p>
                                 </div>
@@ -112,13 +111,16 @@ export default function GetInTouch() {
                                         style={{ appearance: 'none', WebkitAppearance: 'none', paddingRight: '40px' }}
                                     >
                                         <option value="" disabled defaultValue="">Select a service</option>
-                                        <option>ESG Consultancy</option>
-                                        <option>Carbon Accounting &amp; Net Zero</option>
-                                        <option>Carbon Credit Consultancy</option>
-                                        <option>ESG Reporting &amp; Disclosure</option>
-                                        <option>ESG Learning Platform</option>
-                                        <option>Regulatory Assessment</option>
-                                        <option>Other</option>
+                                        <option>ESG &amp; Sustainability Reporting</option>
+                                        <option>GHG Accounting &amp; Carbon Footprinting</option>
+                                        <option>ESG Data Management &amp; Dashboard Development</option>
+                                        <option>Supplier ESG Assessment</option>
+                                        <option>ESG Policy Development</option>
+                                        <option>EcoVadis &amp; Sustainability Ratings Support</option>
+                                        <option>ESG Consulting &amp; Implementation</option>
+                                        <option>ESG Strategy &amp; Roadmap Development</option>
+                                        <option>ESG Training &amp; Capacity Building</option>
+                                        <option>Other / General Inquiry</option>
                                     </select>
                                     <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#003567] text-xs">
                                         <i className="fa-solid fa-chevron-down"></i>

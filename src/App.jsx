@@ -2,12 +2,19 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import IndustrialEcosystems from './components/IndustrialEcosystems'
+import PartnerWithUs from './components/PartnerWithUs'
+import ESGConsultingServices from './components/ESGConsultingServices'
 import ESGConsultancy from './components/ESGConsultancy'
 import CarbonAccounting from './components/CarbonAccounting'
 import LearningPlatform from './components/LearningPlatform'
 import WhyNovaPlus from './components/WhyNovaPlus'
 import GlobalRegulations from './components/GlobalRegulations'
+import ESGPriorities from './components/ESGPriorities'
+import FAQ from './components/FAQ'
 import HowWeWork from './components/HowWeWork'
+import ESGCapabilityBuilding from './components/ESGCapabilityBuilding'
+import ClimateReportingTimeline from './components/ClimateReportingTimeline'
 import AboutUs from './components/AboutUs'
 import GetInTouch from './components/GetInTouch'
 import CTABanner from './components/CTABanner'
@@ -46,13 +53,19 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <ESGConsultancy />
-      <CarbonAccounting />
-      <LearningPlatform />
-      <WhyNovaPlus />
-      <GlobalRegulations />
+      <IndustrialEcosystems />
+      <PartnerWithUs />
+      <ESGConsultingServices />
       <HowWeWork />
-      <AboutUs />
+      <ESGCapabilityBuilding />
+      <ClimateReportingTimeline />
+      {/* <CarbonAccounting />
+      <LearningPlatform />
+      <WhyNovaPlus /> */}
+      <GlobalRegulations />
+      <ESGPriorities />
+      <FAQ />
+      {/* <AboutUs /> */}
       <GetInTouch />
       <CTABanner />
     </>
