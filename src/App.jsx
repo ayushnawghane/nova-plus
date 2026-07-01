@@ -19,35 +19,19 @@ import AboutUs from './components/AboutUs'
 import GetInTouch from './components/GetInTouch'
 import CTABanner from './components/CTABanner'
 import Footer from './components/Footer'
+import ServicesPage from './components/ServicesPage'
+import CorporateTrainingPage from './components/CorporateTrainingPage'
+import InsightsPage from './components/InsightsPage'
+import PageHeader from './components/PageHeader'
 
 const HOME_ROUTE = '#/'
 const ESG_CARBON_MARKET_ROUTE = '#/services/esg-carbon-market'
+const ESG_CONSULTING_ROUTE = '#/services'
+const CORPORATE_TRAINING_ROUTE = '#/services/corporate-training'
 const LMS_ROUTE = '#/services/learning-management-system'
 const CONTACT_US_ROUTE = '#/contact-us'
-
-function PageIntro({ eyebrow, title, description }) {
-  return (
-    <section className="pt-34 pb-12 md:pb-16 px-6 gradient-mesh relative overflow-hidden">
-      <div className="page-intro-glow page-intro-glow-left"></div>
-      <div className="page-intro-glow page-intro-glow-right"></div>
-      <div className="max-w-7xl mx-auto">
-        <div className="page-intro-card animate-reveal">
-          <div className="page-intro-badge-row">
-            <span className="page-intro-badge">{eyebrow}</span>
-          </div>
-          <h1 className="font-serif text-4xl md:text-6xl text-[#003567] font-bold leading-tight mb-6">{title}</h1>
-          <p className="text-gray-600 text-lg max-w-3xl leading-relaxed">{description}</p>
-          <div className="page-intro-actions">
-            <a href="#/contact-us" className="page-intro-primary-link">
-              Talk to our team <i className="fa-solid fa-arrow-right text-xs"></i>
-            </a>
-            <a href="#/" className="page-intro-secondary-link">Back to Home</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+const ABOUT_US_ROUTE = '#/about-us'
+const INSIGHTS_ROUTE = '#/insights'
 
 function HomePage() {
   return (
@@ -75,13 +59,15 @@ function HomePage() {
 function ESGCarbonMarketPage() {
   return (
     <>
-      <PageIntro
+      <PageHeader
         eyebrow="Services"
         title="ESG Carbon Market"
         description="End-to-end support for carbon accounting, decarbonization strategy, and credible carbon market participation."
+        image="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=600&auto=format&fit=crop"
       />
       <ESGConsultancy />
       <CarbonAccounting />
+      <CTABanner />
     </>
   )
 }
@@ -89,12 +75,14 @@ function ESGCarbonMarketPage() {
 function LearningManagementSystemPage() {
   return (
     <>
-      <PageIntro
+      <PageHeader
         eyebrow="Services"
         title="Learning Management System"
         description="Build ESG capability across your organization with a scalable learning platform and practical, role-based training."
+        image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop"
       />
       <LearningPlatform />
+      <CTABanner />
     </>
   )
 }
@@ -102,10 +90,11 @@ function LearningManagementSystemPage() {
 function ContactUsPage() {
   return (
     <>
-      <PageIntro
+      <PageHeader
         eyebrow="Contact"
         title="Contact Us"
         description="Tell us your ESG priorities and our team will help you plan the right next steps."
+        image="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=600&auto=format&fit=crop"
       />
       <GetInTouch />
     </>
@@ -135,12 +124,28 @@ function App() {
       return <ESGCarbonMarketPage />
     }
 
+    if (route === ESG_CONSULTING_ROUTE) {
+      return <ServicesPage />
+    }
+
+    if (route === CORPORATE_TRAINING_ROUTE) {
+      return <CorporateTrainingPage />
+    }
+
     if (route === LMS_ROUTE) {
       return <LearningManagementSystemPage />
     }
 
     if (route === CONTACT_US_ROUTE) {
       return <ContactUsPage />
+    }
+
+    if (route === ABOUT_US_ROUTE) {
+      return <AboutUs />
+    }
+
+    if (route === INSIGHTS_ROUTE) {
+      return <InsightsPage />
     }
 
     return <HomePage />

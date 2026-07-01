@@ -153,9 +153,14 @@ export default function Footer() {
                                 Services
                             </h4>
                             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                {['ESG Consultancy', 'Carbon Accounting & Net Zero', 'Training', 'LMS', 'Products'].map((item) => (
-                                    <li key={item}>
-                                        <a href="#" style={linkStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{item}</a>
+                                {[
+                                    { name: 'ESG Consulting', href: '#/services' },
+                                    { name: 'Carbon Accounting & Net Zero', href: '#/services' },
+                                    { name: 'Corporate Training', href: '#/services/corporate-training' },
+                                    { name: 'ESG Insights', href: '#/insights' }
+                                ].map((item) => (
+                                    <li key={item.name}>
+                                        <a href={item.href} style={linkStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{item.name}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -167,9 +172,13 @@ export default function Footer() {
                                 Company
                             </h4>
                             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                                {['Why Nova Plus', 'About Us', 'Contact Us'].map((item) => (
-                                    <li key={item}>
-                                        <a href="#" style={linkStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{item}</a>
+                                {[
+                                    { name: 'Why Nova Plus', href: '#/' },
+                                    { name: 'About Us', href: '#/about-us' },
+                                    { name: 'Contact Us', href: '#/contact-us' }
+                                ].map((item) => (
+                                    <li key={item.name}>
+                                        <a href={item.href} style={linkStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>{item.name}</a>
                                     </li>
                                 ))}
                             </ul>
