@@ -116,9 +116,6 @@ function NotFoundPage() {
         <p className="text-gray-600 mb-8">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
-        <p className="text-gray-500 text-sm">
-          This website is currently unavailable.
-        </p>
       </div>
     </div>
   )
