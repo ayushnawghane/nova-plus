@@ -33,6 +33,7 @@ const CONTACT_US_ROUTE = '#/contact-us'
 const ABOUT_US_ROUTE = '#/about-us'
 const INSIGHTS_ROUTE = '#/insights'
 
+/*
 function HomePage() {
   return (
     <>
@@ -43,13 +44,13 @@ function HomePage() {
       <HowWeWork />
       <ESGCapabilityBuilding />
       <ClimateReportingTimeline />
-      {/* <CarbonAccounting />
+      {* <CarbonAccounting />
       <LearningPlatform />
-      <WhyNovaPlus /> */}
+      <WhyNovaPlus /> *}
       <GlobalRegulations />
       <ESGPriorities />
       <FAQ />
-      {/* <AboutUs /> */}
+      {* <AboutUs /> *}
       <GetInTouch />
       <CTABanner />
     </>
@@ -104,8 +105,27 @@ function ContactUsPage() {
 function getCurrentRoute() {
   return window.location.hash || HOME_ROUTE
 }
+*/
+
+function NotFoundPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+      <div className="max-w-md w-full text-center">
+        <h1 className="text-9xl font-bold text-gray-200 mb-4">404</h1>
+        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
+        <p className="text-gray-600 mb-8">
+          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+        </p>
+        <p className="text-gray-500 text-sm">
+          This website is currently unavailable.
+        </p>
+      </div>
+    </div>
+  )
+}
 
 function App() {
+  /*
   const [route, setRoute] = useState(getCurrentRoute())
 
   useEffect(() => {
@@ -150,13 +170,11 @@ function App() {
 
     return <HomePage />
   }
+  */
 
   return (
     <div className="font-sans text-gray-800 bg-white antialiased overflow-x-hidden">
-      <div className="noise-bg"></div>
-      <Navbar />
-      {renderPage()}
-      <Footer />
+      <NotFoundPage />
     </div>
   )
 }
