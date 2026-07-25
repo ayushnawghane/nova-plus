@@ -33,147 +33,132 @@ const CONTACT_US_ROUTE = '#/contact-us'
 const ABOUT_US_ROUTE = '#/about-us'
 const INSIGHTS_ROUTE = '#/insights'
 
-/*
 function HomePage() {
   return (
-    <>
-      <Hero />
-      <IndustrialEcosystems />
-      <PartnerWithUs />
-      <ESGConsultingServices />
-      <HowWeWork />
-      <ESGCapabilityBuilding />
-      <ClimateReportingTimeline />
-      {* <CarbonAccounting />
-      <LearningPlatform />
-      <WhyNovaPlus /> *}
-      <GlobalRegulations />
-      <ESGPriorities />
-      <FAQ />
-      {* <AboutUs /> *}
-      <GetInTouch />
-      <CTABanner />
-    </>
-  )
-}
+      <>
+            <Hero />
+                  <IndustrialEcosystems />
+                        <PartnerWithUs />
+                              <ESGConsultingServices />
+                                    <HowWeWork />
+                                          <ESGCapabilityBuilding />
+                                                <ClimateReportingTimeline />
+                                                      {/* <CarbonAccounting />
+                                                            <LearningPlatform />
+                                                                  <WhyNovaPlus /> */}
+                                                                        <GlobalRegulations />
+                                                                              <ESGPriorities />
+                                                                                    <FAQ />
+                                                                                          {/* <AboutUs /> */}
+                                                                                                <GetInTouch />
+                                                                                                      <CTABanner />
+                                                                                                          </>
+                                                                                                            )
+                                                                                                            }
 
-function ESGCarbonMarketPage() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="Services"
-        title="ESG Carbon Market"
-        description="End-to-end support for carbon accounting, decarbonization strategy, and credible carbon market participation."
-        image="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=600&auto=format&fit=crop"
-      />
-      <ESGConsultancy />
-      <CarbonAccounting />
-      <CTABanner />
-    </>
-  )
-}
+                                                                                                            function ESGCarbonMarketPage() {
+                                                                                                              return (
+                                                                                                                  <>
+                                                                                                                        <PageHeader
+                                                                                                                                eyebrow="Services"
+                                                                                                                                        title="ESG Carbon Market"
+                                                                                                                                                description="End-to-end support for carbon accounting, decarbonization strategy, and credible carbon market participation."
+                                                                                                                                                        image="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=600&auto=format&fit=crop"
+                                                                                                                                                              />
+                                                                                                                                                                    <ESGConsultancy />
+                                                                                                                                                                          <CarbonAccounting />
+                                                                                                                                                                                <CTABanner />
+                                                                                                                                                                                    </>
+                                                                                                                                                                                      )
+                                                                                                                                                                                      }
 
-function LearningManagementSystemPage() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="Services"
-        title="Learning Management System"
-        description="Build ESG capability across your organization with a scalable learning platform and practical, role-based training."
-        image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop"
-      />
-      <LearningPlatform />
-      <CTABanner />
-    </>
-  )
-}
+                                                                                                                                                                                      function LearningManagementSystemPage() {
+                                                                                                                                                                                        return (
+                                                                                                                                                                                            <>
+                                                                                                                                                                                                  <PageHeader
+                                                                                                                                                                                                          eyebrow="Services"
+                                                                                                                                                                                                                  title="Learning Management System"
+                                                                                                                                                                                                                          description="Build ESG capability across your organization with a scalable learning platform and practical, role-based training."
+                                                                                                                                                                                                                                  image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop"
+                                                                                                                                                                                                                                        />
+                                                                                                                                                                                                                                              <LearningPlatform />
+                                                                                                                                                                                                                                                    <CTABanner />
+                                                                                                                                                                                                                                                        </>
+                                                                                                                                                                                                                                                          )
+                                                                                                                                                                                                                                                          }
 
-function ContactUsPage() {
-  return (
-    <>
-      <PageHeader
-        eyebrow="Contact"
-        title="Contact Us"
-        description="Tell us your ESG priorities and our team will help you plan the right next steps."
-        image="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=600&auto=format&fit=crop"
-      />
-      <GetInTouch />
-    </>
-  )
-}
+                                                                                                                                                                                                                                                          function ContactUsPage() {
+                                                                                                                                                                                                                                                            return (
+                                                                                                                                                                                                                                                                <>
+                                                                                                                                                                                                                                                                      <PageHeader
+                                                                                                                                                                                                                                                                              eyebrow="Contact"
+                                                                                                                                                                                                                                                                                      title="Contact Us"
+                                                                                                                                                                                                                                                                                              description="Tell us your ESG priorities and our team will help you plan the right next steps."
+                                                                                                                                                                                                                                                                                                      image="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=600&auto=format&fit=crop"
+                                                                                                                                                                                                                                                                                                            />
+                                                                                                                                                                                                                                                                                                                  <GetInTouch />
+                                                                                                                                                                                                                                                                                                                      </>
+                                                                                                                                                                                                                                                                                                                        )
+                                                                                                                                                                                                                                                                                                                        }
 
-function getCurrentRoute() {
-  return window.location.hash || HOME_ROUTE
-}
-*/
+                                                                                                                                                                                                                                                                                                                        function getCurrentRoute() {
+                                                                                                                                                                                                                                                                                                                          return window.location.hash || HOME_ROUTE
+                                                                                                                                                                                                                                                                                                                          }
 
-function NotFoundPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full text-center">
-        <h1 className="text-9xl font-bold text-gray-200 mb-4">404</h1>
-        <h2 className="text-3xl font-semibold text-gray-800 mb-4">Page Not Found</h2>
-        <p className="text-gray-600 mb-8">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
-        </p>
-      </div>
-    </div>
-  )
-}
+                                                                                                                                                                                                                                                                                                                          function App() {
+                                                                                                                                                                                                                                                                                                                            const [route, setRoute] = useState(getCurrentRoute())
 
-function App() {
-  /*
-  const [route, setRoute] = useState(getCurrentRoute())
+                                                                                                                                                                                                                                                                                                                              useEffect(() => {
+                                                                                                                                                                                                                                                                                                                                  const handleHashChange = () => setRoute(getCurrentRoute())
+                                                                                                                                                                                                                                                                                                                                      window.addEventListener('hashchange', handleHashChange)
 
-  useEffect(() => {
-    const handleHashChange = () => setRoute(getCurrentRoute())
-    window.addEventListener('hashchange', handleHashChange)
+                                                                                                                                                                                                                                                                                                                                          if (!window.location.hash) {
+                                                                                                                                                                                                                                                                                                                                                window.location.hash = HOME_ROUTE
+                                                                                                                                                                                                                                                                                                                                                    }
 
-    if (!window.location.hash) {
-      window.location.hash = HOME_ROUTE
-    }
+                                                                                                                                                                                                                                                                                                                                                        return () => window.removeEventListener('hashchange', handleHashChange)
+                                                                                                                                                                                                                                                                                                                                                          }, [])
 
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
+                                                                                                                                                                                                                                                                                                                                                            const renderPage = () => {
+                                                                                                                                                                                                                                                                                                                                                                if (route === ESG_CARBON_MARKET_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                      return <ESGCarbonMarketPage />
+                                                                                                                                                                                                                                                                                                                                                                          }
 
-  const renderPage = () => {
-    if (route === ESG_CARBON_MARKET_ROUTE) {
-      return <ESGCarbonMarketPage />
-    }
+                                                                                                                                                                                                                                                                                                                                                                              if (route === ESG_CONSULTING_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                                    return <ServicesPage />
+                                                                                                                                                                                                                                                                                                                                                                                        }
 
-    if (route === ESG_CONSULTING_ROUTE) {
-      return <ServicesPage />
-    }
+                                                                                                                                                                                                                                                                                                                                                                                            if (route === CORPORATE_TRAINING_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                                                  return <CorporateTrainingPage />
+                                                                                                                                                                                                                                                                                                                                                                                                      }
 
-    if (route === CORPORATE_TRAINING_ROUTE) {
-      return <CorporateTrainingPage />
-    }
+                                                                                                                                                                                                                                                                                                                                                                                                          if (route === LMS_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                                                                return <LearningManagementSystemPage />
+                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-    if (route === LMS_ROUTE) {
-      return <LearningManagementSystemPage />
-    }
+                                                                                                                                                                                                                                                                                                                                                                                                                        if (route === CONTACT_US_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                                                                              return <ContactUsPage />
+                                                                                                                                                                                                                                                                                                                                                                                                                                  }
 
-    if (route === CONTACT_US_ROUTE) {
-      return <ContactUsPage />
-    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                      if (route === ABOUT_US_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                            return <AboutUs />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                }
 
-    if (route === ABOUT_US_ROUTE) {
-      return <AboutUs />
-    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    if (route === INSIGHTS_ROUTE) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          return <InsightsPage />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                              }
 
-    if (route === INSIGHTS_ROUTE) {
-      return <InsightsPage />
-    }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  return <HomePage />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
 
-    return <HomePage />
-  }
-  */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      return (
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div className="font-sans text-gray-800 bg-white antialiased overflow-x-hidden">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div className="noise-bg"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <Navbar />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            {renderPage()}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <Footer />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        )
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
 
-  return (
-    <div className="font-sans text-gray-800 bg-white antialiased overflow-x-hidden">
-      <NotFoundPage />
-    </div>
-  )
-}
-
-export default App
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        export default App
