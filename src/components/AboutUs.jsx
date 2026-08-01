@@ -231,7 +231,12 @@ export default function AboutUs() {
                                         </button>
 
                                         {/* SVG Connecting lines */}
-                                        <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+                                        <svg
+                                            className="absolute inset-0 w-full h-full pointer-events-none"
+                                            style={{ zIndex: 1 }}
+                                            viewBox="0 0 420 315"
+                                            preserveAspectRatio="none"
+                                        >
                                             <path
                                                 d="M 105,95 Q 180,120 280,225"
                                                 fill="none"
