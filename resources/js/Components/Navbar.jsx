@@ -21,6 +21,7 @@ export default function Navbar() {
                     <Link href={route('services')} className="hover:text-[#73aa3c] transition-colors">Services</Link>
                     <Link href={route('services.corporate-training')} className="hover:text-[#73aa3c] transition-colors">ESG Corporate Training</Link>
                     <Link href={route('insights')} className="hover:text-[#73aa3c] transition-colors">ESG Insights</Link>
+                    <Link href={route('blog.index')} className="hover:text-[#73aa3c] transition-colors">Blog</Link>
                 </div>
 
                 {/* Desktop CTA */}
@@ -84,6 +85,13 @@ export default function Navbar() {
                         className="hover:text-[#73aa3c] transition-colors border-b border-white/10 pb-4 text-left"
                     >
                         ESG Insights
+                    </Link>
+                    <Link
+                        href={route('blog.index')}
+                        onClick={() => setIsOpen(false)}
+                        className="hover:text-[#73aa3c] transition-colors border-b border-white/10 pb-4 text-left"
+                    >
+                        Blog
                     </Link>
                 </div>
 

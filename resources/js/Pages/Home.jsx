@@ -12,7 +12,7 @@ import FAQ from '../Components/FAQ';
 import GetInTouch from '../Components/GetInTouch';
 import CTABanner from '../Components/CTABanner';
 
-export default function Home() {
+export default function Home({ faqs = [] }) {
     return (
         <Layout>
             <Hero />
@@ -27,7 +27,7 @@ export default function Home() {
             <WhyNovaPlus /> */}
             <GlobalRegulations />
             <ESGPriorities />
-            <FAQ />
+            <FAQ faqs={faqs} />
             {/* <AboutUs /> */}
             <GetInTouch />
             <CTABanner />
