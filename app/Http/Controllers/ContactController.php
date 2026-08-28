@@ -32,4 +32,19 @@ class ContactController extends Controller
 
         return back()->with('success', "Thanks for reaching out — we'll be in touch within 24 hours.");
     }
+
+    public function downloadBrochure(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'phone' => ['required', 'string', 'max:50'],
+        ]);
+
+        $enquiry = Enquiry::create([...$validated, 'query_type' => 'Brochure Download']);
+
+        Mail::to(config('contact.email'))->send(new ContactEnquiry($enquiry));
+
+        return back()->with('success', 'Thanks! Your download will begin shortly.');
+    }
 }

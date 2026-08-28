@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>NovaPlus - Practical ESG. Regulatory Confidence.</title>
+    <title>Industrial ESG Consultancy | ESG Reporting & Disclosure | Nova Plus</title>
+    <meta name="description" content="Helping industrial and infrastructure businesses across Singapore, the UAE, and Southeast Asia strengthen ESG reporting, governance, supply chains, and sustainable business growth." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
         rel="stylesheet">
 
     <!-- FontAwesome for Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     @routes
     @viteReactRefresh

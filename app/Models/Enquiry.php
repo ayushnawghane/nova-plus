@@ -9,6 +9,7 @@ class Enquiry extends Model
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'company_name',
         'query_type',
         'message',

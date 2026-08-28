@@ -3,7 +3,7 @@ import { Head, useForm, usePage } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import Modal from '@/Components/Admin/Modal';
 import ConfirmDialog from '@/Components/Admin/ConfirmDialog';
-import { Search, Trash2, Mail, Building2, Tag, Eye, MessageSquareOff } from 'lucide-react';
+import { Search, Trash2, Mail, Phone, Building2, Tag, Eye, MessageSquareOff } from 'lucide-react';
 
 export default function EnquiriesIndex({ enquiries }) {
     const { auth } = usePage().props;
@@ -20,6 +20,7 @@ export default function EnquiriesIndex({ enquiries }) {
             (e) =>
                 e.name.toLowerCase().includes(q) ||
                 e.email.toLowerCase().includes(q) ||
+                (e.phone || '').toLowerCase().includes(q) ||
                 (e.company_name || '').toLowerCase().includes(q) ||
                 (e.query_type || '').toLowerCase().includes(q)
         );
@@ -73,6 +74,11 @@ export default function EnquiriesIndex({ enquiries }) {
                                         <p className="text-xs text-slate-400 flex items-center gap-1">
                                             <Mail size={11} /> {e.email}
                                         </p>
+                                        {e.phone && (
+                                            <p className="text-xs text-slate-400 flex items-center gap-1">
+                                                <Phone size={11} /> {e.phone}
+                                            </p>
+                                        )}
                                     </td>
                                     <td className="px-4 py-4 text-slate-500">{e.company_name || '—'}</td>
                                     <td className="px-4 py-4 text-slate-500">{e.query_type || '—'}</td>
@@ -126,6 +132,16 @@ export default function EnquiriesIndex({ enquiries }) {
                                 {viewing.email}
                             </a>
                         </div>
+                        {viewing.phone && (
+                            <div>
+                                <p className="text-xs font-bold uppercase tracking-wide text-[#003567]/60 mb-1 flex items-center gap-1.5">
+                                    <Phone size={12} /> Phone
+                                </p>
+                                <a href={`tel:${viewing.phone}`} className="text-sm font-semibold text-[#73aa3c] hover:underline">
+                                    {viewing.phone}
+                                </a>
+                            </div>
+                        )}
                         {viewing.company_name && (
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-wide text-[#003567]/60 mb-1 flex items-center gap-1.5">

@@ -5,7 +5,34 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4 px-6 transition-all duration-300">
+        <>
+            {/* Top contact strip */}
+            <div className="fixed top-0 w-full z-[60] bg-[#003567] text-white/70 text-xs">
+                <div className="max-w-7xl mx-auto flex justify-between items-center px-6 h-9">
+                    <div className="flex items-center gap-5">
+                        <span className="flex items-center gap-1.5">
+                            <i className="fa-solid fa-location-dot text-[#73aa3c]"></i> Singapore
+                        </span>
+                        <a href="mailto:sales@novaplus.sg" className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors">
+                            <i className="fa-regular fa-envelope text-[#73aa3c]"></i> sales@novaplus.sg
+                        </a>
+                        <a href="tel:+6590882853" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                            <i className="fa-solid fa-phone text-[#73aa3c]"></i> +65 9088 2853
+                        </a>
+                    </div>
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 hover:bg-[#73aa3c] transition-colors"
+                    >
+                        <i className="fa-brands fa-linkedin-in text-[11px]"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav className="fixed top-9 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4 px-6 transition-all duration-300">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center">
@@ -42,7 +69,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Navigation Drawer */}
-            <div className={`fixed inset-0 top-[72px] h-[calc(100vh-72px)] bg-[#003567] text-white z-40 md:hidden flex flex-col justify-between p-8 transition-all duration-500 transform ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'} overflow-y-auto`}>
+            <div className={`fixed inset-0 top-[108px] h-[calc(100vh-108px)] bg-[#003567] text-white z-40 md:hidden flex flex-col justify-between p-8 transition-all duration-500 transform ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'} overflow-y-auto`}>
                 {/* Background glow effects */}
                 <div className="absolute inset-0 opacity-30 pointer-events-none">
                     <div className="absolute -top-10 -right-10 w-80 h-80 rounded-full bg-[#73aa3c]/30 blur-3xl animate-pulse-slow"></div>
@@ -115,6 +142,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-        </nav>
+            </nav>
+        </>
     );
 }

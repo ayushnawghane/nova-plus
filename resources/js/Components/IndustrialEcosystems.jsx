@@ -72,7 +72,7 @@ export default function IndustrialEcosystems() {
     };
 
     return (
-        <section className="relative py-24 bg-gradient-to-b from-[#031122] to-[#081e35] text-white overflow-hidden">
+        <section className="relative py-24 bg-[#122066] text-white overflow-hidden">
             {/* Custom styles for hidden scrollbar */}
             <style dangerouslySetInnerHTML={{ __html: `
                 .no-scrollbar::-webkit-scrollbar {
@@ -91,10 +91,7 @@ export default function IndustrialEcosystems() {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 animate-reveal">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/50 border border-blue-900/30 text-[#73aa3c] font-bold text-xs uppercase tracking-wider mb-4">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#73aa3c] animate-pulse"></span>
-                        EcoSphere
-                    </div>
+                    
                     <h2 className="font-serif text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 text-white">
                         ESG Challenges Across <br className="hidden sm:inline" /> Industrial Ecosystems
                     </h2>
@@ -115,26 +112,26 @@ export default function IndustrialEcosystems() {
                                 href={BLOG_LINK}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block shrink-0 w-[300px] sm:w-[350px] bg-[#0b223c]/90 border border-blue-950/60 rounded-t-2xl shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-950/30 hover:border-blue-800/40 relative group snap-start cursor-pointer"
+                                className="block shrink-0 w-[300px] sm:w-[350px] bg-[#182b82]/90 border border-blue-900/50 rounded-t-2xl shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-blue-900/30 hover:border-blue-700/40 relative group snap-start cursor-pointer"
                                 style={{ minHeight: '380px' }}
                             >
                                 {/* Background Notch cut-out helper (placed in bottom-right corner) */}
-                                <div className="absolute bottom-0 right-0 w-8 h-8 bg-[#081e35] border-t border-l border-blue-950/60 rounded-tl-lg pointer-events-none z-20"></div>
-                                <div className="absolute bottom-0 right-0 w-8 h-8 bg-[#081e35] transition-colors duration-300 pointer-events-none z-10"></div>
+                                <div className="absolute bottom-0 right-0 w-8 h-8 bg-[#122066] border-t border-l border-blue-900/50 rounded-tl-lg pointer-events-none z-20"></div>
+                                <div className="absolute bottom-0 right-0 w-8 h-8 bg-[#122066] transition-colors duration-300 pointer-events-none z-10"></div>
 
                                 {/* Top Image */}
                                 <div className="relative h-44 w-full overflow-hidden rounded-t-2xl">
-                                    <img 
-                                        src={item.image} 
+                                    <img
+                                        src={item.image}
                                         alt={item.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     {/* Gradient overlay on image */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b223c] via-transparent to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#182b82] via-transparent to-transparent"></div>
                                 </div>
 
                                 {/* Icon Badge overlapping bottom left */}
-                                <div className="absolute top-[154px] left-6 w-11 h-11 rounded-full bg-[#73aa3c] text-white flex items-center justify-center shadow-lg border-2 border-[#0b223c] z-20 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
+                                <div className="absolute top-[154px] left-6 w-11 h-11 rounded-full bg-[#73aa3c] text-white flex items-center justify-center shadow-lg border-2 border-[#182b82] z-20 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">
                                     <i className={`${item.icon} text-sm`}></i>
                                 </div>
 
@@ -149,7 +146,7 @@ export default function IndustrialEcosystems() {
                                         </p>
                                     </div>
                                     <div className="mt-4 flex items-center gap-1.5 text-[#73aa3c] text-xs font-semibold uppercase tracking-wider group-hover:text-white transition-colors">
-                                        Read Blog <i className="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1 transition-transform"></i>
+                                        Read More <i className="fa-solid fa-arrow-right text-[10px] transform group-hover:translate-x-1 transition-transform"></i>
                                     </div>
                                 </div>
                             </a>

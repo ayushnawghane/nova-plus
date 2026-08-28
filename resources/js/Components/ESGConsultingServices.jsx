@@ -2,74 +2,67 @@ import { Link } from '@inertiajs/react';
 
 const services = [
     {
-        num: "01",
         title: "ESG Gap Assessment & Benchmarking",
         span: "lg:col-span-1",
-        icon: "fa-solid fa-chart-line"
+        icon: "fa-solid fa-chart-line",
+        image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=700&auto=format&fit=crop"
     },
     {
-        num: "02",
         title: "ESG & Sustainability Reporting",
         span: "lg:col-span-2",
-        icon: "fa-solid fa-file-lines"
+        icon: "fa-solid fa-file-lines",
+        image: "https://images.unsplash.com/photo-1762427354251-f008b64dbc32?q=80&w=900&auto=format&fit=crop"
     },
     {
-        num: "03",
         title: "GHG Accounting",
         span: "lg:col-span-1",
-        icon: "fa-solid fa-leaf"
+        icon: "fa-solid fa-leaf",
+        image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=700&auto=format&fit=crop"
     },
     {
-        num: "04",
         title: "ESG Data Management & Dashboard",
         span: "lg:col-span-1",
-        icon: "fa-solid fa-gauge"
+        icon: "fa-solid fa-gauge",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=700&auto=format&fit=crop"
     },
     {
-        num: "05",
         title: "Supplier ESG Assessment",
         span: "lg:col-span-1",
-        icon: "fa-solid fa-truck"
+        icon: "fa-solid fa-truck",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=700&auto=format&fit=crop"
     },
     {
-        num: "06",
         title: "ESG Policy Development",
         span: "lg:col-span-1",
-        icon: "fa-solid fa-scale-balanced"
+        icon: "fa-solid fa-scale-balanced",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=700&auto=format&fit=crop"
     },
     {
-        num: "07",
         title: "EcoVadis & ESG Ratings Support",
         span: "lg:col-span-2",
-        icon: "fa-solid fa-award"
+        icon: "fa-solid fa-award",
+        image: "/images/ecovadis.png",
+        imageHasBranding: true
     }
 ];
 
-const SERVICES_ROUTE = route('services.esg-carbon-market');
+const SERVICES_ROUTE = route('services');
 
 export default function ESGConsultingServices() {
-    const handleMouseMove = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-        e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-    };
-
     return (
         <section className="relative py-24 bg-gradient-to-b from-[#081e35] to-[#031122] text-white overflow-hidden">
             {/* Hanging Leaf Watermark (Top Left) */}
-            <img 
-                src="/frameworks/8.png" 
-                alt="Leaf Watermark Top Left" 
-                className="absolute -top-12 -left-12 w-52 h-52 md:w-72 md:h-72 pointer-events-none opacity-15 rotate-[135deg] object-contain" 
+            <img
+                src="/frameworks/8.png"
+                alt="Leaf Watermark Top Left"
+                className="absolute -top-12 -left-12 w-52 h-52 md:w-72 md:h-72 pointer-events-none opacity-15 rotate-[135deg] object-contain"
             />
 
             {/* Bottom-Right Leaf Watermark */}
-            <img 
-                src="/frameworks/8.png" 
-                alt="Leaf Watermark Bottom Right" 
-                className="absolute -bottom-6 -right-6 w-48 h-48 md:w-64 md:h-64 pointer-events-none opacity-10 object-contain" 
+            <img
+                src="/frameworks/8.png"
+                alt="Leaf Watermark Bottom Right"
+                className="absolute -bottom-6 -right-6 w-48 h-48 md:w-64 md:h-64 pointer-events-none opacity-10 object-contain"
             />
 
             {/* Glowing spot background */}
@@ -93,30 +86,38 @@ export default function ESGConsultingServices() {
                         <Link
                             key={index}
                             href={SERVICES_ROUTE}
-                            onMouseMove={handleMouseMove}
-                            className={`group relative flex flex-col justify-between p-8 rounded-3xl bg-[#0c233c]/60 border border-blue-900/30 backdrop-blur-md transition-all duration-500 hover:-translate-y-1.5 hover:border-[#73aa3c]/30 hover:shadow-xl hover:shadow-[#73aa3c]/5 overflow-hidden ${item.span}`}
-                            style={{ 
-                                minHeight: '190px',
-                                backgroundImage: 'radial-gradient(circle 120px at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(115, 170, 60, 0.12) 0%, transparent 100%)'
-                            }}
+                            className={`group relative flex flex-col justify-end rounded-3xl border border-blue-900/30 transition-all duration-500 hover:-translate-y-1.5 hover:border-[#73aa3c]/40 hover:shadow-xl hover:shadow-[#73aa3c]/5 overflow-hidden ${item.span}`}
+                            style={{ minHeight: '260px' }}
                         >
-                            {/* Card Header (Number & Subtle Icon Watermark) */}
-                            <div className="flex justify-between items-start">
-                                <span className="font-serif text-xs md:text-sm font-bold tracking-wider text-[#73aa3c]">
-                                    {item.num} // SERVICE
-                                </span>
-                                <i className={`${item.icon} text-lg text-blue-100/10 group-hover:text-[#73aa3c]/20 transition-colors duration-500`}></i>
+                            {/* Background Image */}
+                            <img
+                                src={item.image}
+                                alt={item.title}
+                                loading="lazy"
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+
+                            {/* Gradient overlay for legibility (skipped when the image already carries its own branding) */}
+                            {!item.imageHasBranding && (
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#03102199] via-[#031021]/70 to-[#031021]/20 group-hover:from-[#03102199] group-hover:via-[#031021]/60 transition-colors duration-500"></div>
+                            )}
+
+                            {/* Icon Badge */}
+                            <div className="absolute top-6 left-6 w-11 h-11 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md flex items-center justify-center text-[#b6cf7c] group-hover:bg-[#73aa3c] group-hover:text-white group-hover:border-[#73aa3c] transition-colors duration-500 z-10">
+                                <i className={`${item.icon} text-base`}></i>
                             </div>
 
                             {/* Card Body (Heading text) */}
-                            <div className="mt-8">
-                                <h3 className="font-serif text-lg md:text-xl font-bold leading-snug text-white group-hover:text-[#73aa3c] transition-colors duration-300">
-                                    {item.title}
-                                </h3>
-                            </div>
+                            {!item.imageHasBranding && (
+                                <div className="relative z-10 p-8 pt-0">
+                                    <h3 className="font-serif text-lg md:text-xl font-bold leading-snug text-white group-hover:text-[#b6cf7c] transition-colors duration-300">
+                                        {item.title}
+                                    </h3>
+                                </div>
+                            )}
 
                             {/* Corner Hover Arrow Indicator */}
-                            <div className="absolute bottom-5 right-5 w-8 h-8 rounded-full border border-blue-900/60 flex items-center justify-center text-blue-300 group-hover:border-[#73aa3c] group-hover:bg-[#73aa3c] group-hover:text-white transition-all duration-300 opacity-60 group-hover:opacity-100">
+                            <div className="absolute bottom-5 right-5 w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 group-hover:border-[#73aa3c] group-hover:bg-[#73aa3c] group-hover:text-white transition-all duration-300 z-10">
                                 <i className="fa-solid fa-arrow-up-right text-[10px]"></i>
                             </div>
                         </Link>

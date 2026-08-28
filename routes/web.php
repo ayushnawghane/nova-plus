@@ -37,6 +37,9 @@ Route::get('/contact-us', [ContactController::class, 'index'])
 Route::post('/contact-us', [ContactController::class, 'store'])
     ->name('contact-us.store');
 
+Route::post('/brochure-download', [ContactController::class, 'downloadBrochure'])
+    ->name('brochure.download');
+
 Route::get('/insights', fn () => Inertia::render('Insights'))
     ->name('insights');
 

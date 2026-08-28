@@ -21,6 +21,12 @@
                     <th style="text-align:left; padding:10px 0; color:#5a6b7a; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid #eef1ef;">Email</th>
                     <td style="padding:10px 0; color:#1a2e3a; font-size:14px; border-bottom:1px solid #eef1ef;">{{ $enquiry->email }}</td>
                 </tr>
+                @if($enquiry->phone)
+                <tr>
+                    <th style="text-align:left; padding:10px 0; color:#5a6b7a; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid #eef1ef;">Phone</th>
+                    <td style="padding:10px 0; color:#1a2e3a; font-size:14px; border-bottom:1px solid #eef1ef;">{{ $enquiry->phone }}</td>
+                </tr>
+                @endif
                 @if($enquiry->company_name)
                 <tr>
                     <th style="text-align:left; padding:10px 0; color:#5a6b7a; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid #eef1ef;">Company</th>
